@@ -7,9 +7,11 @@
  * existing anewwichita.com site.
  */
 
-function e(?string $value): string
-{
-    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+if (!function_exists('e')) {
+    function e(?string $value): string
+    {
+        return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+    }
 }
 
 $site = [
@@ -20,6 +22,7 @@ $site = [
     'phone'       => '(316) 260-3777',
     'phone_href'  => 'tel:+13162603777',
     'fax'         => '(316) 260-9382',
+    'email'       => 'info@anewwichita.com',
     'street'      => '8080 E Central Ave, Suite 190',
     'city'        => 'Wichita',
     'region'      => 'KS',
@@ -38,8 +41,8 @@ $site = [
 
 /* Optional: drop in an mp4/webm of the Flint Hills (moving grass, clouds, sunset)
    and the hero switches from photo to looping video automatically. */
-$hero_video = '';            // e.g. 'assets/video/flint-hills.mp4'
-$hero_image = 'assets/images/scenery/flint-hills-golden-hour.jpg';
+$hero_video = '';            // e.g. '/assets/video/flint-hills.mp4'
+$hero_image = '/assets/images/people/sunset-field-walk.jpg';
 
 $services = [
     'therapy' => [
@@ -64,7 +67,7 @@ $services = [
     ],
     'play-therapy' => [
         'name' => 'Play Therapy',
-        'url'  => '/services/',
+        'url'  => '/play-therapy/',
         'blurb' => 'Children often say with play what they can’t yet say with words. We meet them there.',
     ],
     'tms' => [
@@ -81,6 +84,7 @@ $services = [
  */
 $team = [
     'ashley-ludlum' => [
+        'insurance' => ['aetna', 'bcbs', 'tricare', 'united'], 'insurance_soon' => [],
         'name' => 'Ashley Ludlum', 'creds' => 'APRN, PMHNP-BC', 'lane' => 'medication',
         'role' => 'Psychiatric Mental Health Nurse Practitioner', 'format' => 'In-person & telehealth',
         'photo' => 'ashley-ludlum.jpg', 'pos' => '50% 25%',
@@ -89,6 +93,7 @@ $team = [
         'bio' => 'I have passion for all areas of mental health, especially women’s health. I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.',
     ],
     'wes-smothermon' => [
+        'insurance' => ['aetna', 'bcbs', 'tricare', 'united'], 'insurance_soon' => [],
         'name' => 'Wes Smothermon', 'creds' => 'LCMFT', 'lane' => 'therapist',
         'role' => 'Co-founder · Licensed Clinical Marriage & Family Therapist', 'format' => 'In-person & telehealth',
         'photo' => 'wes-smothermon.jpg', 'pos' => '50% 20%',
@@ -97,6 +102,7 @@ $team = [
         'bio' => 'Today, I work with adolescents, adults, couples, and families experiencing anxiety, trauma, relationship difficulties, family conflict, parenting challenges, and struggles related to pornography. My approach is warm, practical, and grounded in an understanding of how past experiences, family relationships, and generational patterns influence our present.',
     ],
     'sierra-fair' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'united', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Sierra Fair', 'creds' => 'LSCSW', 'lane' => 'therapist',
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'Telehealth only',
         'photo' => 'sierra-fair.jpg', 'pos' => '50% 20%',
@@ -105,6 +111,7 @@ $team = [
         'bio' => 'Sierra offers a compassionate, down-to-earth approach to therapy for adolescents and adults, and has a special heart for supporting women through infertility, postpartum struggles, and the complex emotions that often accompany these seasons.',
     ],
     'christina-wankum' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Christina Wankum', 'creds' => 'LMFT', 'lane' => 'therapist',
         'role' => 'Licensed Marriage & Family Therapist', 'format' => 'In-person & telehealth',
         'photo' => 'christina-wankum.jpg', 'pos' => '50% 30%',
@@ -113,6 +120,7 @@ $team = [
         'bio' => 'I’m Christina, a Licensed Marriage and Family Therapist, driven by a genuine love for people and a desire to help others feel seen, heard, and valued. My practice is focused on person-centered and collaborative care.',
     ],
     'sid-mead' => [
+        'insurance' => ['aetna', 'bcbs', 'tricare'], 'insurance_soon' => [],
         'name' => 'Sid Mead', 'creds' => 'LCMFT', 'lane' => 'therapist',
         'role' => 'Licensed Clinical Marriage & Family Therapist', 'format' => 'In-person',
         'photo' => 'sid-mead.jpg', 'pos' => '50% 30%',
@@ -121,6 +129,7 @@ $team = [
         'bio' => 'My primary focus is on helping adults and couples on the road of life. I’m retired from US Military, conflict tolerant, and EMDR trained. If you have slices of your life that don’t fit well, call and let’s do some work together.',
     ],
     'barb-meyer' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'tricare', 'united', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Barb Meyer', 'creds' => 'LSCSW', 'lane' => 'therapist',
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'In-person & telehealth',
         'photo' => 'barb-meyer.jpg', 'pos' => '50% 30%',
@@ -129,6 +138,7 @@ $team = [
         'bio' => 'I have a specific interest in helping people overcome feelings of anxiety and depression. I enjoy helping young people overcome school-related issues including ADHD, and helping parents learn new skills to support their children is important to me.',
     ],
     'chuck-edwards' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Chuck Edwards', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'chuck-edwards.jpg', 'pos' => '50% 20%',
@@ -137,6 +147,7 @@ $team = [
         'bio' => 'I am a skilled professional counselor specializing in trauma, addiction, personality disorders, depression, and anxiety — as well as parenting issues, emotional regulation, personal and spiritual growth, conflict resolution, and broken relationships.',
     ],
     'katlynn-miller' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Katlynn Miller', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'katlynn-miller.jpg', 'pos' => '50% 30%',
@@ -145,6 +156,7 @@ $team = [
         'bio' => 'I strive to create a warm, nonjudgmental space where clients feel seen, heard, and empowered. I work with individuals navigating trauma, depression, anxiety, grief, ADHD, and bipolar disorder, and support couples seeking to rebuild trust or deepen their connection.',
     ],
     'lucas-shryock' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'sunflower'], 'insurance_soon' => ['healthyblue'],
         'name' => 'Lucas Shryock', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'lucas-shryock.jpg', 'pos' => '50% 20%',
@@ -153,6 +165,7 @@ $team = [
         'bio' => 'Relationships, rupture, repair. I believe that relationships do not have to live in brokenness; there can be healing in all of our stories. I have a strong passion for working with people who are addicted to alcohol and other substances.',
     ],
     'jeremiah-coon' => [
+        'insurance' => ['aetna', 'ambetter', 'bcbs', 'sunflower', 'uhc-kancare'], 'insurance_soon' => ['healthyblue'],
         'name' => 'Jeremiah Coon', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'jeremiah-coon.jpg', 'pos' => '50% 30%',
@@ -161,6 +174,7 @@ $team = [
         'bio' => 'I enjoy working with both youth and adults, and spent two and a half years working with children and adolescents diagnosed with ASD. I was born and raised in Wichita and love my city. My goal is to help you run your race no matter where you find yourself in life.',
     ],
     'grace-henderson' => [
+        'insurance' => [], 'insurance_soon' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'],
         'name' => 'Grace Henderson', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'grace-henderson.jpg', 'pos' => '50% 25%',
@@ -184,7 +198,7 @@ $team = [
     'cari-smothermon' => [
         'name' => 'Cari Smothermon', 'creds' => 'RN, BSN', 'lane' => 'office',
         'role' => 'Co-founder · Operations', 'format' => '',
-        'photo' => 'cari-smothermon.jpg', 'pos' => '50% 20%',
+        'photo' => 'cari-smothermon-portrait.jpg', 'pos' => '50% 25%',
         'focus' => ['Registered nurse', 'Day-to-day operations'], 'conditions' => [],
         'bio' => 'Cari oversees the day-to-day operations of the office and makes sure our team has everything they need to best serve you. She is a registered nurse with over a decade of experience in women’s health.',
     ],
@@ -220,61 +234,73 @@ $featured_team = ['wes-smothermon', 'ashley-ludlum', 'katlynn-miller', 'chuck-ed
  */
 $conditions = [
     'anxiety' => [
+        'image' => '/assets/images/people/anxiety.jpg',
         'name' => 'Anxiety', 'tone' => 'sky',
         'blurb' => 'Constant worry, racing thoughts, a tight chest that won’t settle. Anxiety is common — and very treatable.',
         'services' => ['therapy', 'medication'],
     ],
     'depression' => [
+        'image' => '/assets/images/people/depression.jpg',
         'name' => 'Depression & Mood', 'tone' => 'clay', 'tms' => true,
         'blurb' => 'When the color drains out of things you used to love, or the heaviness just won’t lift.',
         'services' => ['therapy', 'medication', 'tms'],
     ],
     'adhd' => [
+        'image' => '/assets/images/people/adhd.jpg',
         'name' => 'ADHD', 'tone' => 'leaf',
         'blurb' => 'Focus, follow-through and restlessness — for kids, teens and adults, starting with a real assessment.',
         'services' => ['adhd-assessment', 'medication', 'therapy'],
     ],
     'trauma' => [
+        'image' => '/assets/images/people/trauma.jpg',
         'name' => 'Trauma & PTSD', 'tone' => 'prairie',
         'blurb' => 'Painful memories don’t have to keep running the show. Healing is possible, at your pace.',
         'services' => ['emdr', 'therapy'],
     ],
     'grief' => [
+        'image' => '/assets/images/people/grief.jpg',
         'name' => 'Grief & Loss', 'tone' => 'sand',
         'blurb' => 'Loss reshapes everything. You don’t have to carry it alone or “move on” on anyone’s timeline.',
         'services' => ['therapy'],
     ],
     'bipolar' => [
+        'image' => '/assets/images/people/bipolar.jpg',
         'name' => 'Bipolar Disorder', 'tone' => 'sky',
         'blurb' => 'Steadier days through thoughtful medication care and therapy that work together.',
         'services' => ['medication', 'therapy'],
     ],
     'ocd' => [
+        'image' => '/assets/images/people/ocd.jpg',
         'name' => 'OCD', 'tone' => 'clay',
         'blurb' => 'Intrusive thoughts and rituals that take up more of your day than you want them to.',
         'services' => ['therapy', 'medication'],
     ],
     'stress' => [
+        'image' => '/assets/images/people/stress.jpg',
         'name' => 'Stress & Burnout', 'tone' => 'leaf',
         'blurb' => 'Running on empty at work or home. Learn to manage stress before it manages you.',
         'services' => ['therapy'],
     ],
     'child' => [
+        'image' => '/assets/images/people/child.jpg',
         'name' => 'Children & Teens', 'tone' => 'sand',
         'blurb' => 'Behavior, school struggles, big feelings. Care for kids and the families who love them — including play therapy.',
         'services' => ['play-therapy', 'therapy', 'adhd-assessment'],
     ],
     'relationships' => [
+        'image' => '/assets/images/people/relationships.jpg',
         'name' => 'Relationships & Family', 'tone' => 'prairie',
         'blurb' => 'Couples, parenting and family conflict. Rupture can become repair.',
         'services' => ['therapy'],
     ],
     'addiction' => [
+        'image' => '/assets/images/people/addiction.jpg',
         'name' => 'Addiction & Recovery', 'tone' => 'clay',
         'blurb' => 'Substances, pornography and habits that have taken hold — met with grace, not judgment.',
         'services' => ['therapy'],
     ],
     'womens' => [
+        'image' => '/assets/images/people/womens.jpg',
         'name' => 'Women’s & Perinatal', 'tone' => 'sky',
         'blurb' => 'Infertility, pregnancy, postpartum and infant loss — care for the seasons that change everything.',
         'services' => ['medication', 'therapy'],
@@ -306,6 +332,22 @@ $insurances = [
     'United Healthcare Community Plan · KanCare',
 ];
 
+/*
+ * Plans each provider accepts, from their staff bios on anewwichita.com.
+ * Practice-level contracts ($insurances above) also list Cigna, TriWest and UMR,
+ * which no individual bio mentions — confirm with the office before publishing.
+ */
+$plans = [
+    'aetna'       => ['name' => 'Aetna', 'note' => 'Commercial'],
+    'ambetter'    => ['name' => 'Ambetter', 'note' => ''],
+    'bcbs'        => ['name' => 'Blue Cross Blue Shield', 'note' => ''],
+    'united'      => ['name' => 'UnitedHealthcare', 'note' => 'Commercial'],
+    'tricare'     => ['name' => 'Tricare', 'note' => ''],
+    'healthyblue' => ['name' => 'Healthy Blue', 'note' => 'KanCare'],
+    'sunflower'   => ['name' => 'Sunflower Health Plan', 'note' => 'KanCare'],
+    'uhc-kancare' => ['name' => 'United Community Plan', 'note' => 'KanCare'],
+];
+
 /* Only add genuine, permission-cleared reviews. Section hides while empty. */
 $reviews = [
     // ['quote' => '…', 'author' => 'First name or initials', 'source' => 'Google'],
@@ -314,4 +356,30 @@ $reviews = [
 /* YouTube IDs for future provider intros / TMS FAQs. Section hides while empty. */
 $videos = [
     // ['youtube_id' => 'XXXXXXXXXXX', 'title' => 'Meet Ashley Ludlum, APRN'],
+];
+
+/* FAQ answers shared across service pages. */
+$common_faqs = [
+    'insurance' => ['Do you accept insurance?', 'ANew is contracted with many major plans, including Aetna, Ambetter, Blue Cross Blue Shield, Cigna, Healthy Blue, Sunflower Health Plan, TriWest, UMR and UnitedHealthcare (including KanCare). Accepted plans vary by provider, so give us a call and we’ll gladly check yours. We also accept cash, major credit cards, CareCredit, HSA and FSA.'],
+    'start'     => ['How do I get started?', 'Send a quick inquiry through our secure scheduling form or call us at ' . $site['phone'] . '. Once it’s submitted, our team will reach out to you shortly.'],
+];
+
+/*
+ * Legal pages. Effective date and privacy contact appear on every policy.
+ * These policies are starting drafts — have ANew’s attorney/compliance
+ * officer review them (and swap in ANew’s own HIPAA Notice if one exists).
+ */
+$legal = [
+    'effective'       => 'October 9, 2026',
+    'privacy_officer' => 'Cari Smothermon, Privacy Officer',
+    'contact_email'   => $site['email'],
+];
+
+$legal_pages = [
+    '/privacy-policy/'              => 'Privacy Policy',
+    '/notice-of-privacy-practices/' => 'Notice of Privacy Practices (HIPAA)',
+    '/terms-of-use/'                => 'Terms of Use',
+    '/good-faith-estimate/'         => 'Good Faith Estimate',
+    '/nondiscrimination/'           => 'Nondiscrimination Notice',
+    '/accessibility/'               => 'Accessibility',
 ];

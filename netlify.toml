@@ -37,3 +37,30 @@
   from = "/index.php"
   to = "/"
   status = 301
+
+# Old team sub-pages now live as sections on /meet-our-team/
+[[redirects]]
+  from = "/meet-our-team/med-providers"
+  to = "/meet-our-team/#medication"
+  status = 301
+
+[[redirects]]
+  from = "/meet-our-team/therapists"
+  to = "/meet-our-team/#therapists"
+  status = 301
+
+[[redirects]]
+  from = "/meet-our-team/office-staff"
+  to = "/meet-our-team/#office"
+  status = 301
+
+# Old individual staff bio pages → that person's card on the team page
+[[redirects]]
+  from = "/staff/counselor-intern-wichita-ks-katrina-amrine"
+  to = "/meet-our-team/#katrina-amrine"
+  status = 301
+
+[[redirects]]
+  from = "/staff/:slug"
+  to = "/meet-our-team/#:slug"
+  status = 301

@@ -22,7 +22,7 @@ h1, h2, h3, .font-serif { font-variation-settings: "SOFT" 60, "WONK" 0; }
 [data-header] { background: rgba(251, 248, 243, .78); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); }
 [data-header].is-scrolled { border-color: var(--cream-200); box-shadow: 0 6px 30px -18px rgba(30, 42, 44, .25); }
 
-.nav-link { display: inline-flex; padding: .55rem .85rem; border-radius: 999px; transition: background .2s, color .2s; }
+.nav-link { display: inline-flex; white-space: nowrap; padding: .55rem .85rem; border-radius: 999px; transition: background .2s, color .2s; }
 .nav-link:hover { background: var(--cream-100); color: var(--ink); }
 .mobile-link { display: block; padding: 1rem 0; border-bottom: 1px solid var(--cream-200); font-weight: 500; }
 
@@ -128,3 +128,34 @@ a.tag:hover { background: var(--cream-200); color: var(--ink); }
     .hero-drift { animation: none; transform: none; }
     .js .reveal { opacity: 1; transform: none; }
 }
+
+.nav-link[aria-current="page"] { background: var(--cream-100); color: var(--ink); }
+
+/* Service pages: sticky section switcher + FAQ */
+.tab-link { flex-shrink: 0; padding: .5rem 1rem; border-radius: 999px; border: 1px solid var(--cream-300); background: #fff; font-size: .875rem; font-weight: 500; color: var(--ink-soft); transition: all .2s; }
+.tab-link:hover, .tab-link.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.faq summary::-webkit-details-marker { display: none; }
+
+/* Insurance plan finder */
+.plan-chip { padding: .65rem 1.1rem; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .06); color: #fff; font-size: .9rem; transition: all .2s; }
+.plan-chip:hover { background: rgba(255, 255, 255, .14); }
+.plan-chip[aria-pressed="true"] { background: var(--wheat); border-color: var(--wheat); color: var(--prairie-deep); font-weight: 600; }
+
+/* Legal pages */
+.legal-prose { max-width: 46rem; color: var(--ink-soft); font-size: 16.5px; line-height: 1.75; }
+.legal-prose section + section { margin-top: 3rem; }
+.legal-prose h2 { font-family: Fraunces, Georgia, serif; font-weight: 400; font-size: 1.75rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+.legal-prose h3 { font-weight: 600; color: var(--ink); margin: 1.5rem 0 .5rem; }
+.legal-prose p + p, .legal-prose p + ul, .legal-prose ul + p { margin-top: 1rem; }
+.legal-prose ul { list-style: disc; padding-left: 1.25rem; }
+.legal-prose ul li + li { margin-top: .4rem; }
+.legal-prose a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.legal-prose strong { color: var(--ink); font-weight: 600; }
+.legal-prose .note { margin-top: 1rem; border-radius: 1.25rem; background: var(--cream-100); padding: 1rem 1.25rem; }
+
+/* Forms */
+.form-label { display: block; margin-bottom: .45rem; font-size: .875rem; font-weight: 600; color: var(--ink); }
+.form-input { width: 100%; border-radius: 1rem; border: 1px solid var(--cream-300); background: var(--cream-50); padding: .8rem 1rem; font-size: 1rem; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+.form-input:focus { outline: none; border-color: var(--prairie-deep); box-shadow: 0 0 0 3px rgba(62, 159, 72, .18); }
+
+@media (max-width: 1279px) { .nav-link { padding: .5rem .6rem; } }

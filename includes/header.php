@@ -11,14 +11,15 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
     <script>document.documentElement.classList.add('js');</script>
     <title><?= e($page_title) ?></title>
     <meta name="description" content="<?= e($page_description) ?>">
-    <link rel="canonical" href="<?= e($site['url']) ?>/">
-    <link rel="icon" href="assets/images/brand/favicon.png">
+    <?php if (!empty($noindex)): ?><meta name="robots" content="noindex">
+    <?php endif; ?>    <link rel="canonical" href="<?= e($site['url'] . ($canonical_path ?? '/')) ?>">
+    <link rel="icon" href="/assets/images/brand/favicon.png">
     <meta name="theme-color" content="#FBF8F3">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= e($page_title) ?>">
     <meta property="og:description" content="<?= e($page_description) ?>">
-    <meta property="og:image" content="<?= e($site['url']) ?>/<?= e($hero_image) ?>">
+    <meta property="og:image" content="<?= e($site['url'] . ($og_image ?? $hero_image)) ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +50,7 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
             },
         };
     </script>
-    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
 
     <script type="application/ld+json">
     <?= json_encode([
@@ -99,15 +100,16 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
 <header id="site-header" class="sticky top-0 z-40 border-b border-transparent transition-all duration-300" data-header>
     <div class="mx-auto flex max-w-site items-center justify-between gap-6 px-5 py-3.5 sm:px-8">
         <a href="/" class="flex items-center gap-3" aria-label="ANew Mental Health — home">
-            <img src="assets/images/brand/logo-color.png" alt="ANew" class="h-14 w-auto" width="45" height="56">
-            <span class="hidden border-l border-cream-300 pl-3 text-[10.5px] font-semibold uppercase leading-[1.5] tracking-[0.2em] text-ink-mute sm:block">Mental Health<br>Wichita, Kansas</span>
+            <img src="/assets/images/brand/logo-color.png" alt="ANew" class="h-14 w-auto" width="45" height="56">
+            <span class="hidden whitespace-nowrap border-l border-cream-300 pl-3 text-[10.5px] font-semibold uppercase leading-[1.5] tracking-[0.2em] text-ink-mute sm:block lg:hidden 2xl:block">Mental Health<br>Wichita, Kansas</span>
         </a>
 
         <nav aria-label="Primary" class="hidden lg:block">
             <ul class="flex items-center gap-1 text-[14.5px] font-medium text-ink-soft">
-                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="/"<?= ($canonical_path ?? '/') === '/' ? ' aria-current="page"' : '' ?>>Home</a></li>
+                <li><a class="nav-link" href="/about/"<?= ($current_page ?? '') === 'about' ? ' aria-current="page"' : '' ?>>About</a></li>
                 <li class="group relative">
-                    <a class="nav-link inline-flex items-center gap-1" href="#services" aria-haspopup="true">
+                    <a class="nav-link inline-flex items-center gap-1" href="/#services" aria-haspopup="true"<?= ($current_page ?? '') === 'services' ? ' aria-current="page"' : '' ?>>
                         Services
                         <svg class="h-3.5 w-3.5 transition group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5"/></svg>
                     </a>
@@ -126,15 +128,40 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
                         </ul>
                     </div>
                 </li>
-                <li><a class="nav-link" href="#conditions">Conditions</a></li>
-                <li><a class="nav-link" href="#team">Our Team</a></li>
-                <li><a class="nav-link" href="#insurance">Insurance</a></li>
-                <li><a class="nav-link" href="#visit">Contact</a></li>
+                <li class="group relative">
+                    <a class="nav-link inline-flex items-center gap-1" href="/conditions/" aria-haspopup="true"<?= ($current_page ?? '') === 'conditions' ? ' aria-current="page"' : '' ?>>
+                        Conditions
+                        <svg class="h-3.5 w-3.5 transition group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5"/></svg>
+                    </a>
+                    <div class="invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                        <div class="rounded-2xl border border-cream-200 bg-white p-2 shadow-xl shadow-ink/5">
+                            <ul class="grid grid-cols-2 gap-0.5">
+                                <?php foreach ($conditions as $cslug => $cond): ?>
+                                    <li>
+                                        <a href="/conditions/<?= e($cslug) ?>/" class="flex items-center justify-between gap-2 rounded-xl px-4 py-2.5 hover:bg-cream-100">
+                                            <span><?= e($cond['name']) ?></span>
+                                            <?php if (!empty($cond['tms'])): ?>
+                                                <span class="rounded-full bg-leaf-soft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-leaf-deep">TMS</span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <div class="mt-2 flex items-center justify-between gap-3 rounded-xl bg-cream-100 px-4 py-3 text-[13.5px]">
+                                <a href="/conditions/" class="font-semibold text-ink hover:underline">All conditions we treat →</a>
+                                <a href="/#next-step" class="text-ink-soft hover:text-ink">Not sure? Find your next step</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a class="nav-link" href="/meet-our-team/"<?= ($current_page ?? '') === 'team' ? ' aria-current="page"' : '' ?>>Our Team</a></li>
+                <li><a class="nav-link" href="/insurance/"<?= ($current_page ?? '') === 'insurance' ? ' aria-current="page"' : '' ?>>Insurance</a></li>
+                <li><a class="nav-link" href="/contact-us/"<?= ($current_page ?? '') === 'contact' ? ' aria-current="page"' : '' ?>>Contact</a></li>
             </ul>
         </nav>
 
         <div class="flex items-center gap-2">
-            <div class="group relative hidden xl:block">
+            <div class="group relative hidden 2xl:block">
                 <button type="button" class="nav-link inline-flex items-center gap-1 text-[14.5px] font-medium text-ink-soft" aria-haspopup="true">
                     Client Portal
                     <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5"/></svg>
@@ -160,15 +187,16 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
     <div class="absolute inset-0 bg-ink/40 backdrop-blur-sm" data-menu-close></div>
     <div class="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-y-auto bg-cream-50 px-6 pb-8 pt-5 shadow-2xl">
         <div class="flex items-center justify-between">
-            <img src="assets/images/brand/logo-color.png" alt="ANew" class="h-10 w-auto">
+            <img src="/assets/images/brand/logo-color.png" alt="ANew" class="h-10 w-auto">
             <button type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300" data-menu-close>
                 <span class="sr-only">Close menu</span>
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
             </button>
         </div>
         <nav class="mt-8 text-lg" aria-label="Mobile">
-            <a class="mobile-link" href="#next-step" data-menu-close>Find your next step</a>
-            <a class="mobile-link" href="#about" data-menu-close>About ANew</a>
+            <a class="mobile-link" href="/" data-menu-close>Home</a>
+            <a class="mobile-link" href="/#next-step" data-menu-close>Find your next step</a>
+            <a class="mobile-link" href="/about/" data-menu-close>About ANew</a>
             <details class="border-b border-cream-200">
                 <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium">Services <span aria-hidden="true">+</span></summary>
                 <div class="pb-3 text-base">
@@ -180,10 +208,18 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
                     <?php endforeach; ?>
                 </div>
             </details>
-            <a class="mobile-link" href="#conditions" data-menu-close>Conditions we treat</a>
-            <a class="mobile-link" href="#team" data-menu-close>Our team</a>
-            <a class="mobile-link" href="#insurance" data-menu-close>Insurance & payment</a>
-            <a class="mobile-link" href="#visit" data-menu-close>Contact & directions</a>
+            <details class="border-b border-cream-200">
+                <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium">Conditions we treat <span aria-hidden="true">+</span></summary>
+                <div class="grid grid-cols-2 gap-x-3 pb-3 text-base">
+                    <?php foreach ($conditions as $cslug => $cond): ?>
+                        <a class="py-2 text-ink-soft" href="/conditions/<?= e($cslug) ?>/"><?= e($cond['name']) ?></a>
+                    <?php endforeach; ?>
+                    <a class="col-span-2 py-2 font-semibold" href="/conditions/">All conditions →</a>
+                </div>
+            </details>
+            <a class="mobile-link" href="/meet-our-team/" data-menu-close>Our team</a>
+            <a class="mobile-link" href="/insurance/" data-menu-close>Insurance & payment</a>
+            <a class="mobile-link" href="/contact-us/" data-menu-close>Contact & directions</a>
         </nav>
         <div class="mt-6 grid grid-cols-2 gap-2 text-sm">
             <a class="rounded-xl border border-cream-300 px-4 py-3 text-center" href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener">Therapy portal</a>

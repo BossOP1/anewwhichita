@@ -24,8 +24,32 @@ $_SERVER['HTTPS']          = 'on';
 // Pages to publish. Homepage only for now; add the rest as they're built,
 // e.g. 'meet-our-team.php' => 'meet-our-team/index.html' for a pretty URL.
 $pages = [
-    'index.php' => 'index.html',
+    'index.php'       => 'index.html',
+    'about/index.php' => 'about/index.html',
+    'talk-therapy/index.php' => 'talk-therapy/index.html',
+    'mental-health-medication-management/index.php' => 'mental-health-medication-management/index.html',
+    'adhd-assessment/index.php' => 'adhd-assessment/index.html',
+    'emdr-therapy/index.php'    => 'emdr-therapy/index.html',
+    'play-therapy/index.php'    => 'play-therapy/index.html',
+    'insurance/index.php'       => 'insurance/index.html',
+    'contact-us/index.php'      => 'contact-us/index.html',
+    'meet-our-team/index.php'   => 'meet-our-team/index.html',
+    'conditions/index.php'      => 'conditions/index.html',
+    'mental-health-careers-wichita-ks/index.php' => 'mental-health-careers-wichita-ks/index.html',
+    'privacy-policy/index.php'              => 'privacy-policy/index.html',
+    'notice-of-privacy-practices/index.php' => 'notice-of-privacy-practices/index.html',
+    'terms-of-use/index.php'                => 'terms-of-use/index.html',
+    'good-faith-estimate/index.php'         => 'good-faith-estimate/index.html',
+    'nondiscrimination/index.php'           => 'nondiscrimination/index.html',
+    'accessibility/index.php'               => 'accessibility/index.html',
+    'thank-you/index.php'                   => 'thank-you/index.html',
+    '404.php'                               => '404.html',
 ];
+
+// Every condition page: conditions/{slug}/index.php → conditions/{slug}/index.html
+foreach (glob('conditions/*/index.php') as $conditionPage) {
+    $pages[$conditionPage] = substr($conditionPage, 0, -3) . 'html';
+}
 
 // Folders copied wholesale into dist/: images (brand, team, office,
 // scenery), css/site.css and js/main.js.
@@ -111,7 +135,7 @@ foreach ($pages as $srcFile => $outFile) {
 
     // Each page starts from a clean slate: includes/header.php falls back to
     // defaults only when these are unset, so leftovers would carry over.
-    unset($page_title, $page_description);
+    unset($page_title, $page_description, $canonical_path, $current_page, $og_image, $svc, $slug, $doc, $noindex);
 
     $_SERVER['SCRIPT_NAME'] = '/' . $srcFile;
 
@@ -164,6 +188,23 @@ foreach ($rootFiles as $file) {
     }
 }
 
+/* ---- sitemap.xml + robots.txt ------------------------------------- */
+
+$noIndex = ['404.html', 'thank-you/index.html'];
+$urls = [];
+foreach ($pages as $src => $out) {
+    if (in_array($out, $noIndex, true) || !file_exists('dist/' . $out)) {
+        continue;
+    }
+    $path = '/' . preg_replace('#(^|/)index\.html$#', '$1', $out);
+    $urls[] = '  <url><loc>' . htmlspecialchars($site['url'] . $path) . '</loc><lastmod>' . date('Y-m-d') . '</lastmod></url>';
+}
+file_put_contents('dist/sitemap.xml', "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" . implode("\n", $urls) . "\n</urlset>\n");
+if (!file_exists('dist/robots.txt')) {
+    file_put_contents('dist/robots.txt', "User-agent: *\nAllow: /\nDisallow: /thank-you/\n\nSitemap: {$site['url']}/sitemap.xml\n");
+}
+echo "Wrote:   sitemap.xml (" . count($urls) . " URLs), robots.txt\n";
+
 /* ---- Sanity checks -------------------------------------------------- */
 
 // Every local file the build references (images, css, js) must exist in
@@ -172,7 +213,9 @@ foreach ($rootFiles as $file) {
 // separately: those pages simply haven't been built yet.
 $missing = [];
 $unbuiltPages = [];
-foreach (glob('dist/{,*/}*.html', GLOB_BRACE) as $page) {
+$builtPages = new RegexIterator(new RecursiveIteratorIterator(new RecursiveDirectoryIterator('dist', FilesystemIterator::SKIP_DOTS)), '/\.html$/');
+foreach ($builtPages as $page) {
+    $page = $page->getPathname();
     $html = file_get_contents($page);
     preg_match_all('/(?:src|href|poster)="(?!https?:|\/\/|tel:|sms:|mailto:|#|data:)([^"]+)"/i', $html, $m);
     foreach (array_unique($m[1]) as $ref) {

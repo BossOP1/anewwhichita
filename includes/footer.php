@@ -1,9 +1,9 @@
 <?php /** @var array $site @var array $services @var array $conditions */ ?>
-<footer class="bg-prairie-deep pb-28 pt-20 text-cream-200 sm:pb-12">
+<footer class="bg-prairie-deep pb-28 pt-16 text-cream-200 sm:pb-12">
     <div class="mx-auto max-w-site px-5 sm:px-8">
         <div class="grid gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4">
-                <img src="assets/images/brand/logo-white.png" alt="ANew Mental Health" class="h-20 w-auto" loading="lazy">
+                <img src="/assets/images/brand/logo-white.png" alt="ANew Mental Health" class="h-20 w-auto" loading="lazy">
                 <p class="mt-5 max-w-sm font-serif text-xl italic leading-snug text-cream-100">“<?= e($site['tagline']) ?>.”</p>
                 <p class="mt-4 max-w-sm text-sm leading-relaxed text-cream-200/80">Full-service mental health therapy and medication management for children, adolescents and adults in Wichita, Kansas.</p>
                 <div class="mt-6 flex gap-3">
@@ -31,7 +31,7 @@
                         <?php foreach (array_slice($conditions, 0, 7, true) as $slug => $condition): ?>
                             <li><a href="/conditions/<?= e($slug) ?>/"><?= e($condition['name']) ?></a></li>
                         <?php endforeach; ?>
-                        <li><a href="#conditions">View all →</a></li>
+                        <li><a href="/conditions/">View all →</a></li>
                     </ul>
                 </div>
                 <div class="col-span-2 sm:col-span-1">
@@ -39,6 +39,8 @@
                     <ul class="footer-list">
                         <li><a href="/about/">Our story</a></li>
                         <li><a href="/meet-our-team/">Meet our team</a></li>
+                        <li><a href="/insurance/">Insurance &amp; payment</a></li>
+                        <li><a href="/contact-us/">Contact us</a></li>
                         <li><a href="/mental-health-careers-wichita-ks/">Careers</a></li>
                         <li><a href="<?= e($site['referral_url']) ?>">Provider referrals</a></li>
                         <li><a href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener">Therapy client portal</a></li>
@@ -55,7 +57,15 @@
             <p><strong class="text-white">In crisis or need immediate help?</strong> Call or text <a href="tel:988" class="font-semibold text-white underline underline-offset-2">988</a> (Suicide &amp; Crisis Lifeline), or call <a href="tel:911" class="font-semibold text-white underline underline-offset-2">911</a>. ANew is not an emergency service.</p>
         </div>
 
-        <div class="mt-10 flex flex-col gap-6 border-t border-cream-100/10 pt-8 text-xs text-cream-200/70 lg:flex-row lg:justify-between">
+        <nav class="mt-10 border-t border-cream-100/10 pt-8" aria-label="Legal">
+            <ul class="flex flex-wrap gap-x-6 gap-y-3 text-[13px]">
+                <?php foreach ($legal_pages as $url => $label): ?>
+                    <li><a href="<?= e($url) ?>" class="text-cream-200/85 underline-offset-4 hover:text-white hover:underline"><?= e($label) ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+
+        <div class="mt-8 flex flex-col gap-6 text-xs text-cream-200/70 lg:flex-row lg:justify-between">
             <p class="max-w-3xl leading-relaxed">ANew offers email and text messaging to make communication easier and more accessible. Please note that email and text messaging are not secure, and we cannot guarantee the privacy of these communications. If you receive a text from ANew, you may decline or opt out of text communication at any time.</p>
             <p class="shrink-0">© <?= date('Y') ?> ANew Wichita · <?= e($site['street']) ?>, <?= e($site['city']) ?>, <?= e($site['region']) ?> <?= e($site['postal']) ?></p>
         </div>
@@ -77,12 +87,14 @@
     'services' => array_map(fn ($s) => ['name' => $s['name'], 'url' => $s['url'], 'new' => !empty($s['new'])], $services),
     'team' => array_combine(array_keys($team), array_map(fn ($slug, $p) => [
         'name' => $p['name'], 'creds' => $p['creds'], 'role' => $p['role'], 'lane' => $p['lane'],
-        'format' => $p['format'], 'photo' => 'assets/images/team/' . $p['photo'], 'pos' => $p['pos'],
+        'format' => $p['format'], 'photo' => '/assets/images/team/' . $p['photo'], 'pos' => $p['pos'],
         'focus' => $p['focus'], 'conditions' => $p['conditions'], 'bio' => $p['bio'],
-        'bioUrl' => $p['bio_url'] ?? '/staff/' . $slug . '/',
+        'bioUrl' => '/meet-our-team/#' . $slug,
+        'insurance' => array_map(fn ($k) => $plans[$k]['name'] . ($plans[$k]['note'] ? ' (' . $plans[$k]['note'] . ')' : ''), $p['insurance'] ?? []),
+        'insuranceSoon' => array_map(fn ($k) => $plans[$k]['name'] . ($plans[$k]['note'] ? ' (' . $plans[$k]['note'] . ')' : ''), $p['insurance_soon'] ?? []),
     ], array_keys($team), $team)),
     'scheduleUrl' => $site['schedule_url'],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) ?>;</script>
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
