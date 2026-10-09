@@ -15,13 +15,11 @@ $svc = [
     'intro'     => 'Eye Movement Desensitization and Reprocessing (EMDR) is a powerful, evidence-based treatment that helps people heal from trauma and emotional distress — recognized worldwide as an effective approach.',
     'image'     => '/assets/images/office/therapy-room.jpg',
     'image_alt' => 'A calm, sunlit ANew therapy room with a sofa and armchair',
-    'quote'     => ['text' => 'I have a passion to bring healing to people who have been through a traumatic or stressful experience.', 'by' => 'Barb Meyer, LSCSW'],
-    'facts'     => ['Evidence-based', 'EMDR-trained therapists', 'Most major insurance'],
     'blocks'    => [
         [
             'type' => 'text', 'id' => 'how', 'nav' => 'How it works',
             'eyebrow' => 'How EMDR works',
-            'title' => 'Helping the brain <em class="italic text-prairie">file memories differently.</em>',
+            'title' => 'Helping the brain <em class="italic text-clay">file memories differently.</em>',
             'paras' => [
                 'During EMDR sessions, a trained therapist guides you through a structured process: calling to mind distressing memories while engaging in bilateral stimulation, such as guided eye movements, handheld pulsation devices, or tapping.',
                 'This helps reprocess traumatic memories, reducing their emotional charge and allowing the brain to store them in a healthier, more adaptive way. Over time, clients often experience reduced anxiety, improved emotional regulation, and a greater sense of peace.',
@@ -68,7 +66,7 @@ $svc = [
         [
             'type' => 'people', 'id' => 'therapists', 'nav' => 'Our EMDR therapists',
             'eyebrow' => 'Meet our EMDR-trained therapists',
-            'title' => 'Trained, experienced, <em class="italic text-prairie">and kind.</em>',
+            'title' => 'Trained, experienced, <em class="italic text-clay">and kind.</em>',
             'intro' => 'Tap a therapist to learn more about who they work with and how they help.',
             'slugs' => ['barb-meyer', 'sid-mead', 'wes-smothermon'],
         ],

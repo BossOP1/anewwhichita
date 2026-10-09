@@ -16,20 +16,20 @@ $svc = [
     'image'     => '/assets/images/team/ashley-ludlum.jpg',
     'image_alt' => 'Ashley Ludlum, APRN, PMHNP-BC, ANew’s psychiatric mental health nurse practitioner',
     'image_pos' => '50% 30%',
-    'quote'     => ['text' => 'I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.', 'by' => 'Ashley Ludlum, APRN, PMHNP-BC'],
-    'facts'     => ['In-person & telehealth', 'Children & adults', 'Coordinated with your therapist'],
     'blocks'    => [
         [
             'type' => 'text', 'id' => 'what', 'nav' => 'What it is',
             'eyebrow' => 'What is medication management?',
-            'title' => 'More than <em class="italic text-prairie">a prescription.</em>',
+            'title' => 'More than <em class="italic text-clay">a prescription.</em>',
             'paras' => [
                 'At ANew, our Psychiatric Mental Health Nurse Practitioner (PMHNP) offers expert medication management to support children and adults living with a wide range of mental health conditions.',
                 'Medication management is an ongoing, collaborative process: evaluating your symptoms, monitoring how you respond to treatment, adjusting medications as needed, and supporting your overall mental wellness. Our medication management team is here to guide and support you every step of the way.',
+                'Your care also stays connected. When you see an ANew therapist too, your medication provider and therapist work together under one roof — and we’ll collaborate with your primary care provider when it applies. Appointments are available for both children and adults, in person at our Wichita office or by telehealth.',
             ],
             'points' => ['Thorough psychiatric evaluation', 'Ongoing monitoring of how you feel', 'Adjustments as your needs change', 'Coordinated with your therapist'],
             'image' => '/assets/images/office/reception.jpg',
             'image_alt' => 'The bright ANew reception area with the ANew logo on the wall',
+            'image_pos' => '50% 60%',
         ],
         [
             'type' => 'list', 'id' => 'conditions', 'nav' => 'Conditions',
@@ -67,7 +67,7 @@ $svc = [
         [
             'type' => 'people', 'id' => 'provider', 'nav' => 'Your provider',
             'eyebrow' => 'Why choose a PMHNP?',
-            'title' => 'Medical expertise, <em class="italic text-prairie">person-centered care.</em>',
+            'title' => 'Medical expertise, <em class="italic text-clay">person-centered care.</em>',
             'intro' => 'A Psychiatric Mental Health Nurse Practitioner is an advanced practice nurse with specialized training in mental health diagnosis, treatment, and psychopharmacology — bringing both medical expertise and a holistic, person-centered approach.',
             'slugs' => ['ashley-ludlum'],
         ],

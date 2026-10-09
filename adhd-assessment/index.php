@@ -16,7 +16,6 @@ $svc = [
     'image'     => '/assets/images/people/adhd.jpg',
     'image_alt' => 'A boy with glasses concentrating on writing in a notebook',
     'image_pos' => '50% 40%',
-    'facts'     => ['Children, teens & adults', 'T.O.V.A. attention testing', 'Referral required'],
     'blocks'    => [
         [
             'type' => 'callout', 'id' => 'referral',
@@ -39,7 +38,7 @@ $svc = [
         [
             'type' => 'text', 'id' => 'tova', 'nav' => 'The T.O.V.A. test',
             'eyebrow' => 'An objective measure',
-            'title' => 'What is the <em class="italic text-prairie">T.O.V.A.?</em>',
+            'title' => 'What is the <em class="italic text-clay">T.O.V.A.?</em>',
             'paras' => [
                 'The T.O.V.A. is a highly sensitive, computerized test that measures attention. It helps clinicians in the assessment, evaluation, and treatment of ADHD.',
                 'According to the official T.O.V.A. website, it is “the most widely used objective measure of attention in the world,” considered the “Gold Standard” among measures of its type — with more than 260 peer-reviewed articles using the test.',

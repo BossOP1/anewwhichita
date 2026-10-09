@@ -18,12 +18,11 @@ $svc = [
     'image'     => '/assets/images/people/play.jpg',
     'image_alt' => 'A young boy absorbed in building with colorful toy bricks on the floor',
     'image_pos' => '60% 50%',
-    'facts'     => ['For children & families', 'Parents involved', 'Most major insurance'],
     'blocks'    => [
         [
             'type' => 'text', 'id' => 'what', 'nav' => 'What it is',
             'eyebrow' => 'What is play therapy?',
-            'title' => 'Play is a child’s <em class="italic text-prairie">first language.</em>',
+            'title' => 'Play is a child’s <em class="italic text-clay">first language.</em>',
             'paras' => [
                 'Young children don’t usually process the world by sitting and talking about it — they play it out. In play therapy, a therapist uses toys, art, stories and games to help a child express feelings, make sense of experiences, and practice new ways of coping.',
                 'To a child it simply feels like play. To a trained therapist, it’s a window into what your child is carrying — and a gentle, developmentally appropriate way to help them heal and grow.',
@@ -61,7 +60,7 @@ $svc = [
         [
             'type' => 'people', 'id' => 'therapists', 'nav' => 'Our therapists',
             'eyebrow' => 'Therapists who work with children',
-            'title' => 'People your child <em class="italic text-prairie">can trust.</em>',
+            'title' => 'People your child <em class="italic text-clay">can trust.</em>',
             'intro' => 'Our team includes therapists who love working with kids, teens and their families. We’ll help match your child with the right fit.',
             'slugs' => ['barb-meyer', 'jeremiah-coon', 'christina-wankum', 'wes-smothermon'],
         ],
