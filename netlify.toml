@@ -1,0 +1,39 @@
+# Netlify config for the ANew Wichita site.
+# Netlify runs build.php to render the PHP pages into static HTML in dist/.
+
+[build]
+  command = "php build.php"
+  publish = "dist"
+
+[build.environment]
+  PHP_VERSION = "8.3"
+
+# Long-lived caching for images; CSS/JS revalidate so edits show up right away.
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Source files are never published (only dist/ is), but keep old .php URLs working.
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
