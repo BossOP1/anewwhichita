@@ -263,23 +263,64 @@ include __DIR__ . '/includes/header.php';
     </section>
     <?php endif; ?>
 
-    <?php if ($reviews): ?>
-    <!-- ============ REVIEWS (genuine reviews only) ============ -->
-    <section class="bg-cream-100 py-14" aria-labelledby="reviews-title">
-        <div class="mx-auto max-w-site px-5 sm:px-8">
-            <p class="eyebrow text-leaf-deep">In their words</p>
-            <h2 id="reviews-title" class="mt-5 font-serif text-4xl font-light tracking-tight">What our clients say.</h2>
-            <div class="mt-10 grid gap-6 md:grid-cols-3">
-                <?php foreach ($reviews as $review): ?>
-                    <figure class="rounded-3xl bg-white p-8">
-                        <blockquote class="font-serif text-xl leading-snug">“<?= e($review['quote']) ?>”</blockquote>
-                        <figcaption class="mt-5 text-sm text-ink-soft"><?= e($review['author']) ?> · <?= e($review['source']) ?></figcaption>
-                    </figure>
-                <?php endforeach; ?>
+    <!-- ============ GOOGLE REVIEWS (real rating and reviews only — see $google_reviews in config) ============ -->
+    <?php
+    $stars = fn ($n, $cls = 'h-4 w-4') => implode('', array_map(fn ($i) => '<svg viewBox="0 0 20 20" class="' . $cls . ' ' . ($i <= round($n) ? 'text-[#F4B400]' : 'text-cream-300') . '" fill="currentColor" aria-hidden="true"><path d="M10 1.8l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg>', range(1, 5)));
+    $review_link = $google_reviews['place_id'] ? 'https://search.google.com/local/writereview?placeid=' . rawurlencode($google_reviews['place_id']) : $google_reviews['url'];
+    ?>
+    <section id="reviews" class="mt-14 scroll-mt-24 px-3 sm:px-4 lg:mt-20" aria-labelledby="reviews-title">
+        <div class="rounded-4xl bg-cream-100">
+            <div class="mx-auto grid max-w-site gap-10 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:gap-16 lg:py-20">
+                <div class="<?= $reviews ? 'lg:col-span-4' : 'mx-auto max-w-2xl text-center lg:col-span-12' ?>">
+                    <p class="eyebrow reveal inline-flex items-center gap-2 text-leaf-deep">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7Z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3a7.2 7.2 0 0 1-10.8-3.8h-4v3.1A12 12 0 0 0 12 24Z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1Z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8Z"/></svg>
+                        Google reviews
+                    </p>
+                    <h2 id="reviews-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What our clients <em class="italic text-clay">are saying.</em></h2>
+                    <?php if ($google_reviews['rating'] && $google_reviews['count']): ?>
+                        <div class="reveal mt-7 flex items-center gap-4 <?= $reviews ? '' : 'justify-center' ?>">
+                            <span class="font-serif text-5xl font-light"><?= e(number_format($google_reviews['rating'], 1)) ?></span>
+                            <span>
+                                <span class="flex gap-0.5" role="img" aria-label="Rated <?= e(number_format($google_reviews['rating'], 1)) ?> out of 5"><?= $stars($google_reviews['rating'], 'h-5 w-5') ?></span>
+                                <span class="mt-1 block text-sm text-ink-soft">Based on <?= e($google_reviews['count']) ?> Google reviews</span>
+                            </span>
+                        </div>
+                    <?php else: ?>
+                        <p class="reveal mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-ink-soft">Hear from the people we’ve had the privilege of caring for — and if ANew has been part of your story, we’d be grateful if you shared your experience.</p>
+                    <?php endif; ?>
+                    <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row <?= $reviews ? 'lg:flex-col xl:flex-row' : 'sm:justify-center' ?>">
+                        <a href="<?= e($google_reviews['url']) ?>" target="_blank" rel="noopener" class="btn-primary">Read reviews on Google</a>
+                        <a href="<?= e($review_link) ?>" target="_blank" rel="noopener" class="btn-ghost">Leave a review</a>
+                    </div>
+                </div>
+
+                <?php if ($reviews): ?>
+                    <div class="reveal min-w-0 lg:col-span-8" data-slider aria-roledescription="carousel" aria-label="Client reviews">
+                        <ul class="-mx-1 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-1 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" data-slider-track tabindex="0">
+                            <?php foreach ($reviews as $i => $review): ?>
+                            <li class="flex w-[85%] shrink-0 snap-start flex-col rounded-3xl bg-white p-7 sm:w-[calc(50%-0.625rem)]" aria-roledescription="slide" aria-label="Review <?= $i + 1 ?> of <?= count($reviews) ?>">
+                                <span class="flex gap-0.5" role="img" aria-label="<?= e($review['rating'] ?? 5) ?> out of 5 stars"><?= $stars($review['rating'] ?? 5) ?></span>
+                                <blockquote class="mt-4 font-serif text-lg leading-snug">“<?= e($review['quote']) ?>”</blockquote>
+                                <?php if (!empty($review['sample'])): ?>
+                                    <p class="mt-auto flex items-center gap-2 pt-6 text-sm text-ink-mute"><span class="shrink-0 whitespace-nowrap rounded-full bg-wheat-soft px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-clay-deep">Sample review</span> Placeholder until real reviews are added</p>
+                                <?php else: ?>
+                                    <p class="mt-auto pt-6 text-sm text-ink-mute"><span class="font-semibold text-ink"><?= e($review['author']) ?></span><?php if (!empty($review['when'])): ?> · <?= e($review['when']) ?><?php endif; ?> · Google</p>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                        </ul>
+                        <div class="mt-6 flex items-center justify-between gap-4">
+                            <div class="flex gap-1.5" data-slider-dots aria-hidden="true"></div>
+                            <div class="flex gap-2">
+                                <button type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 bg-white transition hover:border-ink disabled:opacity-40 disabled:hover:border-cream-300" data-slider-prev aria-label="Previous review">←</button>
+                                <button type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 bg-white transition hover:border-ink disabled:opacity-40 disabled:hover:border-cream-300" data-slider-next aria-label="Next review">→</button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
-    <?php endif; ?>
 
     <!-- ============ INSURANCE ============ -->
     <section id="insurance" class="mt-14 scroll-mt-24 bg-white lg:mt-20" aria-labelledby="insurance-title">

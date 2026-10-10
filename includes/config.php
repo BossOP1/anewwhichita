@@ -352,9 +352,28 @@ $plans = [
     'uhc-kancare' => ['name' => 'United Community Plan', 'note' => 'KanCare'],
 ];
 
-/* Only add genuine, permission-cleared reviews. Section hides while empty. */
+/*
+ * Google reviews on the homepage. Copy the real rating and review count from
+ * ANew's Google Business Profile — never estimate them. Add the Place ID
+ * (Google Business Profile → "Ask for reviews") to enable the "Leave a review" link.
+ */
+$google_reviews = [
+    'url'      => $site['maps_url'],
+    'place_id' => '',      // e.g. 'ChIJ…'
+    'rating'   => null,    // e.g. 4.9
+    'count'    => null,    // e.g. 87
+];
+
+/* Only add genuine, permission-cleared reviews, copied word for word from Google. */
 $reviews = [
-    // ['quote' => '…', 'author' => 'First name or initials', 'source' => 'Google'],
+    // ['quote' => '…', 'author' => 'First name or initials', 'rating' => 5, 'when' => 'March 2026'],
+
+    // PLACEHOLDERS for layout review only — 'sample' => true shows a visible "Sample review" tag
+    // instead of Google attribution. Replace with real Google reviews before launch.
+    ['quote' => 'The front desk made me feel welcome from the first phone call, and my therapist really took the time to listen.', 'author' => 'Sample reviewer', 'rating' => 5, 'sample' => true],
+    ['quote' => 'Having my therapist and medication provider work together under one roof made everything so much easier.', 'author' => 'Sample reviewer', 'rating' => 5, 'sample' => true],
+    ['quote' => 'Our son looks forward to his play therapy sessions. We’ve seen real progress at home and at school.', 'author' => 'Sample reviewer', 'rating' => 5, 'sample' => true],
+    ['quote' => 'Warm, calm office and a team that genuinely cares. It never felt like a clinic.', 'author' => 'Sample reviewer', 'rating' => 5, 'sample' => true],
 ];
 
 /* YouTube IDs for future provider intros / TMS FAQs. Section hides while empty. */

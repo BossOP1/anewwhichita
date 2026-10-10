@@ -178,6 +178,38 @@
         $('[data-team-reset]').addEventListener('click', () => { condSel.value = ''; tele.checked = false; laneBtns[0].click(); });
     }
 
+    /* ---------- Review slider ---------- */
+    $$('[data-slider]').forEach((slider) => {
+        const track = $('[data-slider-track]', slider);
+        const slides = [...track.children];
+        const prev = $('[data-slider-prev]', slider);
+        const next = $('[data-slider-next]', slider);
+        const dotsWrap = $('[data-slider-dots]', slider);
+        const step = () => slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+        const dots = slides.map(() => {
+            const d = document.createElement('span');
+            d.className = 'h-1.5 w-1.5 rounded-full bg-cream-300 transition-all';
+            dotsWrap.appendChild(d);
+            return d;
+        });
+        const update = () => {
+            const max = track.scrollWidth - track.clientWidth;
+            prev.disabled = track.scrollLeft <= 2;
+            next.disabled = track.scrollLeft >= max - 2;
+            const active = Math.round(track.scrollLeft / step());
+            dots.forEach((d, i) => { d.classList.toggle('bg-ink', i === active); d.classList.toggle('w-5', i === active); });
+        };
+        prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+        next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+        track.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+        });
+        track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+        window.addEventListener('resize', update);
+        update();
+    });
+
     /* ---------- Provider dialog ---------- */
     const dialog = $('#person-dialog');
     const openPerson = (slug) => {
