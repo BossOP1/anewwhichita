@@ -1,4 +1,7 @@
-<?php /** @var array $site @var array $services @var array $conditions */ ?>
+<?php /** @var array $site @var array $services @var array $conditions */
+$address_full = $site['street'] . ', ' . $site['city'] . ', ' . $site['region'] . ' ' . $site['postal'];
+$map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental Health, ' . $address_full) . '&z=15&output=embed';
+?>
 <footer class="bg-prairie-deep pb-28 pt-16 text-cream-200 sm:pb-12">
     <div class="mx-auto max-w-site px-5 sm:px-8">
         <div class="grid gap-12 lg:grid-cols-12">
@@ -42,13 +45,50 @@
                         <li><a href="/insurance/">Insurance &amp; payment</a></li>
                         <li><a href="/contact-us/">Contact us</a></li>
                         <li><a href="/mental-health-careers-wichita-ks/">Careers</a></li>
-                        <li><a href="<?= e($site['referral_url']) ?>">Provider referrals</a></li>
-                        <li><a href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener">Therapy client portal</a></li>
-                        <li><a href="<?= e($site['portal_medication']) ?>" target="_blank" rel="noopener">Medication client portal</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <?php if (empty($hide_footer_visit)): ?>
+        <!-- Visit ANew -->
+        <div class="mt-14 grid gap-10 border-t border-cream-100/10 pt-12 lg:grid-cols-12 lg:gap-16">
+            <div class="text-sm lg:col-span-5">
+                <h3 class="footer-h">Visit ANew</h3>
+                <dl class="mt-5 space-y-6">
+                    <div>
+                        <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-cream-200/60">Office</dt>
+                        <dd class="mt-1.5 text-[15px] leading-relaxed text-cream-100"><?= e($site['street']) ?><br><?= e($site['city']) ?>, <?= e($site['region']) ?> <?= e($site['postal']) ?></dd>
+                        <dd><a href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener" class="mt-1.5 inline-block font-semibold text-wheat underline-offset-4 hover:underline">Get directions →</a></dd>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-cream-200/60">Phone</dt>
+                            <dd class="mt-1.5 text-[15px]"><a href="<?= e($site['phone_href']) ?>" class="font-semibold text-white hover:underline"><?= e($site['phone']) ?></a></dd>
+                        </div>
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-cream-200/60">Fax</dt>
+                            <dd class="mt-1.5 text-[15px] text-cream-100"><?= e($site['fax']) ?></dd>
+                        </div>
+                    </div>
+                    <div>
+                        <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-cream-200/60">Already a client?</dt>
+                        <dd class="mt-2.5 flex flex-wrap gap-2">
+                            <a href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener" class="rounded-full border border-cream-100/25 px-4 py-2 text-cream-100 transition hover:border-white hover:text-white">Therapy portal</a>
+                            <a href="<?= e($site['portal_medication']) ?>" target="_blank" rel="noopener" class="rounded-full border border-cream-100/25 px-4 py-2 text-cream-100 transition hover:border-white hover:text-white">Medication portal</a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="sr-only">Referrals</dt>
+                        <dd class="text-cream-200/80">Referring a patient? <a href="<?= e($site['referral_url']) ?>" class="font-semibold text-white underline underline-offset-4">Provider referral form</a></dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="overflow-hidden rounded-3xl bg-white/5 lg:col-span-7">
+                <iframe src="<?= e($map_embed) ?>" title="Map showing ANew Mental Health at <?= e($address_full) ?>" class="h-72 w-full border-0 lg:h-full lg:min-h-[340px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+        </div>
+        <?php endif; ?>
 
         <div class="mt-14 rounded-2xl border border-cream-100/15 bg-white/5 p-5 text-sm leading-relaxed sm:flex sm:items-center sm:gap-4">
             <span class="mb-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-wheat text-prairie-deep sm:mb-0" aria-hidden="true">

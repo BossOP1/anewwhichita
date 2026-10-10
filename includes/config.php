@@ -34,6 +34,10 @@ $site = [
     'portal_therapy'    => 'https://anewwichita.clientsecure.me',
     'portal_medication' => 'https://pp-wfe-102.advancedmd.com/account/logon?lk=150778',
     'referral_url' => '/professional-referral-form/',
+    // Where the professional referral form posts. Referrals include patient health info, so this must be
+    // a HIPAA-compliant form endpoint covered by a BAA (e.g. Jotform HIPAA, Paperform, Formstack). While
+    // it's empty the form renders but submission is disabled and referrers are pointed to fax/phone.
+    'referral_form_action' => '',
     'carecredit_url' => 'https://www.carecredit.com/go/823HFQ/?dtc=DS5X&sitecode=CCCABDS5X',
     'facebook'    => 'https://www.facebook.com/ANew.ICT',
     'instagram'   => 'https://www.instagram.com/anew.ict/',

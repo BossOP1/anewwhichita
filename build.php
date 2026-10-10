@@ -33,6 +33,7 @@ $pages = [
     'play-therapy/index.php'    => 'play-therapy/index.html',
     'insurance/index.php'       => 'insurance/index.html',
     'contact-us/index.php'      => 'contact-us/index.html',
+    'professional-referral-form/index.php' => 'professional-referral-form/index.html',
     'meet-our-team/index.php'   => 'meet-our-team/index.html',
     'conditions/index.php'      => 'conditions/index.html',
     'mental-health-careers-wichita-ks/index.php' => 'mental-health-careers-wichita-ks/index.html',

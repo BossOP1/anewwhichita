@@ -98,10 +98,10 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
 
 <!-- Header -->
 <header id="site-header" class="sticky top-0 z-40 border-b border-transparent transition-all duration-300" data-header>
-    <div class="mx-auto flex max-w-site items-center justify-between gap-6 px-5 py-3.5 sm:px-8">
+    <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-5 py-3.5 sm:px-8 xl:gap-6">
         <a href="/" class="flex items-center gap-3" aria-label="ANew Mental Health — home">
             <img src="/assets/images/brand/logo-color.png" alt="ANew" class="h-14 w-auto" width="45" height="56">
-            <span class="hidden whitespace-nowrap border-l border-cream-300 pl-3 text-[10.5px] font-semibold uppercase leading-[1.5] tracking-[0.2em] text-ink-mute sm:block lg:hidden 2xl:block">Mental Health<br>Wichita, Kansas</span>
+            <span class="block whitespace-nowrap border-l border-cream-300 pl-3 text-[10px] font-semibold uppercase leading-[1.5] tracking-[0.18em] text-ink-mute sm:text-[10.5px] sm:tracking-[0.2em] lg:hidden min-[1400px]:block">Mental Health<br>Wichita, Kansas</span>
         </a>
 
         <nav aria-label="Primary" class="hidden lg:block">
@@ -161,9 +161,9 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
         </nav>
 
         <div class="flex items-center gap-2">
-            <div class="group relative hidden 2xl:block">
+            <div class="group relative hidden lg:block">
                 <button type="button" class="nav-link inline-flex items-center gap-1 text-[14.5px] font-medium text-ink-soft" aria-haspopup="true">
-                    Client Portal
+                    <span class="xl:hidden">Portal</span><span class="hidden xl:inline">Client Portal</span>
                     <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5"/></svg>
                 </button>
                 <div class="invisible absolute right-0 top-full w-56 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">

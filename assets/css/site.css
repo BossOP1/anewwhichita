@@ -158,4 +158,4 @@ a.tag:hover { background: var(--cream-200); color: var(--ink); }
 .form-input { width: 100%; border-radius: 1rem; border: 1px solid var(--cream-300); background: var(--cream-50); padding: .8rem 1rem; font-size: 1rem; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
 .form-input:focus { outline: none; border-color: var(--prairie-deep); box-shadow: 0 0 0 3px rgba(62, 159, 72, .18); }
 
-@media (max-width: 1279px) { .nav-link { padding: .5rem .6rem; } }
+@media (max-width: 1279px) { .nav-link { padding: .5rem .5rem; } }

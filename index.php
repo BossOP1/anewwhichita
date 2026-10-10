@@ -289,7 +289,7 @@ include __DIR__ . '/includes/header.php';
                 <h2 id="insurance-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Care that’s <em class="italic text-clay">within reach.</em></h2>
                 <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">ANew accepts many major insurance plans, including KanCare. Coverage can vary by provider — give us a call and we’ll gladly check yours.</p>
                 <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="/insurance/" class="btn-primary">Find a provider for your plan</a>
+                    <a href="/insurance/" class="btn-primary">Insurance &amp; payment</a>
                     <a href="<?= e($site['phone_href']) ?>" class="btn-ghost">Call <?= e($site['phone']) ?></a>
                 </div>
             </div>
