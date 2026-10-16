@@ -178,6 +178,42 @@
         $('[data-team-reset]').addEventListener('click', () => { condSel.value = ''; tele.checked = false; laneBtns[0].click(); });
     }
 
+    /* ---------- Self-check quiz (TMS page): points to a conversation, never a diagnosis ---------- */
+    $$('[data-quiz]').forEach((form) => {
+        const result = $('[data-quiz-result]', form);
+        const count = $('[data-quiz-count]', form);
+        const total = new Set($$('input[type=radio]', form).map((r) => r.name)).size;
+
+        const answers = () => Object.fromEntries($$('input:checked', form).map((r) => [r.dataset.key, r.value]));
+
+        form.addEventListener('change', () => { count.textContent = ''; });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const a = answers();
+            const answered = Object.keys(a).length;
+            if (answered < total) {
+                count.textContent = `${total - answered} question${total - answered === 1 ? '' : 's'} left — answer them all for your result.`;
+                return;
+            }
+            // Safety comes first: implants or seizures need a provider conversation before anything else.
+            let key = 'explore';
+            if (a.safety !== 'no') key = 'safety';
+            else if (a.depression === 'yes' && (a.tried_meds === 'yes' || a.side_effects === 'yes')) key = 'good';
+            $$('[data-result]', result).forEach((el) => el.classList.toggle('hidden', el.dataset.result !== key));
+            result.classList.remove('hidden');
+            result.focus({ preventScroll: true });
+            result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        $('[data-quiz-reset]', form)?.addEventListener('click', () => {
+            form.reset();
+            result.classList.add('hidden');
+            count.textContent = '';
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
     /* ---------- Review slider ---------- */
     $$('[data-slider]').forEach((slider) => {
         const track = $('[data-slider-track]', slider);

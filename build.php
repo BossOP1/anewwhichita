@@ -31,6 +31,7 @@ $pages = [
     'adhd-assessment/index.php' => 'adhd-assessment/index.html',
     'emdr-therapy/index.php'    => 'emdr-therapy/index.html',
     'play-therapy/index.php'    => 'play-therapy/index.html',
+    'services/tms-therapy/index.php' => 'services/tms-therapy/index.html',
     'insurance/index.php'       => 'insurance/index.html',
     'contact-us/index.php'      => 'contact-us/index.html',
     'professional-referral-form/index.php' => 'professional-referral-form/index.html',

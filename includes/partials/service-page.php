@@ -173,6 +173,87 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                 <?= $split_close ?>
             <?= $panel_close ?>
 
+        <?php elseif ($block['type'] === 'facts'): ?>
+            <!-- facts block: a short row of at-a-glance numbers -->
+            <section id="<?= e($id) ?>" class="mx-auto max-w-site px-5 pb-6 sm:px-8" aria-label="<?= e($block['label'] ?? 'At a glance') ?>">
+                <dl class="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-cream-200 py-8 lg:grid-cols-4">
+                    <?php foreach ($block['items'] as $i => [$value, $label]): ?>
+                        <div class="reveal" style="--d: <?= $i * 60 ?>ms">
+                            <dt class="sr-only"><?= e($label) ?></dt>
+                            <dd class="font-serif text-3xl font-light tracking-tight sm:text-4xl"><?= e($value) ?></dd>
+                            <dd class="mt-1.5 text-sm leading-snug text-ink-soft"><?= e($label) ?></dd>
+                        </div>
+                    <?php endforeach; ?>
+                </dl>
+            </section>
+
+        <?php elseif ($block['type'] === 'quiz'): ?>
+            <!-- quiz block: a short self-check that points to a conversation, never a diagnosis (logic in main.js) -->
+            <?= $panel_open($id, 'bg-cream-100') ?>
+                <?php $split_open($id, $block['eyebrow'], $block['title'], $block['intro'] ?? null, false,
+                    '<p class="reveal mt-6 text-[13.5px] leading-relaxed text-ink-mute">' . e($block['disclaimer']) . '</p>'); ?>
+                <form class="reveal" data-quiz novalidate>
+                    <ol class="space-y-3">
+                        <?php foreach ($block['questions'] as $qi => $q): ?>
+                            <li class="rounded-3xl bg-white p-5 sm:p-6">
+                                <fieldset>
+                                    <legend class="flex gap-3 font-serif text-lg leading-snug sm:text-xl">
+                                        <span class="text-ink-mute"><?= $qi + 1 ?>.</span><span><?= e($q['q']) ?></span>
+                                    </legend>
+                                    <?php if (!empty($q['hint'])): ?><p class="mt-2 pl-7 text-sm text-ink-mute"><?= e($q['hint']) ?></p><?php endif; ?>
+                                    <div class="mt-4 flex flex-wrap gap-2 pl-7">
+                                        <?php foreach (['yes' => 'Yes', 'no' => 'No', 'unsure' => 'Not sure'] as $val => $label): ?>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="q<?= $qi ?>" value="<?= $val ?>" data-key="<?= e($q['key']) ?>" class="peer sr-only">
+                                                <span class="inline-flex min-h-[44px] items-center rounded-full border border-cream-300 px-5 text-[15px] transition hover:border-ink peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-leaf peer-focus-visible:ring-offset-2"><?= $label ?></span>
+                                            </label>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </fieldset>
+                            </li>
+                        <?php endforeach; ?>
+                    </ol>
+                    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <button type="submit" class="btn-primary">See my next step</button>
+                        <p class="text-sm text-ink-mute" data-quiz-count aria-live="polite"></p>
+                    </div>
+                    <div class="mt-8 hidden rounded-3xl bg-white p-6 sm:p-8" data-quiz-result tabindex="-1" aria-live="polite">
+                        <?php foreach ($block['results'] as $key => $res): ?>
+                            <div class="hidden" data-result="<?= e($key) ?>">
+                                <p class="eyebrow text-leaf-deep"><?= e($res['eyebrow']) ?></p>
+                                <h3 class="mt-3 font-serif text-2xl leading-snug sm:text-3xl"><?= e($res['title']) ?></h3>
+                                <p class="mt-4 text-[16px] leading-relaxed text-ink-soft"><?= e($res['text']) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+                            <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Request a TMS consultation</a>
+                            <a href="<?= e($site['phone_href']) ?>" class="btn-ghost">Call <?= e($site['phone']) ?></a>
+                        </div>
+                        <button type="button" class="mt-5 text-sm text-ink-mute underline underline-offset-4 hover:text-ink" data-quiz-reset>Start over</button>
+                    </div>
+                </form>
+                <?= $split_close ?>
+            <?= $panel_close ?>
+
+        <?php elseif ($block['type'] === 'videos'): $vids = array_values(array_filter($videos ?? [], fn ($v) => ($v['topic'] ?? '') === $block['topic'])); ?>
+            <?php if ($vids): ?>
+            <!-- videos block: renders once videos with this topic are added to $videos in config -->
+            <?= $panel_open($id) ?>
+                <?php $split_open($id, $block['eyebrow'], $block['title'], $block['intro'] ?? null); ?>
+                <div class="grid gap-6 sm:grid-cols-2">
+                    <?php foreach ($vids as $video): ?>
+                        <figure class="reveal">
+                            <div class="aspect-video overflow-hidden rounded-3xl bg-cream-200">
+                                <iframe class="h-full w-full" src="https://www.youtube-nocookie.com/embed/<?= e($video['youtube_id']) ?>" title="<?= e($video['title']) ?>" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <figcaption class="mt-3 font-serif text-lg"><?= e($video['title']) ?></figcaption>
+                        </figure>
+                    <?php endforeach; ?>
+                </div>
+                <?= $split_close ?>
+            <?= $panel_close ?>
+            <?php endif; ?>
+
         <?php elseif ($block['type'] === 'people'): ?>
             <!-- people block -->
             <?= $panel_open($id) ?>
