@@ -73,7 +73,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal text-leaf-deep">How can we help?</p>
-                <h2 id="help-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">The fastest way to <em class="italic text-clay">the right person.</em></h2>
+                <h2 id="help-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">The fastest way to <em class="italic text-clay">Find the right person to help you.</em></h2>
             </div>
             <ul class="grid gap-x-12 sm:grid-cols-2 lg:col-span-8">
                 <?php foreach ($routes as $i => [$title, $text, $actions]): ?>

@@ -9,7 +9,7 @@ $current_page     = 'insurance';
 $faqs = [
     ['Do you accept my insurance?', 'ANew is contracted with many major plans, including Aetna, Ambetter, Blue Cross Blue Shield, Cigna, Healthy Blue, Sunflower Health Plan, TriWest, UMR and UnitedHealthcare. Each provider is in network with different plans, so call us at ' . $site['phone'] . ' and we’ll check for you.'],
     ['Do you accept KanCare (Kansas Medicaid)?', 'Yes — many of our therapists are in network with KanCare plans, including Healthy Blue, Sunflower Health Plan and United Community Plan. Call us and we’ll match you with a provider who accepts yours.'],
-    ['Do you accept Tricare?', 'Yes. Several of our providers accept Tricare, including our medication management provider. Call us and we’ll match you with one.'],
+    ['Do you accept TRICARE?', 'Yes. Several of our providers accept TRICARE, including our medication management provider. Call us and we’ll match you with one.'],
     ['What if my provider isn’t in network with my plan?', 'Call us. We’ll help you find another provider on our team who is in network, or talk through self-pay options.'],
     ['Can I pay out of pocket?', 'Yes. ANew accepts cash, all major credit cards, CareCredit, health savings accounts (HSA) and flexible spending accounts (FSA) for co-payments and self-pay sessions. Call our office to learn about per-session self-pay rates.'],
     ['What is CareCredit?', 'CareCredit is a health care credit card that can help you pay for care over time. ANew accepts CareCredit, and you can apply online.'],
@@ -115,7 +115,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal text-clay">Questions</p>
                 <h2 id="faq-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Insurance FAQ</h2>
-                <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Our billing team is happy to help. Call <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>.</p>
+                <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Have questions about insurance or payment options? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>. We’re happy to help.</p>
             </div>
             <div class="divide-y divide-cream-200 border-y border-cream-200 lg:col-span-8">
                 <?php foreach ($faqs as $i => [$q, $a]): ?>

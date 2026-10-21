@@ -377,7 +377,7 @@ $plans = [
     'ambetter'    => ['name' => 'Ambetter', 'note' => ''],
     'bcbs'        => ['name' => 'Blue Cross Blue Shield', 'note' => ''],
     'united'      => ['name' => 'UnitedHealthcare', 'note' => 'Commercial'],
-    'tricare'     => ['name' => 'Tricare', 'note' => ''],
+    'tricare'     => ['name' => 'TRICARE', 'note' => ''],
     'healthyblue' => ['name' => 'Healthy Blue', 'note' => 'KanCare'],
     'sunflower'   => ['name' => 'Sunflower Health Plan', 'note' => 'KanCare'],
     'uhc-kancare' => ['name' => 'United Community Plan', 'note' => 'KanCare'],

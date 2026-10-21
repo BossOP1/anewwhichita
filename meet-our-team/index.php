@@ -9,7 +9,7 @@ $current_page     = 'team';
 $groups = [
     'medication' => ['Medication Management', 'Psychiatric evaluation and ongoing medication care, coordinated with your therapist.'],
     'therapist'  => ['Therapists', 'Licensed therapists for individuals, couples, families, teens and children.'],
-    'intern'     => ['Counselor Interns', 'Graduate-level counselors-in-training, supervised by our licensed clinicians.'],
+    'intern'     => ['Counselor Interns', 'Our graduate-level counseling interns work under the supervision of licensed clinicians. Contact our office to learn more about availability and rates.'],
     'office'     => ['Office Team', 'The friendly faces who greet you, answer the phone, and keep ANew running.'],
 ];
 
