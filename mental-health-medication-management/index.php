@@ -69,11 +69,11 @@ $svc = [
             'eyebrow' => 'Why choose a PMHNP?',
             'title' => 'Medical expertise, <em class="italic text-clay">person-centered care.</em>',
             'intro' => 'A Psychiatric Mental Health Nurse Practitioner is an advanced practice nurse with specialized training in mental health diagnosis, treatment, and psychopharmacology — bringing both medical expertise and a holistic, person-centered approach.',
-            'slugs' => ['ashley-ludlum'],
+            'slugs' => ['ashley-ludlum', 'irene'],
         ],
     ],
     'faqs' => [
-        ['What is a PMHNP?', 'A Psychiatric Mental Health Nurse Practitioner is an advanced practice nurse with specialized training in mental health diagnosis, treatment, and psychopharmacology. At ANew, our PMHNP combines that medical expertise with a holistic, person-centered approach to care.'],
+        ['What is a PMHNP?', 'A Psychiatric Mental Health Nurse Practitioner is an advanced practice nurse with specialized training in mental health diagnosis, treatment, and psychopharmacology. At ANew, our PMHNPs combine that medical expertise with a holistic, person-centered approach to care.'],
         ['Do you treat children?', 'Yes. Our medication management services support both children and adults.'],
         ['Will my medication provider talk to my therapist?', 'When it applies, yes. Collaboration with your therapist or primary care provider is part of how we work — and when your therapist is also at ANew, your care stays connected under one roof.'],
         ['Do you offer telehealth for medication management?', 'Yes. Ashley Ludlum, APRN, PMHNP-BC, offers both in-person and telehealth appointments.'],

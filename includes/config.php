@@ -96,6 +96,19 @@ $team = [
         'conditions' => ['depression', 'anxiety', 'bipolar', 'adhd', 'womens', 'ocd'],
         'bio' => 'I have passion for all areas of mental health, especially women’s health. I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.',
     ],
+    'irene' => [
+        // TODO: confirm last name, insurance panels and visit format with ANew.
+        'insurance' => [], 'insurance_soon' => [],
+        'name' => 'Irene', 'creds' => 'PMHNP-BC', 'lane' => 'medication',
+        'role' => 'Psychiatric Mental Health Nurse Practitioner · Army Veteran', 'format' => '',
+        'photo' => 'irene.jpg', 'pos' => '50% 20%',
+        'focus' => ['Medication management', 'Teens & adults', 'Veterans', 'PTSD & trauma'],
+        'conditions' => ['trauma', 'depression', 'anxiety', 'child'],
+        'bio' => "I am a Board-Certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC), Army veteran, and registered nurse with 14 years of experience in behavioral health, acute care, and critical care. I earned my bachelor’s degree from Mid-America Nazarene University in 2012 and proudly served seven years on active duty in the U.S. Army before transitioning to the Army Reserve in 2022. My passion for mental health care led me to earn my Master of Science in Nursing with a specialization in Psychiatric-Mental Health Nurse Practitioner from Walden University in August 2025.\n\n"
+            . "I am excited to join ANew and provide compassionate, evidence-based mental health care to our community. I am especially passionate about supporting teens and adults facing mental health challenges, including veterans navigating PTSD and trauma. My approach is collaborative and trauma-informed, focusing on each person’s unique needs and goals to promote healing, well-being, and recovery.\n\n"
+            . "I am married and blessed with two wonderful boys. Outside of work, I enjoy cheering our kids on in soccer, exploring nature trails, and going on family bike rides.\n\n"
+            . "I look forward to building meaningful connections with my patients and partnering with individuals and families to support better mental health and an improved quality of life.",
+    ],
     'wes-smothermon' => [
         'insurance' => ['aetna', 'bcbs', 'tricare', 'united'], 'insurance_soon' => [],
         'name' => 'Wes Smothermon', 'creds' => 'LCMFT', 'lane' => 'therapist',
@@ -188,30 +201,48 @@ $team = [
     ],
     'katrina-amrine' => [
         'name' => 'Katrina Amrine', 'creds' => '', 'lane' => 'intern',
-        'role' => 'Professional Counselor Intern', 'format' => '',
+        'role' => 'Professional Counselor Intern', 'format' => 'In-person & telehealth',
         'photo' => 'katrina-amrine.jpg', 'pos' => '50% 30%',
-        'focus' => [], 'conditions' => [], 'bio' => '',
+        'self_pay' => '$30 per session',
+        'focus' => ['Anxiety', 'OCD', 'Trauma & PTSD', 'Church hurt'],
+        'conditions' => ['anxiety', 'ocd', 'trauma'],
+        'bio' => "There is nothing more disconcerting than feeling unsafe inside your own mind, misunderstood, and without direction. This is why I’m compelled to be here.\n\n"
+            . "I’m here to work with you and for you, because I want to be here. I find joy in this space! This is my purpose. As an intern counselor I work with individuals experiencing anxiety, OCD, trauma, PTSD, and those who have been hurt by the church. I also welcome individuals with a variety of other needs.\n\n"
+            . "I’m a student and intern counselor with Liberty University in the Clinical Mental Health Counseling program working toward my Master’s degree and licensure to become a Licensed Professional Counselor. This is my path.\n\n"
+            . "Student memberships: American Counseling Association (ACA) and American Association of Christian Counselors (AACC).\n\n"
+            . "When I’m not at work, I enjoy long walks outside, weightlifting, and oil painting. My best days are days I’ve spent time with my family.",
         'bio_url' => '/staff/counselor-intern-wichita-ks-katrina-amrine/',
     ],
     'honora-cummings' => [
         'name' => 'Honora Cummings', 'creds' => '', 'lane' => 'intern',
-        'role' => 'Professional Counselor Intern', 'format' => '',
+        'role' => 'Professional Counselor Intern', 'format' => 'In-person & telehealth',
         'photo' => 'honora-cummings.jpg', 'pos' => '50% 30%',
-        'focus' => [], 'conditions' => [], 'bio' => '',
+        'self_pay' => '$30 per session',
+        'focus' => ['Children & families', 'Emotional regulation', 'Behavioral concerns', 'Life transitions'],
+        'conditions' => ['child', 'relationships', 'anxiety'],
+        'bio' => "Hello! My name is Honora Cummings, and I am currently completing my Master’s degree in Clinical Mental Health Counseling (LPC track) at Wichita State University.\n\n"
+            . "After graduation, I plan to pursue my Play Therapy certification through the Wichita State University Play Therapy Center. This will allow me to provide developmentally appropriate and evidence-based therapy for children and families.\n\n"
+            . "I hold a Bachelor of Arts in Education (grades K–9) as well as a Bachelor of General Studies, both from Wichita State University. I have over 12 years of experience working directly with children in educational settings. I’ve supported students across a wide range of ages, developmental levels, and emotional needs. My background as a teacher has given me a strong foundation in child development, emotional regulation, classroom behavior, and collaboration with families.\n\n"
+            . "Working with children has always been my passion. Over the years, I have supported children through academic challenges, emotional stress, behavioral concerns, and major life transitions. This experience has naturally led me into the field of mental health counseling. There, I can combine my educational background with therapeutic care to help children feel safe, understood, and empowered.\n\n"
+            . "I have been married for 32 years and am the proud mother of three children. These experiences continue to shape my compassionate, family-centered approach to therapy. I am grateful for the opportunity to be part of the ANew Mental Health team and look forward to supporting children and families in their healing journey.",
     ],
     'cari-smothermon' => [
         'name' => 'Cari Smothermon', 'creds' => 'RN, BSN', 'lane' => 'office',
         'role' => 'Co-founder · Operations', 'format' => '',
         'photo' => 'cari-smothermon-portrait.jpg', 'pos' => '50% 25%',
         'focus' => ['Registered nurse', 'Day-to-day operations'], 'conditions' => [],
-        'bio' => 'Cari oversees the day-to-day operations of the office and makes sure our team has everything they need to best serve you. She is a registered nurse with over a decade of experience in women’s health.',
+        'bio' => "At ANew, Cari oversees the day-to-day operations of the office and makes sure our team has everything they need to best serve you. Cari is a registered nurse with over a decade of experience in women’s health, specifically labor and delivery. It has always been her passion to go above and beyond to make every patient feel well cared for.\n\n"
+            . "“I pride myself in caring for my patients like family. From the moment you arrive at ANew I want you to know that your experience will be different. Our friendly reception staff will treat you with kindness and helpfulness. Our home-like environment is intentional and is meant to be relaxed in and enjoyed. We are honored to be a part of your mental health journey and are looking forward to taking care of you.”\n\n"
+            . "Cari’s first passion is loving on her family. She and her husband, Wes, have 2 children and a fur baby. She also enjoys baking, traveling, and finding new adventures around Wichita.",
     ],
     'judy-smothermon' => [
         'name' => 'Judy Smothermon', 'creds' => '', 'lane' => 'office',
         'role' => 'Office Administrator', 'format' => '',
         'photo' => 'judy-smothermon.jpg', 'pos' => '50% 20%',
         'focus' => [], 'conditions' => [],
-        'bio' => 'Judy is known for her contagious smile and naturally hospitable spirit. She will happily greet you and help you get settled in for your appointment at ANew.',
+        'bio' => "Judy is known for her contagious smile and naturally hospitable spirit. She will happily greet you and help you get settled in for your appointment at ANew. In addition to providing excellent customer service to our clients, Judy maintains our office financials and provides additional support to our team wherever she may be needed.\n\n"
+            . "Judy has decades of experience in hospitality and looks forward to caring for you.\n\n"
+            . "Judy resides with her husband and her teenage daughter. She has 3 other adult children and 8 grand babies. She loves cooking up feasts for her family and entertaining.",
     ],
     'denise-maier' => [
         'name' => 'Denise Maier', 'creds' => '', 'lane' => 'office',

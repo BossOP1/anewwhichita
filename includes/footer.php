@@ -131,6 +131,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
         'focus' => $p['focus'], 'conditions' => $p['conditions'], 'bio' => $p['bio'],
         'bioUrl' => '/meet-our-team/#' . $slug,
         'insurance' => array_map(fn ($k) => $plans[$k]['name'] . ($plans[$k]['note'] ? ' (' . $plans[$k]['note'] . ')' : ''), $p['insurance'] ?? []),
+        'selfPay' => $p['self_pay'] ?? '',
         'insuranceSoon' => array_map(fn ($k) => $plans[$k]['name'] . ($plans[$k]['note'] ? ' (' . $plans[$k]['note'] . ')' : ''), $p['insurance_soon'] ?? []),
     ], array_keys($team), $team)),
     'scheduleUrl' => $site['schedule_url'],

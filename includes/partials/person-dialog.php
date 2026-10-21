@@ -3,7 +3,8 @@
 <dialog id="person-dialog" class="person-dialog" aria-labelledby="pd-name">
     <div class="grid max-h-[90vh] overflow-y-auto sm:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <div class="relative bg-cream-200">
-            <img src="" alt="" class="h-72 w-full object-cover sm:h-full" data-pd-photo>
+            <!-- pinned on desktop so a long bio scrolls past the photo instead of stretching it -->
+            <img src="" alt="" class="h-72 w-full object-cover sm:sticky sm:top-0 sm:h-full sm:max-h-[90vh]" data-pd-photo>
         </div>
         <div class="flex flex-col p-6 sm:p-9">
             <div class="flex items-start justify-between gap-4">
@@ -17,7 +18,7 @@
                 </button>
             </div>
             <p class="mt-3 inline-flex w-max items-center gap-2 rounded-full bg-leaf-soft px-3 py-1 text-xs font-semibold text-leaf-deep" data-pd-format></p>
-            <p class="mt-5 text-[15.5px] leading-relaxed text-ink-soft" data-pd-bio></p>
+            <p class="mt-5 whitespace-pre-line text-[15.5px] leading-relaxed text-ink-soft" data-pd-bio></p>
             <div class="mt-6" data-pd-focus-wrap>
                 <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">Areas of focus</h3>
                 <div class="mt-2.5 flex flex-wrap gap-1.5" data-pd-focus></div>
@@ -27,7 +28,7 @@
                 <div class="mt-2.5 flex flex-wrap gap-1.5" data-pd-conditions></div>
             </div>
             <div class="mt-6" data-pd-insurance-wrap>
-                <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">Insurance accepted</h3>
+                <h3 class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute" data-pd-insurance-title>Insurance accepted</h3>
                 <p class="mt-2.5 text-sm leading-relaxed text-ink-soft" data-pd-insurance></p>
                 <a href="/insurance/" class="mt-1 inline-block text-sm font-semibold text-sky-deep underline underline-offset-4">Insurance &amp; payment details</a>
             </div>

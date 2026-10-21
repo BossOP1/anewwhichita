@@ -271,7 +271,10 @@
         bioLink.href = p.bioUrl;
         bioLink.classList.toggle('hidden', location.pathname.startsWith('/meet-our-team'));
         const ins = [...p.insurance, ...p.insuranceSoon.map((n) => `${n} (coming soon)`)];
-        $('[data-pd-insurance]', dialog).textContent = ins.length ? ins.join(' · ') : 'Call our office to ask about coverage and self-pay rates.';
+        $('[data-pd-insurance-title]', dialog).textContent = !ins.length && p.selfPay ? 'Rates' : 'Insurance accepted';
+        $('[data-pd-insurance]', dialog).textContent = ins.length ? ins.join(' · ')
+            : p.selfPay ? `Self-pay rate: ${p.selfPay}. Call our office with any questions about payment.`
+            : 'Call our office to ask about coverage and self-pay rates.';
         $('[data-pd-insurance-wrap]', dialog).classList.toggle('hidden', p.lane === 'office');
         dialog.showModal();
     };

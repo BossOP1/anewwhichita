@@ -64,7 +64,11 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                 </div>
             </div>
             <figure class="reveal" style="--d: 120ms">
-                <img src="<?= e($svc['image']) ?>" alt="<?= e($svc['image_alt']) ?>" class="aspect-[4/3] w-full rounded-4xl object-cover" style="object-position: <?= e($svc['image_pos'] ?? '50% 50%') ?>" fetchpriority="high">
+                <?php if (($svc['image_fit'] ?? '') === 'contain'): /* product cutouts: show the whole thing on a soft panel */ ?>
+                    <img src="<?= e($svc['image']) ?>" alt="<?= e($svc['image_alt']) ?>" class="aspect-[4/3] w-full rounded-4xl bg-cream-100 object-contain p-4 sm:p-8" fetchpriority="high">
+                <?php else: ?>
+                    <img src="<?= e($svc['image']) ?>" alt="<?= e($svc['image_alt']) ?>" class="aspect-[4/3] w-full rounded-4xl object-cover" style="object-position: <?= e($svc['image_pos'] ?? '50% 50%') ?>" fetchpriority="high">
+                <?php endif; ?>
             </figure>
         </div>
     </section>
@@ -264,7 +268,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                         <div>
                             <p class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute"><?= e($p['role']) ?></p>
                             <h3 class="mt-3 font-serif text-3xl leading-tight"><?= e($p['name']) ?><?php if ($p['creds']): ?><span class="text-ink-mute">, <?= e($p['creds']) ?></span><?php endif; ?></h3>
-                            <p class="mt-5 text-[16.5px] leading-relaxed text-ink-soft"><?= e($p['bio']) ?></p>
+                            <p class="mt-5 whitespace-pre-line text-[16.5px] leading-relaxed text-ink-soft"><?= e($p['bio']) ?></p>
                             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                                 <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule with <?= e(strtok($p['name'], ' ')) ?></a>
                                 <button type="button" class="btn-ghost" data-person="<?= e($slug) ?>" aria-haspopup="dialog">More about <?= e(strtok($p['name'], ' ')) ?></button>

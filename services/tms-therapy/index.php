@@ -22,9 +22,9 @@ $svc = [
     'eyebrow'     => 'New at ANew · TMS therapy in Wichita, KS',
     'title'       => 'When depression hasn’t lifted, there may be <em class="italic text-clay">another path forward.</em>',
     'intro'       => 'Transcranial Magnetic Stimulation (TMS) is a non-invasive, FDA-cleared treatment that uses gentle magnetic pulses to wake up areas of the brain involved in mood. No medication, no anesthesia — and it’s now offered right here in our Wichita office.',
-    'image'       => '/assets/images/people/prairie-walk.jpg',
-    'image_alt'   => 'A woman walking through tall prairie grass toward the evening sun',
-    'image_pos'   => '50% 35%',
+    'image'       => '/assets/images/tms/magstim-horizon-3-stimguide-pro.png',
+    'image_alt'   => 'The Magstim Horizon 3.0 TMS system with StimGuide Pro navigation, treatment chair and coil',
+    'image_fit'   => 'contain',
     'blocks'      => [
         [
             'type' => 'text', 'id' => 'what', 'nav' => 'What TMS is',
