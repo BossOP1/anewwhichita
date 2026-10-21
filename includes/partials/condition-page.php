@@ -44,7 +44,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
                 <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"><?= e($page['intro']) ?></p>
                 <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row">
                     <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule an Appointment</a>
-                    <a href="#help" class="btn-ghost">How we can help</a>
+                    <a href="#help" class="btn-ghost">Explore Treatment Options</a>
                 </div>
             </div>
             <figure class="reveal relative lg:col-span-6" style="--d: 120ms">
@@ -63,9 +63,9 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
     <nav class="sticky top-[84px] z-30 border-y border-cream-200 bg-cream-50/90 backdrop-blur" aria-label="On this page">
         <div class="mx-auto flex max-w-site gap-2 overflow-x-auto px-5 py-3 sm:px-8">
             <a href="#signs" class="tab-link">Signs</a>
-            <a href="#help" class="tab-link">How we help</a>
-            <?php if ($providers): ?><a href="#providers" class="tab-link">Who can help</a><?php endif; ?>
-            <a href="#faq" class="tab-link">FAQ</a>
+            <a href="#help" class="tab-link">Treatment Options</a>
+            <?php if ($providers): ?><a href="#providers" class="tab-link">Our Providers</a><?php endif; ?>
+            <a href="#faq" class="tab-link">FAQs</a>
         </div>
     </nav>
 
@@ -74,7 +74,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal <?= $tone['ink'] ?>">Does this sound familiar?</p>
-                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What <?= e(in_array($slug, ['adhd', 'ocd'], true) ? $c['name'] : mb_strtolower($c['name'])) ?> can feel like.</h2>
+                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What <?= e($c_lower) ?> can feel like.</h2>
                 <p class="reveal mt-6 text-[16px] leading-relaxed text-ink-soft">Everyone’s experience is different, and this list isn’t a diagnosis. If several of these feel true for you — or someone you love — it’s worth a conversation.</p>
                 <a href="/#next-step" class="reveal mt-6 inline-flex items-center gap-1.5 text-sm font-semibold underline decoration-cream-300 underline-offset-4 hover:decoration-ink">Not sure? Find your next step →</a>
             </div>
@@ -101,13 +101,13 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         </div>
     </section>
 
-    <!-- ============ HOW WE HELP ============ -->
+    <!-- ============ TREATMENT OPTIONS ============ -->
     <section id="help" class="scroll-mt-40 px-3 sm:px-4" aria-labelledby="help-title">
         <div class="rounded-4xl bg-prairie-deep text-cream-100">
             <div class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20">
                 <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                     <div class="max-w-2xl">
-                        <p class="eyebrow reveal text-wheat">How ANew can help</p>
+                        <p class="eyebrow reveal text-wheat">Treatment Options</p>
                         <h2 id="help-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl">One team, <em class="italic text-wheat">a plan that fits you.</em></h2>
                     </div>
                     <p class="reveal max-w-md text-[17px] leading-relaxed text-cream-100/80">Our therapists and providers work side by side, so your care can combine whatever you need — and change as you do.</p>
@@ -150,14 +150,15 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         <section id="providers" class="mx-auto max-w-site scroll-mt-40 px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="providers-title">
             <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div class="max-w-2xl">
-                    <p class="eyebrow reveal text-leaf-deep">Who can help</p>
-                    <h2 id="providers-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Providers who work with <?= e(in_array($slug, ['adhd', 'ocd'], true) ? $c['name'] : mb_strtolower($c['name'])) ?>.</h2>
+                    <p class="eyebrow reveal text-leaf-deep">Our Providers</p>
+                    <h2 id="providers-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Providers who work with <?= e($c_lower) ?>.</h2>
                 </div>
                 <p class="reveal max-w-md text-[17px] leading-relaxed text-ink-soft">Tap anyone to learn about their approach and who they see. Not sure who’s right? We’ll match you.</p>
             </div>
-            <ul class="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+            <!-- flex-wrap rather than grid so a short last row sits centered; widths match 2 / 3 / 5 columns -->
+            <ul class="mt-10 flex flex-wrap justify-center gap-x-4 gap-y-8">
                 <?php $i = 0; foreach ($providers as $pslug => $p): ?>
-                    <li class="reveal" style="--d: <?= ($i++ % 5) * 50 ?>ms">
+                    <li class="reveal w-[calc((100%-1rem)/2)] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)]" style="--d: <?= ($i++ % 5) * 50 ?>ms">
                         <button type="button" class="group block w-full text-left" data-person="<?= e($pslug) ?>" aria-haspopup="dialog">
                             <span class="block overflow-hidden rounded-3xl bg-cream-200">
                                 <img src="/assets/images/team/<?= e($p['photo']) ?>" alt="" class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.04]" style="object-position: <?= e($p['pos']) ?>" loading="lazy">
@@ -176,7 +177,10 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         <div class="mx-auto grid max-w-site gap-10 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-20">
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal text-clay">Questions</p>
-                <h2 id="faq-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl"><?= e($c['name']) ?> FAQ</h2>
+                <h2 id="faq-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl"><?= e($c['name']) ?> FAQs</h2>
+                <?php $faq_topic = ['womens' => 'women’s & perinatal mental health', 'child' => 'care for children & teens'][$slug]
+                    ?? $c_lower; ?>
+                <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Have questions about <?= e($faq_topic) ?>? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>. We’re happy to help.</p>
                 <div class="reveal mt-8 rounded-3xl border border-clay/30 bg-clay-soft/40 p-5 text-[15px] leading-relaxed text-ink-soft">
                     <strong class="font-semibold text-ink">In crisis?</strong> Call or text <a href="tel:988" class="font-semibold text-ink underline underline-offset-4">988</a>, or call <a href="tel:911" class="font-semibold text-ink underline underline-offset-4">911</a> in an emergency.
                 </div>

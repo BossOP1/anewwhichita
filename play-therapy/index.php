@@ -11,6 +11,7 @@ $og_image         = '/assets/images/people/play.jpg';
    TODO: confirm with Wes & Cari which therapists provide play therapy and the age range they see. */
 $svc = [
     'name'      => 'Play Therapy',
+    'faq_topic' => 'play therapy', // FAQ intro: “Have questions about …?”
     'schema_name' => 'Play therapy',
     'eyebrow'   => 'Play therapy in Wichita, KS',
     'title'     => 'Kids say with play <em class="italic text-clay">what they can’t yet say with words.</em>',

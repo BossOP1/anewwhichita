@@ -9,6 +9,7 @@ $og_image         = '/assets/images/people/adhd.jpg';
 
 $svc = [
     'name'      => 'ADHD Assessment',
+    'faq_topic' => 'ADHD assessments', // FAQ intro: “Have questions about …?”
     'schema_name' => 'ADHD assessment',
     'eyebrow'   => 'ADHD assessment in Wichita, KS',
     'title'     => 'Finally understand <em class="italic text-clay">how your mind works.</em>',
@@ -22,7 +23,7 @@ $svc = [
             'eyebrow' => 'Before you start',
             'title' => 'A referral is required.',
             'text' => 'You’ll need a doctor’s or therapist’s referral to begin an ADHD assessment. Fax it to <strong>' . e($site['fax']) . '</strong> or email it to <a class="font-semibold text-ink underline underline-offset-4" href="mailto:' . e($site['email']) . '">' . e($site['email']) . '</a>. Already working with an ANew therapist? Just ask them.',
-            'actions' => [['Email a referral', 'mailto:' . $site['email'] . '?subject=ADHD%20assessment%20referral'], ['Call ' . $site['phone'], $site['phone_href']]],
+            'actions' => [['Email a Referral', 'mailto:' . $site['email'] . '?subject=ADHD%20assessment%20referral'], ['Call ' . $site['phone'], $site['phone_href']]],
         ],
         [
             'type' => 'list', 'id' => 'signs', 'nav' => 'Possible signs',

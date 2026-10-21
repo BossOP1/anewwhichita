@@ -326,11 +326,11 @@ include __DIR__ . '/includes/header.php';
     <section id="insurance" class="mt-14 scroll-mt-24 bg-white lg:mt-20" aria-labelledby="insurance-title">
         <div class="mx-auto grid max-w-site gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:gap-20 lg:py-20">
             <div class="lg:col-span-5">
-                <p class="eyebrow text-leaf-deep reveal">Insurance &amp; payment</p>
+                <p class="eyebrow text-leaf-deep reveal">Insurance &amp; Payment</p>
                 <h2 id="insurance-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Care that’s <em class="italic text-clay">within reach.</em></h2>
                 <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">ANew accepts many major insurance plans, including KanCare. Coverage can vary by provider — give us a call and we’ll gladly check yours.</p>
                 <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="/insurance/" class="btn-primary">Insurance &amp; payment</a>
+                    <a href="/insurance/" class="btn-primary">Insurance &amp; Payment</a>
                     <a href="<?= e($site['phone_href']) ?>" class="btn-ghost">Call <?= e($site['phone']) ?></a>
                 </div>
             </div>
@@ -340,7 +340,7 @@ include __DIR__ . '/includes/header.php';
                         <li class="rounded-full bg-cream-100 px-4 py-2.5 text-[15px] font-medium text-ink-soft"><?= e($insurer) ?></li>
                     <?php endforeach; ?>
                 </ul>
-                <p class="reveal mt-8 text-[15px] leading-relaxed text-ink-soft">Paying out of pocket? We accept cash, all major credit cards, CareCredit, HSA and FSA. <a href="<?= e($site['carecredit_url']) ?>" target="_blank" rel="noopener" class="font-semibold text-ink underline underline-offset-4">Apply for CareCredit</a></p>
+                <p class="reveal mt-8 text-[15px] leading-relaxed text-ink-soft">Paying out of pocket? We accept cash, all major credit cards, CareCredit, HSA and FSA.<br> <a href="<?= e($site['carecredit_url']) ?>" target="_blank" rel="noopener" class="font-semibold text-ink underline underline-offset-4">Apply for CareCredit</a></p>
             </div>
         </div>
     </section>

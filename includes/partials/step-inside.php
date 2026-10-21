@@ -11,7 +11,7 @@
         <div class="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-[2fr_1fr_1fr]">
             <?php foreach ([
                 ['office/waiting-room.jpg', 'Our waiting room, with soft armchairs and a leather sofa', 'Waiting room', 'col-span-2 aspect-[4/3] lg:col-span-1 lg:aspect-auto lg:h-[460px]'],
-                ['office/therapy-room.jpg', 'A bright ANew therapy room with a sofa and armchair', 'A therapy room', 'aspect-[4/5] lg:aspect-auto lg:h-[460px]'],
+                ['office/therapy-room.jpg', 'A bright ANew therapy room with a sofa and armchair', 'Therapy room', 'aspect-[4/5] lg:aspect-auto lg:h-[460px]'],
                 ['office/hallway.jpg', 'The ANew hallway with a coffee station beneath the logo', 'Coffee’s on', 'aspect-[4/5] lg:aspect-auto lg:h-[460px]'],
             ] as $i => [$src, $alt, $label, $cls]): ?>
                 <figure class="reveal group relative overflow-hidden rounded-3xl <?= $cls ?>" style="--d: <?= $i * 70 ?>ms">

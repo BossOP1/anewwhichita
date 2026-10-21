@@ -202,7 +202,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal text-leaf-deep">Questions</p>
                 <h2 id="faq-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Talk therapy FAQ</h2>
-                <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Still wondering about something? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>.</p>
+                <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Have questions about therapy? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>. We’re happy to help.</p>
             </div>
             <div class="divide-y divide-cream-200 border-y border-cream-200 lg:col-span-8">
                 <?php foreach ($faqs as $i => [$q, $a]): ?>

@@ -55,10 +55,10 @@ include __DIR__ . '/../includes/header.php';
                 </div>
                 <figure class="reveal lg:col-span-6" style="--d: 120ms">
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="/assets/images/team/<?= e($team['cari-smothermon']['photo']) ?>" alt="Cari Smothermon, RN, BSN, co-founder of ANew" class="aspect-[3/4] w-full rounded-3xl object-cover object-[50%_25%]" loading="lazy">
-                        <img src="/assets/images/team/<?= e($team['wes-smothermon']['photo']) ?>" alt="Wes Smothermon, LCMFT, co-founder of ANew" class="mt-12 aspect-[3/4] w-full rounded-3xl object-cover object-[50%_20%]" loading="lazy">
+                        <img src="/assets/images/team/<?= e($team['cari-smothermon']['photo']) ?>" alt="Cari Smothermon, RN, BSN, Co-Founder of ANew" class="aspect-[3/4] w-full rounded-3xl object-cover object-[50%_25%]" loading="lazy">
+                        <img src="/assets/images/team/<?= e($team['wes-smothermon']['photo']) ?>" alt="Wes Smothermon, LCMFT, Co-Founder of ANew" class="mt-12 aspect-[3/4] w-full rounded-3xl object-cover object-[50%_20%]" loading="lazy">
                     </div>
-                    <figcaption class="mt-5 text-sm text-cream-100/70">Cari &amp; Wes Smothermon, co-founders</figcaption>
+                    <figcaption class="mt-5 text-sm text-cream-100/70">Cari &amp; Wes Smothermon, Co-Founders</figcaption>
                 </figure>
             </div>
         </div>

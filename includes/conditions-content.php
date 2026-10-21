@@ -74,7 +74,7 @@ $condition_pages = [
             'medication'      => 'If ADHD is diagnosed, our medication provider can help improve focus and reduce impulsivity, with careful follow-up.',
             'therapy'         => 'Practical strategies for organization, emotions and relationships — plus support for parents and families.',
         ],
-        'callout' => ['A referral is required for ADHD assessment', 'You’ll need a doctor’s or therapist’s referral to begin. Fax it to %fax% or email it to %email%.', 'About ADHD assessment', '/adhd-assessment/'],
+        'callout' => ['A referral is required for ADHD assessment', 'An ADHD assessment requires a referral from a doctor or therapist. Ask your provider to fax the referral to %fax% or email it to %email%.', 'About ADHD assessment', '/adhd-assessment/'],
         'faqs'    => [
             ['Can adults have ADHD?', 'Yes. Many adults were never diagnosed as children. An assessment can help you finally understand years of struggling with focus, organization or restlessness.'],
             ['How is ADHD diagnosed at ANew?', 'With a referral, you’ll start with an intake with one of our trained providers, take the T.O.V.A. — a computerized, objective test of attention — and then review your results and recommendations at a follow-up.'],

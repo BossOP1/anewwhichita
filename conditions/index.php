@@ -34,7 +34,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div class="reveal lg:col-span-5">
                 <p class="text-lg leading-relaxed text-ink-soft">Explore what you’re experiencing, how we treat it, and the people on our team who specialize in it. You don’t need a diagnosis to start — just a sense that something isn’t right.</p>
-                <a href="/#next-step" class="btn-ghost mt-6">Not sure? Start with what you’re noticing</a>
+                <a href="/#next-step" class="btn-ghost mt-6">Not sure where to start? Let us help.</a>
             </div>
         </div>
     </section>

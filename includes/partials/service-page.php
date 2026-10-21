@@ -230,7 +230,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                             </div>
                         <?php endforeach; ?>
                         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-                            <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Request a TMS consultation</a>
+                            <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule an Appointment</a>
                             <a href="<?= e($site['phone_href']) ?>" class="btn-ghost">Call <?= e($site['phone']) ?></a>
                         </div>
                         <button type="button" class="mt-5 text-sm text-ink-mute underline underline-offset-4 hover:text-ink" data-quiz-reset>Start over</button>
@@ -270,7 +270,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                             <h3 class="mt-3 font-serif text-3xl leading-tight"><?= e($p['name']) ?><?php if ($p['creds']): ?><span class="text-ink-mute">, <?= e($p['creds']) ?></span><?php endif; ?></h3>
                             <p class="mt-5 whitespace-pre-line text-[16.5px] leading-relaxed text-ink-soft"><?= e($p['bio']) ?></p>
                             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                                <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule with <?= e(strtok($p['name'], ' ')) ?></a>
+                                <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule an Appointment</a>
                                 <button type="button" class="btn-ghost" data-person="<?= e($slug) ?>" aria-haspopup="dialog">More about <?= e(strtok($p['name'], ' ')) ?></button>
                             </div>
                         </div>
@@ -301,7 +301,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
         <!-- ============ FAQ ============ -->
         <?= $panel_open('faq', 'bg-white') ?>
             <?php $split_open('faq', 'Questions', $svc['name'] . ' FAQ', null, false,
-                '<p class="reveal mt-6 text-[15px] leading-relaxed text-ink-soft">Still wondering about something? Call us at <a href="' . e($site['phone_href']) . '" class="font-semibold text-ink underline underline-offset-4">' . e($site['phone']) . '</a>.</p>'); ?>
+                '<p class="reveal mt-6 text-[15px] leading-relaxed text-ink-soft">Have questions about ' . e($svc['faq_topic'] ?? $svc['name']) . '? Call us at <a href="' . e($site['phone_href']) . '" class="font-semibold text-ink underline underline-offset-4">' . e($site['phone']) . '</a>. We’re happy to help.</p>'); ?>
             <div class="divide-y divide-cream-200 border-y border-cream-200">
                 <?php foreach ($svc['faqs'] as [$q, $a]): ?>
                     <details class="faq group reveal">

@@ -9,6 +9,7 @@ $og_image         = '/assets/images/office/therapy-room.jpg';
 
 $svc = [
     'name'      => 'EMDR Therapy',
+    'faq_topic' => 'EMDR therapy', // FAQ intro: “Have questions about …?”
     'schema_name' => 'Eye Movement Desensitization and Reprocessing (EMDR)',
     'eyebrow'   => 'EMDR therapy in Wichita, KS',
     'title'     => 'The past doesn’t have to <em class="italic text-clay">keep hurting.</em>',

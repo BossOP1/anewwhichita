@@ -6,8 +6,10 @@ require __DIR__ . '/conditions-content.php';
 require_once __DIR__ . '/icons.php';
 
 $c = $conditions[$slug];
+/* Condition name for mid-sentence use: lowercase, but acronyms stay capitalized (“trauma & PTSD”). */
+$c_lower = str_replace(['adhd', 'ocd', 'ptsd'], ['ADHD', 'OCD', 'PTSD'], mb_strtolower($c['name']));
 $page_title       = $c['name'] . ' Treatment & Therapy in Wichita, KS | ANew Mental Health';
-$page_description = $c['name'] . ' care in Wichita, Kansas. Learn the signs, how ANew’s therapists and medication providers can help, and who on our team specializes in ' . (in_array($slug, ['adhd', 'ocd'], true) ? $c['name'] : mb_strtolower($c['name'])) . '.';
+$page_description = $c['name'] . ' care in Wichita, Kansas. Learn the signs, how ANew’s therapists and medication providers can help, and who on our team specializes in ' . $c_lower . '.';
 $canonical_path   = '/conditions/' . $slug . '/';
 $current_page     = 'conditions';
 $og_image         = $c['image'];

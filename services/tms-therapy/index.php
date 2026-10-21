@@ -18,6 +18,7 @@ $og_image         = '/assets/images/people/prairie-walk.jpg';
 
 $svc = [
     'name'        => 'TMS Therapy',
+    'faq_topic' => 'TMS therapy', // FAQ intro: “Have questions about …?”
     'schema_name' => 'Transcranial Magnetic Stimulation (TMS)',
     'eyebrow'     => 'New at ANew · TMS therapy in Wichita, KS',
     'title'       => 'When depression hasn’t lifted, there may be <em class="italic text-clay">another path forward.</em>',
