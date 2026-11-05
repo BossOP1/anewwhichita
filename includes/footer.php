@@ -8,7 +8,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
             <div class="lg:col-span-4">
                 <img src="/assets/images/brand/logo-white.png" alt="ANew Mental Health" class="h-20 w-auto" loading="lazy">
                 <p class="mt-5 max-w-sm font-serif text-xl italic leading-snug text-cream-100">“<?= e($site['tagline']) ?>.”</p>
-                <p class="mt-4 max-w-sm text-sm leading-relaxed text-cream-200/80">Full-service mental health therapy and medication management for children, adolescents and adults in Wichita, Kansas.</p>
+                <p class="mt-4 max-w-sm text-sm leading-relaxed text-cream-200/80">Full-service mental health care for children, adolescents and adults in Wichita, Kansas.</p>
                 <div class="mt-6 flex gap-3">
                     <a href="<?= e($site['facebook']) ?>" target="_blank" rel="noopener" class="social" aria-label="ANew on Facebook">
                         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></svg>
@@ -74,8 +74,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
                     <div>
                         <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-cream-200/60">Already a client?</dt>
                         <dd class="mt-2.5 flex flex-wrap gap-2">
-                            <a href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener" class="rounded-full border border-cream-100/25 px-4 py-2 text-cream-100 transition hover:border-white hover:text-white">Therapy portal</a>
-                            <a href="<?= e($site['portal_medication']) ?>" target="_blank" rel="noopener" class="rounded-full border border-cream-100/25 px-4 py-2 text-cream-100 transition hover:border-white hover:text-white">Medication portal</a>
+                            <a href="<?= e($site['portal_client']) ?>" target="_blank" rel="noopener" class="rounded-full border border-cream-100/25 px-4 py-2 text-cream-100 transition hover:border-white hover:text-white">Client Portal</a>
                         </dd>
                     </div>
                     <div>

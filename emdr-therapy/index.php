@@ -20,14 +20,14 @@ $svc = [
         [
             'type' => 'text', 'id' => 'how', 'nav' => 'How it works',
             'eyebrow' => 'How EMDR works',
-            'title' => 'Helping the brain <em class="italic text-clay">file memories differently.</em>',
+            'title' => 'Helping the brain <em class="italic text-clay">file memories&nbsp;differently.</em>',
             'paras' => [
                 'During EMDR sessions, a trained therapist guides you through a structured process: calling to mind distressing memories while engaging in bilateral stimulation, such as guided eye movements, handheld pulsation devices, or tapping.',
                 'This helps reprocess traumatic memories, reducing their emotional charge and allowing the brain to store them in a healthier, more adaptive way. Over time, clients often experience reduced anxiety, improved emotional regulation, and a greater sense of peace.',
             ],
             'points' => ['A structured, guided process', 'Eye movements, tapping or handheld pulsers', 'Memories lose their emotional charge', 'Greater calm and emotional regulation'],
-            'image' => '/assets/images/people/trauma.jpg',
-            'image_alt' => 'A young man in warm golden light, looking down thoughtfully',
+            'image' => '/assets/images/people/emdr-session.jpg',
+            'image_alt' => 'A therapist listening and taking notes as an adult client talks in a bright, comfortable therapy room',
         ],
         [
             'type' => 'text', 'id' => 'beyond', 'flip' => true,
@@ -77,7 +77,7 @@ $svc = [
         ['Is EMDR only for PTSD?', 'No. EMDR is widely used for trauma and PTSD, but it can also help with anxiety, depression, grief, phobias, panic attacks, stress-related issues and more.'],
         ['Do I have to talk through every detail of what happened?', 'Not necessarily. EMDR focuses on how a memory is stored and how it affects you now, so many people find they don’t have to describe every detail out loud. Your therapist will go at a pace that feels safe.'],
         ['How many sessions will I need?', 'It varies from person to person, depending on what you’re working on and your history. Your therapist will talk through a plan with you after getting to know you.'],
-        ['Can EMDR be combined with other care?', 'Yes. EMDR can be part of a broader plan that includes talk therapy and, when helpful, medication management — all coordinated by the ANew team.'],
+        ['Can EMDR be combined with other care?', 'Yes. EMDR can be part of a broader plan that includes talk therapy and, when helpful, medication management, all coordinated by the ANew team.'],
         $common_faqs['insurance'],
         $common_faqs['start'],
     ],

@@ -15,7 +15,7 @@
         <nav aria-label="Breadcrumb" class="text-sm text-ink-mute">
             <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink"><?= e($doc['title']) ?></span>
         </nav>
-        <p class="eyebrow mt-8 text-sky-deep"><?= e($doc['eyebrow']) ?></p>
+        <p class="eyebrow mt-8 text-ivy"><?= e($doc['eyebrow']) ?></p>
         <h1 id="page-title" class="mt-5 max-w-4xl font-serif text-[2.4rem] font-light leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"><?= e($doc['title']) ?></h1>
         <p class="mt-6 max-w-3xl text-lg leading-relaxed text-ink-soft"><?= e($doc['summary']) ?></p>
         <p class="mt-6 text-sm text-ink-mute">Effective <?= e($legal['effective']) ?></p>

@@ -27,7 +27,7 @@ include __DIR__ . '/../includes/header.php';
         </nav>
         <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div class="lg:col-span-7">
-                <p class="eyebrow reveal text-sky-deep">Conditions we treat</p>
+                <p class="eyebrow reveal text-ivy">Conditions we treat</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
                     Does any of this <em class="italic text-clay">sound like you?</em>
                 </h1>

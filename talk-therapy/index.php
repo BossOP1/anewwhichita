@@ -47,8 +47,8 @@ $therapy_types = [
     'family' => [
         'name'  => 'Family Therapy',
         'kicker'=> 'The people who call themselves family',
-        'image' => '/assets/images/people/family-walk.jpg',
-        'alt'   => 'A family walking hand in hand across a grassy hill',
+        'image' => '/assets/images/people/family-prairie.jpg',
+        'alt'   => 'A family walking hand in hand through tall golden prairie grass at sunset',
         'tone'  => 'bg-leaf-soft',
         'copy'  => [
             'Family therapy brings together family members, relatives, or any group of people who consider themselves a family. It’s a specialized type of therapy that helps improve the relationships and dynamics within a family unit.',
@@ -89,7 +89,7 @@ include __DIR__ . '/../includes/header.php';
                     <a href="/#services" class="hover:text-ink">Services</a> <span aria-hidden="true">/</span>
                     <span class="text-ink">Talk Therapy</span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-leaf-deep">Talk therapy in Wichita, KS</p>
+                <p class="eyebrow reveal mt-8 text-ivy">Talk therapy in Wichita, KS</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">A safe place to talk. <em class="italic text-clay">Someone who listens.</em></h1>
                 <p class="reveal mt-7 max-w-lg text-lg leading-relaxed text-ink-soft">Individual, couples and family therapy with licensed therapists who take the time to understand your story — in person or by telehealth.</p>
                 <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row">
@@ -112,7 +112,7 @@ include __DIR__ . '/../includes/header.php';
                         <img src="<?= e($type['image']) ?>" alt="<?= e($type['alt']) ?>" class="aspect-[4/3] w-full rounded-4xl object-cover" loading="lazy">
                     </div>
                     <div class="lg:col-span-7">
-                        <p class="eyebrow reveal text-leaf-deep"><?= e($type['kicker']) ?></p>
+                        <p class="eyebrow reveal text-ivy"><?= e($type['kicker']) ?></p>
                         <h2 id="<?= e($key) ?>-title" class="reveal mt-4 font-serif text-4xl font-light leading-[1.1] tracking-tight"><?= e($type['name']) ?></h2>
                         <p class="reveal mt-5 max-w-xl text-[17px] leading-relaxed text-ink-soft"><?= e($type['copy'][0]) ?></p>
 
@@ -137,7 +137,7 @@ include __DIR__ . '/../includes/header.php';
                                     </button>
                                 <?php endforeach; ?>
                             </div>
-                            <p class="text-sm text-ink-soft"><?= count($type['people']) ?> therapists offer <?= e(mb_strtolower($type['name'])) ?></p>
+                            <p class="text-sm text-ink-soft">Therapists who offer <?= e(mb_strtolower($type['name'])) ?></p>
                         </div>
                     </div>
                 </article>
@@ -156,7 +156,7 @@ include __DIR__ . '/../includes/header.php';
                 <ol class="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                     <?php foreach ([
                         ['Reach out', 'Send a quick inquiry or call. Our front desk team will follow up shortly to get you scheduled.'],
-                        ['Get matched', 'We’ll pair you with a therapist whose expertise fits what you’re facing — in person or telehealth.'],
+                        ['Find a provider', 'We’ll pair you with a therapist whose expertise fits what you’re facing — in person or telehealth.'],
                         ['Talk it through', 'Your first session is a conversation: what brought you in and what you hope will change.'],
                         ['Build your plan', 'Together you’ll set goals and a rhythm for sessions. If medication could help, we’ll coordinate it.'],
                     ] as $i => [$title, $text]): ?>
@@ -176,7 +176,7 @@ include __DIR__ . '/../includes/header.php';
     <section id="therapists" class="mx-auto max-w-site scroll-mt-28 px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="therapists-title">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-2xl">
-                <p class="eyebrow reveal text-leaf-deep">Our therapists</p>
+                <p class="eyebrow reveal text-ivy">Our therapists</p>
                 <h2 id="therapists-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Find someone <em class="italic text-clay">you click with.</em></h2>
             </div>
             <p class="reveal max-w-sm text-[17px] leading-relaxed text-ink-soft">Tap anyone to read about who they work with and how they help.</p>
@@ -200,7 +200,7 @@ include __DIR__ . '/../includes/header.php';
     <section id="faq" class="scroll-mt-28 bg-white" aria-labelledby="faq-title">
         <div class="mx-auto grid max-w-site gap-10 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:gap-20 lg:py-20">
             <div class="lg:col-span-4">
-                <p class="eyebrow reveal text-leaf-deep">Questions</p>
+                <p class="eyebrow reveal text-ivy">Questions</p>
                 <h2 id="faq-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Talk therapy FAQ</h2>
                 <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Have questions about therapy? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>. We’re happy to help.</p>
             </div>
@@ -220,7 +220,7 @@ include __DIR__ . '/../includes/header.php';
 
     <!-- ============ RELATED SERVICES ============ -->
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="related-title">
-        <p class="eyebrow reveal text-leaf-deep">Alongside therapy</p>
+        <p class="eyebrow reveal text-ivy">Alongside therapy</p>
         <h2 id="related-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight">More ways <em class="italic text-clay">we help.</em></h2>
         <ul class="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
             <?php foreach ($related as $i => $key): $svc = $services[$key]; ?>

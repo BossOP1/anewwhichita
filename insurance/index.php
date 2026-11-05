@@ -28,7 +28,7 @@ include __DIR__ . '/../includes/header.php';
                 <nav aria-label="Breadcrumb" class="reveal text-sm text-ink-mute">
                     <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink">Insurance &amp; Payment</span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-sky-deep">Insurance &amp; payment</p>
+                <p class="eyebrow reveal mt-8 text-ivy">Insurance &amp; payment</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
                     Care that’s <em class="italic text-clay">within reach.</em>
                 </h1>
@@ -87,7 +87,7 @@ include __DIR__ . '/../includes/header.php';
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="benefits-title">
         <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-5">
-                <p class="eyebrow reveal text-sky-deep">Before your first visit</p>
+                <p class="eyebrow reveal text-ivy">Before your first visit</p>
                 <h2 id="benefits-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Questions to ask <em class="italic text-clay">your insurance.</em></h2>
                 <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">A quick call to the number on the back of your card can save surprises later. Here’s what to ask about <strong class="font-semibold text-ink">outpatient mental health</strong> benefits:</p>
             </div>

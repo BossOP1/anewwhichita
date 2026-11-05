@@ -29,8 +29,9 @@ $svc = [
                 'To a child it simply feels like play. To a trained therapist, it’s a window into what your child is carrying — and a gentle, developmentally appropriate way to help them heal and grow.',
             ],
             'points' => ['A safe, child-friendly space', 'Toys, art, stories and games', 'Builds coping and emotional skills', 'Parents guided along the way'],
-            'image' => '/assets/images/people/child.jpg',
-            'image_alt' => 'A parent and child walking together along a hillside path',
+            'image' => '/assets/images/people/play-therapy-toys.jpg',
+            'image_alt' => 'A boy and an adult building with colorful blocks together on a rug in a bright, comfortable room',
+            'image_pos' => '50% 55%',
         ],
         [
             'type' => 'list', 'id' => 'signs', 'nav' => 'When it helps',
@@ -60,10 +61,10 @@ $svc = [
         ],
         [
             'type' => 'people', 'id' => 'therapists', 'nav' => 'Our therapists',
-            'eyebrow' => 'Therapists who work with children',
+            'eyebrow' => 'Therapists who work with children and teens',
             'title' => 'People your child <em class="italic text-clay">can trust.</em>',
             'intro' => 'Our team includes therapists who love working with kids, teens and their families. We’ll help match your child with the right fit.',
-            'slugs' => ['barb-meyer', 'jeremiah-coon', 'christina-wankum', 'wes-smothermon'],
+            'slugs' => ['barb-meyer', 'jeremiah-coon', 'christina-wankum', 'honora-cummings', 'wes-smothermon', 'sierra-fair', 'katlynn-miller'],
         ],
     ],
     'faqs' => [

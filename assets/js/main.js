@@ -23,6 +23,21 @@
     $$('[data-menu-close]').forEach((el) => el.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.classList.contains('hidden')) setMenu(false); });
 
+    /* ---------- Nav: "Services" links to /#services, so highlight it there instead of Home ---------- */
+    if (location.pathname === '/') {
+        const homeLink = $('.nav-link[href="/"]');
+        const servicesLink = $('.nav-link[href="/#services"]');
+        const syncNav = () => {
+            const onServices = location.hash === '#services';
+            homeLink?.toggleAttribute('aria-current', !onServices);
+            if (!onServices) homeLink?.setAttribute('aria-current', 'page');
+            servicesLink?.toggleAttribute('aria-current', onServices);
+            if (onServices) servicesLink?.setAttribute('aria-current', 'page');
+        };
+        syncNav();
+        window.addEventListener('hashchange', syncNav);
+    }
+
     /* ---------- Scroll reveal ---------- */
     const reveals = $$('.reveal');
     if ('IntersectionObserver' in window) {
@@ -60,15 +75,33 @@
         }));
         const conditions = Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, 4);
 
+        // Services a selected experience names directly come first, then those of the matched conditions.
         const serviceKeys = [];
-        conditions.forEach((c) => data.conditions[c].services.forEach((s) => { if (!serviceKeys.includes(s)) serviceKeys.push(s); }));
+        const addService = (s) => { if (data.services[s] && !serviceKeys.includes(s)) serviceKeys.push(s); };
+        selected.forEach((key) => (data.symptoms[key]?.services || []).forEach(addService));
+        conditions.forEach((c) => data.conditions[c].services.forEach(addService));
 
+        // People: ANew's own list per experience where given (listed most often across selections
+        // first, then in the order given); experiences without a list fall back to condition matches.
         const peopleScore = {};
-        Object.entries(data.team).forEach(([slug, p]) => {
-            const hits = p.conditions.filter((c) => conditions.includes(c));
-            if (hits.length) peopleScore[slug] = hits.reduce((n, c) => n + score[c], 0);
+        const order = [];
+        const addPerson = (slug, pts) => {
+            if (!data.team[slug]) return;
+            if (!(slug in peopleScore)) { peopleScore[slug] = 0; order.push(slug); }
+            peopleScore[slug] += pts;
+        };
+        selected.forEach((key) => {
+            const listed = data.symptoms[key]?.people;
+            if (listed) { listed.forEach((slug) => addPerson(slug, 100)); return; }
+            const own = data.symptoms[key]?.conditions || [];
+            Object.entries(data.team).forEach(([slug, p]) => {
+                if (!['therapist', 'medication'].includes(p.lane)) return;
+                const hits = p.conditions.filter((c) => own.includes(c));
+                if (hits.length) addPerson(slug, hits.length);
+            });
         });
-        const people = Object.keys(peopleScore).sort((a, b) => peopleScore[b] - peopleScore[a]).slice(0, 5);
+        const pos = Object.fromEntries(order.map((slug, i) => [slug, i]));
+        const people = [...order].sort((a, b) => peopleScore[b] - peopleScore[a] || pos[a] - pos[b]).slice(0, 12);
 
         $('[data-ns-conditions]').innerHTML = conditions.map((c) =>
             `<a class="result-pill" href="/conditions/${esc(c)}/">${esc(data.conditions[c].name)} <span aria-hidden="true">→</span></a>`

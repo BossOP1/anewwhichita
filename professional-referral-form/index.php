@@ -25,7 +25,7 @@ include __DIR__ . '/../includes/header.php';
         </nav>
         <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div class="lg:col-span-7">
-                <p class="eyebrow reveal text-leaf-deep">For providers</p>
+                <p class="eyebrow reveal text-ivy">For providers</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">Refer a patient <em class="italic text-clay">to ANew.</em></h1>
             </div>
             <p class="reveal text-lg leading-relaxed text-ink-soft lg:col-span-5">Fill out this form so we can assist your patient efficiently and as soon as possible. We appreciate you choosing ANew to help care for your patients.</p>

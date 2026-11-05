@@ -21,7 +21,7 @@ $split_open = function ($id, $eyebrow, $title, $intro = null, $dark = false, $ex
     <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-4">
             <div class="lg:sticky lg:top-32">
-                <?php if ($eyebrow): ?><p class="eyebrow reveal <?= $dark ? 'text-wheat' : 'text-leaf-deep' ?>"><?= e($eyebrow) ?></p><?php endif; ?>
+                <?php if ($eyebrow): ?><p class="eyebrow reveal <?= $dark ? 'text-wheat' : 'text-ivy' ?>"><?= e($eyebrow) ?></p><?php endif; ?>
                 <h2 id="<?= e($id) ?>-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-[2.75rem] <?= $dark ? 'text-white' : '' ?>"><?= $plain($title) ?></h2>
                 <?php if ($intro): ?><p class="reveal mt-5 text-[17px] leading-relaxed <?= $dark ? 'text-cream-100/75' : 'text-ink-soft' ?>"><?= e($intro) ?></p><?php endif; ?>
                 <?= $extra ?>
@@ -55,8 +55,8 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                     <a href="/#services" class="hover:text-ink">Services</a> <span aria-hidden="true">/</span>
                     <span class="text-ink"><?= e($svc['name']) ?></span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-leaf-deep"><?= e($svc['eyebrow']) ?></p>
-                <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl"><?= $plain($svc['title']) ?></h1>
+                <p class="eyebrow reveal mt-8 text-ivy"><?= e($svc['eyebrow']) ?></p>
+                <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl"><?= $svc['title'] ?></h1>
                 <p class="reveal mt-7 max-w-lg text-lg leading-relaxed text-ink-soft"><?= e($svc['intro']) ?></p>
                 <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row">
                     <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule an Appointment</a>
@@ -95,10 +95,10 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
             <?= $panel_open($id) ?>
                 <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                     <?php if (!empty($block['image'])): ?>
-                        <img src="<?= e($block['image']) ?>" alt="<?= e($block['image_alt'] ?? '') ?>" class="reveal order-last aspect-[4/3] w-full rounded-3xl object-cover <?= $flip ? '' : 'lg:order-first' ?>" style="object-position: <?= e($block['image_pos'] ?? '50% 50%') ?>" loading="lazy">
+                        <img src="<?= e($block['image']) ?>" alt="<?= e($block['image_alt'] ?? '') ?>" class="reveal order-last aspect-[4/3] w-full rounded-3xl <?= ($block['image_fit'] ?? '') === 'contain' ? 'bg-cream-100 object-contain p-4 sm:p-8' : 'object-cover' ?> <?= $flip ? '' : 'lg:order-first' ?>" style="object-position: <?= e($block['image_pos'] ?? '50% 50%') ?>" loading="lazy">
                     <?php endif; ?>
                     <div class="<?= empty($block['image']) ? 'max-w-3xl lg:col-span-2' : '' ?>">
-                        <p class="eyebrow reveal text-leaf-deep"><?= e($block['eyebrow']) ?></p>
+                        <p class="eyebrow reveal text-ivy"><?= e($block['eyebrow']) ?></p>
                         <h2 id="<?= e($id) ?>-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-[2.75rem]"><?= $plain($block['title']) ?></h2>
                         <div class="reveal mt-6 space-y-5 text-[17px] leading-relaxed text-ink-soft">
                             <?php foreach ($block['paras'] as $para): ?><p><?= e($para) ?></p><?php endforeach; ?>
@@ -189,6 +189,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                         </div>
                     <?php endforeach; ?>
                 </dl>
+                <?php if (!empty($block['note'])): ?><p class="mt-4 max-w-3xl text-[13px] leading-relaxed text-ink-mute"><?= e($block['note']) ?></p><?php endif; ?>
             </section>
 
         <?php elseif ($block['type'] === 'quiz'): ?>
@@ -218,13 +219,13 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                         <?php endforeach; ?>
                     </ol>
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                        <button type="submit" class="btn-primary">See my next step</button>
+                        <button type="submit" class="btn-primary">Submit My Answers</button>
                         <p class="text-sm text-ink-mute" data-quiz-count aria-live="polite"></p>
                     </div>
                     <div class="mt-8 hidden rounded-3xl bg-white p-6 sm:p-8" data-quiz-result tabindex="-1" aria-live="polite">
                         <?php foreach ($block['results'] as $key => $res): ?>
                             <div class="hidden" data-result="<?= e($key) ?>">
-                                <p class="eyebrow text-leaf-deep"><?= e($res['eyebrow']) ?></p>
+                                <p class="eyebrow text-ivy"><?= e($res['eyebrow']) ?></p>
                                 <h3 class="mt-3 font-serif text-2xl leading-snug sm:text-3xl"><?= e($res['title']) ?></h3>
                                 <p class="mt-4 text-[16px] leading-relaxed text-ink-soft"><?= e($res['text']) ?></p>
                             </div>
@@ -286,6 +287,7 @@ $dot_list = function ($items, $cols = 'sm:grid-cols-2', $dot = 'bg-leaf') { ?>
                                     </span>
                                     <span class="mt-4 block font-serif text-xl leading-tight"><?= e($p['name']) ?></span>
                                     <span class="mt-1 block text-sm text-ink-mute"><?= e($p['creds'] ?: $p['role']) ?></span>
+                                    <?php if (!empty($p['ages'])): ?><span class="mt-1 block text-[13px] font-medium text-ivy"><?= e($p['ages']) ?></span><?php endif; ?>
                                 </button>
                             </li>
                         <?php endforeach; ?>

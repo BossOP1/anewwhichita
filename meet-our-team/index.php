@@ -31,7 +31,7 @@ include __DIR__ . '/../includes/header.php';
         </nav>
         <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div class="lg:col-span-7">
-                <p class="eyebrow reveal text-leaf-deep">Meet our team</p>
+                <p class="eyebrow reveal text-ivy">Meet our team</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">The people who’ll walk alongside you.</h1>
             </div>
             <div class="lg:col-span-5">

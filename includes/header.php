@@ -34,8 +34,10 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
                     colors: {
                         cream:   { 50: '#FBF8F3', 100: '#F5EFE6', 200: '#ECE3D4', 300: '#DFD2BC' },
                         ink:     { DEFAULT: '#1E2A2C', soft: '#4B5759', mute: '#7A8486' },
-                        clay:    { DEFAULT: '#B5784A', soft: '#E9D5C2', deep: '#8A5531' },
-                        wheat:   { DEFAULT: '#E2C487', soft: '#F3E6C9' },
+                        clay:    { DEFAULT: '#626B4B', soft: '#E9D5C2', deep: '#8A5531' },   /* DEFAULT = Deeper Ivy: accent titles on light backgrounds */
+                        wheat:   { DEFAULT: '#D1D8BD', soft: '#F3E6C9' },                    /* DEFAULT = Spring: accents on dark backgrounds */
+                        ivy:     '#626B4B',   /* Deeper Ivy — small capitalized headers */
+                        spring:  '#D1D8BD',
                         prairie: { DEFAULT: '#56664A', soft: '#DDE3D3', deep: '#2F3B2A' },
                         sky:     { DEFAULT: '#2AA4DC', soft: '#DCEFF8', deep: '#16719C' },   /* logo blue */
                         leaf:    { DEFAULT: '#3E9F48', soft: '#DFF0D9', deep: '#2B7433', lime: '#8CC63F' }, /* logo greens */
@@ -83,14 +85,14 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
 
 <!-- Announcement -->
 <div class="relative z-50 bg-prairie-deep text-cream-100">
-    <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-5 py-2.5 text-[13px] sm:px-8">
-        <a href="<?= e($services['tms']['url']) ?>" class="group inline-flex items-center gap-2.5">
-            <span class="rounded-full bg-leaf-lime px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-prairie-deep">New</span>
-            <span>Now offering <strong class="font-semibold">TMS Therapy</strong> at ANew<span class="hidden sm:inline"> — learn whether it may be right for you</span></span>
+    <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-5 py-3 text-[14px] sm:px-8 sm:py-3.5 sm:text-[15.5px]">
+        <a href="<?= e($services['tms']['url']) ?>" class="group inline-flex items-center gap-3">
+            <span class="rounded-full bg-leaf-lime px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-prairie-deep">New</span>
+            <span>Now offering <strong class="font-semibold text-white">TMS Therapy</strong> at ANew<span class="hidden sm:inline"> — <span class="underline decoration-cream-100/40 underline-offset-4 group-hover:decoration-cream-100">learn whether it may be right for you</span></span></span>
             <span aria-hidden="true" class="transition group-hover:translate-x-0.5">→</span>
         </a>
         <div class="hidden items-center gap-6 md:flex">
-            <a href="<?= e($site['maps_url']) ?>" class="opacity-80 hover:opacity-100" target="_blank" rel="noopener"><?= e($site['street']) ?>, Wichita</a>
+            <a href="<?= e($site['maps_url']) ?>" class="opacity-80 hover:opacity-100" target="_blank" rel="noopener"><?= e($site['street']) ?>, Wichita, KS</a>
             <a href="<?= e($site['phone_href']) ?>" class="font-semibold hover:text-white"><?= e($site['phone']) ?></a>
         </div>
     </div>
@@ -161,18 +163,7 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
         </nav>
 
         <div class="flex items-center gap-2">
-            <div class="group relative hidden lg:block">
-                <button type="button" class="nav-link inline-flex items-center gap-1 text-[14.5px] font-medium text-ink-soft" aria-haspopup="true">
-                    <span class="xl:hidden">Portal</span><span class="hidden xl:inline">Client Portal</span>
-                    <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5"/></svg>
-                </button>
-                <div class="invisible absolute right-0 top-full w-56 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <ul class="rounded-2xl border border-cream-200 bg-white p-2 text-[14px] shadow-xl shadow-ink/5">
-                        <li><a class="block rounded-xl px-4 py-2.5 hover:bg-cream-100" href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener">Therapy clients</a></li>
-                        <li><a class="block rounded-xl px-4 py-2.5 hover:bg-cream-100" href="<?= e($site['portal_medication']) ?>" target="_blank" rel="noopener">Medication clients</a></li>
-                    </ul>
-                </div>
-            </div>
+            <a class="nav-link hidden text-[14.5px] font-medium text-ink-soft lg:inline-flex" href="<?= e($site['portal_client']) ?>" target="_blank" rel="noopener">Client Portal</a>
             <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary hidden sm:inline-flex">Schedule an Appointment</a>
             <button type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 bg-white/70 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" data-menu-toggle>
                 <span class="sr-only">Open menu</span>
@@ -221,9 +212,8 @@ $page_description = $page_description ?? 'ANew is a full-service mental health p
             <a class="mobile-link" href="/insurance/" data-menu-close>Insurance & payment</a>
             <a class="mobile-link" href="/contact-us/" data-menu-close>Contact & directions</a>
         </nav>
-        <div class="mt-6 grid grid-cols-2 gap-2 text-sm">
-            <a class="rounded-xl border border-cream-300 px-4 py-3 text-center" href="<?= e($site['portal_therapy']) ?>" target="_blank" rel="noopener">Therapy portal</a>
-            <a class="rounded-xl border border-cream-300 px-4 py-3 text-center" href="<?= e($site['portal_medication']) ?>" target="_blank" rel="noopener">Medication portal</a>
+        <div class="mt-6 text-sm">
+            <a class="block rounded-xl border border-cream-300 px-4 py-3 text-center" href="<?= e($site['portal_client']) ?>" target="_blank" rel="noopener">Client Portal</a>
         </div>
         <div class="mt-auto space-y-3 pt-8">
             <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary w-full justify-center">Schedule an Appointment</a>

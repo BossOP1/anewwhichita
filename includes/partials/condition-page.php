@@ -36,7 +36,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
                     <a href="/conditions/" class="hover:text-ink">Conditions</a> <span aria-hidden="true">/</span>
                     <span class="text-ink"><?= e($c['name']) ?></span>
                 </nav>
-                <p class="eyebrow reveal mt-8 flex items-center gap-2.5 <?= $tone['ink'] ?>">
+                <p class="eyebrow reveal mt-8 flex items-center gap-2.5 text-ivy">
                     <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl <?= $tone['bg'] ?>"><?= icon($icons[$slug], 'h-4 w-4') ?></span>
                     <?= e($c['name']) ?> care in Wichita, KS
                 </p>
@@ -73,8 +73,8 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
     <section id="signs" class="mx-auto max-w-site scroll-mt-40 px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="signs-title">
         <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-4">
-                <p class="eyebrow reveal <?= $tone['ink'] ?>">Does this sound familiar?</p>
-                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What <?= e($c_lower) ?> can feel like.</h2>
+                <p class="eyebrow reveal text-ivy">Does this sound familiar?</p>
+                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What <?= e(['womens' => 'women’s and perinatal mental health concerns'][$slug] ?? $c_lower) ?> can feel like.</h2>
                 <p class="reveal mt-6 text-[16px] leading-relaxed text-ink-soft">Everyone’s experience is different, and this list isn’t a diagnosis. If several of these feel true for you — or someone you love — it’s worth a conversation.</p>
                 <a href="/#next-step" class="reveal mt-6 inline-flex items-center gap-1.5 text-sm font-semibold underline decoration-cream-300 underline-offset-4 hover:decoration-ink">Not sure? Find your next step →</a>
             </div>
@@ -150,8 +150,8 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         <section id="providers" class="mx-auto max-w-site scroll-mt-40 px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="providers-title">
             <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div class="max-w-2xl">
-                    <p class="eyebrow reveal text-leaf-deep">Our Providers</p>
-                    <h2 id="providers-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Providers who work with <?= e($c_lower) ?>.</h2>
+                    <p class="eyebrow reveal text-ivy">Our Providers</p>
+                    <h2 id="providers-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Providers who <?= e(['womens' => 'support women’s and perinatal mental health'][$slug] ?? 'work with ' . $c_lower) ?>.</h2>
                 </div>
                 <p class="reveal max-w-md text-[17px] leading-relaxed text-ink-soft">Tap anyone to learn about their approach and who they see. Not sure who’s right? We’ll match you.</p>
             </div>
@@ -203,7 +203,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="related-title">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-                <p class="eyebrow reveal text-sky-deep">Often connected</p>
+                <p class="eyebrow reveal text-ivy">Often connected</p>
                 <h2 id="related-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Related conditions.</h2>
             </div>
             <a href="/conditions/" class="reveal text-sm font-semibold underline decoration-cream-300 underline-offset-4 hover:decoration-ink">All conditions we treat →</a>

@@ -13,7 +13,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
 $routes = [
     ['New to ANew?', 'Send a quick inquiry and our team will reach out shortly to get you scheduled with the right provider.', [['Schedule an Appointment', $site['schedule_url'], true]]],
     ['Prefer to talk?', 'Call our front desk. We’re happy to answer questions, check your insurance, or help you find a starting point.', [['Call ' . $site['phone'], $site['phone_href'], false]]],
-    ['Already a client?', 'Message your provider, manage appointments and complete paperwork in your client portal.', [['Therapy portal', $site['portal_therapy'], true], ['Medication portal', $site['portal_medication'], true]]],
+    ['Already a client?', 'Message your provider, manage appointments and complete paperwork in your client portal.', [['Client Portal', $site['portal_client'], true]]],
     ['Referring a patient?', 'Submit our professional referral form, or fax referrals to ' . $site['fax'] . '.', [['Provider referral form', $site['referral_url'], false]]],
     ['Insurance or billing?', 'See which plans we accept, or call and our billing team will help.', [['Insurance & payment', '/insurance/', false]]],
     ['Want to join our team?', 'Therapists, interns and medication providers welcome.', [['Careers at ANew', '/mental-health-careers-wichita-ks/', false]]],
@@ -36,7 +36,7 @@ include __DIR__ . '/../includes/header.php';
                 <nav aria-label="Breadcrumb" class="reveal text-sm text-ink-mute">
                     <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink">Contact</span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-leaf-deep">Contact ANew</p>
+                <p class="eyebrow reveal mt-8 text-ivy">Contact ANew</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
                     We’d love to <em class="italic text-clay">hear from you.</em>
                 </h1>
@@ -72,7 +72,7 @@ include __DIR__ . '/../includes/header.php';
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="help-title">
         <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div class="lg:col-span-4">
-                <p class="eyebrow reveal text-leaf-deep">How can we help?</p>
+                <p class="eyebrow reveal text-ivy">How can we help?</p>
                 <h2 id="help-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">The fastest way to <em class="italic text-clay">Find the right person to help you.</em></h2>
             </div>
             <ul class="grid gap-x-12 sm:grid-cols-2 lg:col-span-8">
@@ -96,7 +96,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="grid overflow-hidden rounded-4xl bg-cream-100 lg:grid-cols-12">
             <div class="flex flex-col justify-between gap-10 p-8 sm:p-12 lg:col-span-5">
                 <div>
-                    <p class="eyebrow reveal text-leaf-deep">Find us</p>
+                    <p class="eyebrow reveal text-ivy">Find us</p>
                     <h2 id="map-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">On East Central, <em class="italic text-clay">in east Wichita.</em></h2>
                     <address class="reveal mt-6 text-[17px] not-italic leading-relaxed text-ink-soft">
                         ANew Mental Health<br><?= e($site['street']) ?><br><?= e($site['city']) ?>, <?= e($site['region']) ?> <?= e($site['postal']) ?>
@@ -117,7 +117,7 @@ include __DIR__ . '/../includes/header.php';
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="desk-title">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-2xl">
-                <p class="eyebrow reveal text-leaf-deep">The voices you’ll hear</p>
+                <p class="eyebrow reveal text-ivy">The voices you’ll hear</p>
                 <h2 id="desk-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Meet our front office team.</h2>
             </div>
             <p class="reveal max-w-md text-[17px] leading-relaxed text-ink-soft">When you call or walk in, these are the people who’ll greet you, help you get settled, and make sure you’re taken care of.</p>

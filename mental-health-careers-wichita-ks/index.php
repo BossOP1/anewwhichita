@@ -15,6 +15,7 @@ $roles = [
 ];
 
 $ideal = [
+    'Christ-centered',
     'Naturally compassionate and client-centered',
     'Dedicated to ethical, evidence-based care',
     'Whole-patient focused — considering mind, spirituality, body, family and community',
@@ -28,7 +29,7 @@ $why = [
     ['Supervision & mentorship', 'Opportunities for supervision and mentorship as you grow.'],
     ['Flexible scheduling', 'Meaningful work-life balance, with in-person and telehealth options.'],
     ['Administrative support', 'Our front office handles the details so you can focus on client care.'],
-    ['A home-like office', 'An intentionally warm space on East Central — for clients and for you.'],
+    ['A home-like office', 'An intentionally warm space in East Wichita — for clients and for you.'],
 ];
 
 $licensures = ['LMSW', 'LSCSW', 'LPC', 'LCPC', 'LMFT', 'LCMFT', 'Psychiatrist', 'PMHNP / APRN', 'Therapist intern / practicum student', 'Student nurse practitioner', 'Other'];
@@ -45,7 +46,7 @@ include __DIR__ . '/../includes/header.php';
                 <nav aria-label="Breadcrumb" class="reveal text-sm text-ink-mute">
                     <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink">Careers</span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-leaf-deep">Careers at ANew</p>
+                <p class="eyebrow reveal mt-8 text-ivy">Careers at ANew</p>
                 <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
                     Join a team that believes <em class="italic text-clay">people matter.</em>
                 </h1>
@@ -87,7 +88,7 @@ include __DIR__ . '/../includes/header.php';
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="roles-title">
         <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-7">
-                <p class="eyebrow reveal text-sky-deep">Who we’re looking for</p>
+                <p class="eyebrow reveal text-ivy">Who we’re looking for</p>
                 <h2 id="roles-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">We welcome inquiries for:</h2>
                 <ul class="mt-8 grid gap-3 sm:grid-cols-2">
                     <?php foreach ($roles as $i => [$role, $detail]): ?>
@@ -119,7 +120,7 @@ include __DIR__ . '/../includes/header.php';
     <!-- ============ WHY ANEW ============ -->
     <section class="border-y border-cream-200 bg-white" aria-labelledby="why-title">
         <div class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20">
-            <p class="eyebrow reveal text-leaf-deep">Why ANew</p>
+            <p class="eyebrow reveal text-ivy">Why ANew</p>
             <h2 id="why-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">A place to do your best work.</h2>
             <ol class="mt-10 grid gap-x-10 gap-y-2 md:grid-cols-2 lg:grid-cols-3">
                 <?php foreach ($why as $i => [$title, $text]): ?>

@@ -116,8 +116,15 @@ a.tag:hover { background: var(--cream-200); color: var(--ink); }
 .social:hover { background: rgba(255, 255, 255, .1); }
 
 /* Hero: slow drift like wind over the hills */
-.hero-drift { animation: drift 28s ease-in-out infinite alternate; transform-origin: 60% 60%; }
-@keyframes drift { from { transform: scale(1.04) translate3d(0, 0, 0); } to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); } }
+.hero-drift { animation: drift 22s ease-in-out infinite alternate; transform-origin: 60% 60%; }
+@keyframes drift { from { transform: scale(1.04) translate3d(0, 0, 0); } to { transform: scale(1.16) translate3d(-2.5%, -1.5%, 0); } }
+/* Hero: slow-moving golden light over the photo */
+.hero-glow {
+    background: radial-gradient(40% 55% at 30% 35%, rgba(255, 214, 140, .38), transparent 70%),
+                radial-gradient(35% 45% at 75% 25%, rgba(255, 236, 190, .22), transparent 70%);
+    mix-blend-mode: soft-light; animation: glow 16s ease-in-out infinite alternate; pointer-events: none;
+}
+@keyframes glow { from { transform: translate3d(-6%, 2%, 0) scale(1); opacity: .65; } to { transform: translate3d(8%, -4%, 0) scale(1.15); opacity: 1; } }
 
 /* Scroll reveal */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0ms); }
@@ -125,7 +132,7 @@ a.tag:hover { background: var(--cream-200); color: var(--ink); }
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-    .hero-drift { animation: none; transform: none; }
+    .hero-drift, .hero-glow { animation: none; transform: none; }
     .js .reveal { opacity: 1; transform: none; }
 }
 

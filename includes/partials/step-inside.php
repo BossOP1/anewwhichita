@@ -3,10 +3,10 @@
     <section class="mx-auto max-w-site px-5 pt-14 sm:px-8 lg:pt-20" aria-labelledby="inside-title">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-2xl">
-                <p class="eyebrow text-leaf-deep reveal">Step inside</p>
+                <p class="eyebrow text-ivy reveal">Step inside</p>
                 <h2 id="inside-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">Less like a clinic. <em class="italic text-clay">More like home.</em></h2>
             </div>
-            <p class="reveal max-w-md text-[17px] leading-relaxed text-ink-soft">Soft chairs, natural light and a friendly face at the front desk. Here’s a look inside our office on East Central before you ever walk through the door.</p>
+            <p class="reveal max-w-md text-[17px] leading-relaxed text-ink-soft">Soft chairs, natural light and a friendly face at the front desk. Here’s a look inside our office in East Wichita before you ever walk through the door.</p>
         </div>
         <div class="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-[2fr_1fr_1fr]">
             <?php foreach ([

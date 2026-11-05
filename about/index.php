@@ -25,7 +25,7 @@ include __DIR__ . '/../includes/header.php';
                 <nav aria-label="Breadcrumb" class="reveal text-sm text-ink-mute">
                     <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink">About</span>
                 </nav>
-                <p class="eyebrow reveal mt-8 text-leaf-deep">About ANew</p>
+                <p class="eyebrow reveal mt-8 text-ivy">About ANew</p>
                 <h1 id="about-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">
                     A family practice, built because <em class="italic text-clay">people matter.</em>
                 </h1>
@@ -43,23 +43,36 @@ include __DIR__ . '/../includes/header.php';
     <!-- ============ OUR STORY ============ -->
     <section id="people" class="scroll-mt-24 px-3 sm:px-4" aria-labelledby="story-title">
         <div class="rounded-4xl bg-prairie-deep text-cream-100">
-            <div class="mx-auto grid max-w-site items-center gap-14 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:gap-20 lg:py-20">
-                <div class="lg:col-span-6">
-                    <p class="eyebrow reveal text-wheat">Our story</p>
-                    <h2 id="story-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl">Two careers spent caring for people. <em class="italic text-wheat">One practice built around them.</em></h2>
-                    <!-- TODO: confirm founding year and details with Wes & Cari, then expand. -->
-                    <div class="reveal mt-8 max-w-lg space-y-5 text-[17px] leading-relaxed text-cream-100/85">
-                        <p>ANew was started by Wes and Cari Smothermon. Wes came to therapy from youth ministry, with a passion for supporting teenagers and families through hard seasons. Cari is a registered nurse with over a decade in women’s health who has always gone above and beyond for her patients.</p>
-                        <p>Together they built the practice they’d want for their own family — and it still is one. Wes sees clients, Cari runs the day-to-day, and Judy Smothermon greets you at the front desk.</p>
+            <div class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20">
+                <!-- Story text and photo provided by ANew (Ruttl, Oct 2026). -->
+                <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+                    <div class="lg:col-span-5">
+                        <p class="eyebrow reveal text-wheat">Our Story</p>
+                        <h2 id="story-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl">Better care, <em class="italic text-wheat">built together.</em></h2>
+                        <p class="reveal mt-6 text-lg leading-relaxed text-cream-100/90">ANew opened on April 11, 2022, from a simple conviction: clients are served best when clinicians are not working alone. After six years in solo practice, Wes Smothermon, LCMFT, recognized that collaboration, shared wisdom, and daily encouragement among like-minded providers would not only strengthen clinicians — it would elevate the care clients receive.</p>
+                    </div>
+                    <figure class="reveal lg:col-span-7" style="--d: 120ms">
+                        <img src="/assets/images/team/wes-cari-smothermon.jpg" alt="Wes Smothermon, LCMFT, and Cari Smothermon, RN, BSN, Co-Founders of ANew, sitting together on a sofa" class="aspect-[3/2] w-full rounded-3xl object-cover object-[50%_45%]" loading="lazy">
+                        <figcaption class="mt-4 text-sm text-cream-100/70">Cari &amp; Wes Smothermon, Co-Founders</figcaption>
+                    </figure>
+                </div>
+
+                <div class="mt-12 grid gap-x-16 gap-y-5 border-t border-white/10 pt-12 text-[17px] leading-relaxed text-cream-100/85 lg:mt-16 lg:grid-cols-2">
+                    <div class="reveal space-y-5">
+                        <p>Alongside his wife, Cari, a registered nurse with more than a decade of experience in women’s health and labor and delivery, Wes set out to build something intentional: a practice where team-based mental healthcare is at the heart of everything we do. Wes and Cari’s backgrounds have shaped their deep commitment to making people feel safe, valued, and genuinely cared for. From the first phone call to the moment someone walks through our doors, they want each person to experience the kindness, thoughtfulness, and personal connection that make ANew different.</p>
+                        <p>We believe client-centered care thrives when providers are supported, mentored, challenged, and united by shared values. That belief extends beyond the care we provide to the environment we create — one that feels welcoming, personal, and comfortable, where people can feel at ease taking the next step in their mental health journey.</p>
+                    </div>
+                    <div class="reveal space-y-5" style="--d: 100ms">
+                        <p>Today, the strength of ANew is our team. Each provider brings unique training, personality, and perspective, yet we work collectively — consulting, collaborating, and encouraging one another — to deliver thoughtful, ethical, and compassionate mental healthcare. ANew is built on the belief that when we care well for our team, our team is better equipped to care well for you.</p>
+                        <p>At ANew, we believe this work is more than a profession — it is a calling. As Ephesians 2:10 (NLT) reminds us:</p>
                     </div>
                 </div>
-                <figure class="reveal lg:col-span-6" style="--d: 120ms">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="/assets/images/team/<?= e($team['cari-smothermon']['photo']) ?>" alt="Cari Smothermon, RN, BSN, Co-Founder of ANew" class="aspect-[3/4] w-full rounded-3xl object-cover object-[50%_25%]" loading="lazy">
-                        <img src="/assets/images/team/<?= e($team['wes-smothermon']['photo']) ?>" alt="Wes Smothermon, LCMFT, Co-Founder of ANew" class="mt-12 aspect-[3/4] w-full rounded-3xl object-cover object-[50%_20%]" loading="lazy">
-                    </div>
-                    <figcaption class="mt-5 text-sm text-cream-100/70">Cari &amp; Wes Smothermon, Co-Founders</figcaption>
+
+                <figure class="reveal mx-auto mt-12 max-w-3xl text-center lg:mt-16">
+                    <blockquote class="font-serif text-2xl font-light italic leading-snug text-white sm:text-3xl">“For we are God’s masterpiece. He has created us anew in Christ Jesus, so we can do the good things he planned for us long ago.”</blockquote>
+                    <figcaption class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-wheat">Ephesians 2:10 (NLT)</figcaption>
                 </figure>
+                <p class="reveal mx-auto mt-8 max-w-2xl text-center text-[17px] leading-relaxed text-cream-100/85">We see that truth reflected in our team every day. Each provider has been uniquely gifted for this work, and together we are committed to helping every person who walks through our doors — regardless of their background or circumstances — experience hope, healing, and the opportunity to move forward again, ANew.</p>
             </div>
         </div>
     </section>
@@ -67,7 +80,7 @@ include __DIR__ . '/../includes/header.php';
     <!-- ============ MISSION + VALUES ============ -->
     <section class="mx-auto max-w-site px-5 py-14 sm:px-8 lg:py-20" aria-labelledby="mission-title">
         <div class="mx-auto max-w-3xl text-center">
-            <p class="eyebrow reveal text-leaf-deep">Our mission</p>
+            <p class="eyebrow reveal text-ivy">Our mission</p>
             <h2 id="mission-title" class="reveal mt-5 font-serif text-3xl font-light leading-[1.2] tracking-tight sm:text-[2.6rem]">
                 To provide compassionate, ethical and effective mental health care that <em class="italic text-clay">transforms and empowers people.</em>
             </h2>
@@ -87,8 +100,8 @@ include __DIR__ . '/../includes/header.php';
         <div class="rounded-4xl bg-cream-100">
             <div class="mx-auto grid max-w-site gap-12 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:gap-20 lg:py-20">
                 <div class="lg:col-span-5">
-                    <p class="eyebrow reveal text-leaf-deep">How care works</p>
-                    <h2 id="how-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">One team. <em class="italic text-clay">One plan.</em> Built around you.</h2>
+                    <p class="eyebrow reveal text-ivy">How care works</p>
+                    <h2 id="how-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">One team. <em class="italic text-clay">A plan</em> built around you.</h2>
                 </div>
                 <ol class="lg:col-span-7">
                     <?php foreach ([

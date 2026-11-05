@@ -31,8 +31,8 @@ $site = [
     // Existing SimplePractice inquiry — keep this workflow (feeds the EHR directly).
     // Swap for the updated URL once Wesley adds TMS as an inquiry option.
     'schedule_url' => 'https://anewwichita.clientsecure.me/contact-widget',
-    'portal_therapy'    => 'https://anewwichita.clientsecure.me',
-    'portal_medication' => 'https://pp-wfe-102.advancedmd.com/account/logon?lk=150778',
+    // One client portal (SimplePractice). The old AdvancedMD medication portal is no longer used.
+    'portal_client' => 'https://anewwichita.clientsecure.me',
     'referral_url' => '/professional-referral-form/',
     // Where the professional referral form posts. Referrals include patient health info, so this must be
     // a HIPAA-compliant form endpoint covered by a BAA (e.g. Jotform HIPAA, Paperform, Formstack). While
@@ -96,10 +96,10 @@ $team = [
         'conditions' => ['depression', 'anxiety', 'bipolar', 'adhd', 'womens', 'ocd'],
         'bio' => 'I have passion for all areas of mental health, especially women’s health. I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.',
     ],
-    'irene' => [
-        // TODO: confirm last name, insurance panels and visit format with ANew.
+    'irene-keny' => [
+        // TODO: confirm insurance panels and visit format with ANew.
         'insurance' => [], 'insurance_soon' => [],
-        'name' => 'Irene', 'creds' => 'PMHNP-BC', 'lane' => 'medication',
+        'name' => 'Irene Keny', 'creds' => 'APRN, PMHNP-BC', 'lane' => 'medication',
         'role' => 'Psychiatric Mental Health Nurse Practitioner · Army Veteran', 'format' => '',
         'photo' => 'irene.jpg', 'pos' => '50% 20%',
         'focus' => ['Medication management', 'Teens & adults', 'Veterans', 'PTSD & trauma'],
@@ -110,6 +110,7 @@ $team = [
             . "I look forward to building meaningful connections with my patients and partnering with individuals and families to support better mental health and an improved quality of life.",
     ],
     'wes-smothermon' => [
+        'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'bcbs', 'tricare', 'united'], 'insurance_soon' => [],
         'name' => 'Wes Smothermon', 'creds' => 'LCMFT', 'lane' => 'therapist',
         'role' => 'Co-founder · Licensed Clinical Marriage & Family Therapist', 'format' => 'In-person & telehealth',
@@ -119,6 +120,7 @@ $team = [
         'bio' => 'Today, I work with adolescents, adults, couples, and families experiencing anxiety, trauma, relationship difficulties, family conflict, parenting challenges, and struggles related to pornography. My approach is warm, practical, and grounded in an understanding of how past experiences, family relationships, and generational patterns influence our present.',
     ],
     'sierra-fair' => [
+        'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'united', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Sierra Fair', 'creds' => 'LSCSW', 'lane' => 'therapist',
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'Telehealth only',
@@ -128,6 +130,7 @@ $team = [
         'bio' => 'Sierra offers a compassionate, down-to-earth approach to therapy for adolescents and adults, and has a special heart for supporting women through infertility, postpartum struggles, and the complex emotions that often accompany these seasons.',
     ],
     'christina-wankum' => [
+        'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Christina Wankum', 'creds' => 'LMFT', 'lane' => 'therapist',
         'role' => 'Licensed Marriage & Family Therapist', 'format' => 'In-person & telehealth',
@@ -146,6 +149,7 @@ $team = [
         'bio' => 'My primary focus is on helping adults and couples on the road of life. I’m retired from US Military, conflict tolerant, and EMDR trained. If you have slices of your life that don’t fit well, call and let’s do some work together.',
     ],
     'barb-meyer' => [
+        'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'tricare', 'united', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Barb Meyer', 'creds' => 'LSCSW', 'lane' => 'therapist',
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'In-person & telehealth',
@@ -155,6 +159,7 @@ $team = [
         'bio' => 'I have a specific interest in helping people overcome feelings of anxiety and depression. I enjoy helping young people overcome school-related issues including ADHD, and helping parents learn new skills to support their children is important to me.',
     ],
     'chuck-edwards' => [
+        'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Chuck Edwards', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
@@ -164,6 +169,7 @@ $team = [
         'bio' => 'I am a skilled professional counselor specializing in trauma, addiction, personality disorders, depression, and anxiety — as well as parenting issues, emotional regulation, personal and spiritual growth, conflict resolution, and broken relationships.',
     ],
     'katlynn-miller' => [
+        'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
         'name' => 'Katlynn Miller', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
@@ -182,6 +188,7 @@ $team = [
         'bio' => 'Relationships, rupture, repair. I believe that relationships do not have to live in brokenness; there can be healing in all of our stories. I have a strong passion for working with people who are addicted to alcohol and other substances.',
     ],
     'jeremiah-coon' => [
+        'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'sunflower', 'uhc-kancare'], 'insurance_soon' => ['healthyblue'],
         'name' => 'Jeremiah Coon', 'creds' => 'LPC', 'lane' => 'therapist',
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
@@ -214,6 +221,7 @@ $team = [
         'bio_url' => '/staff/counselor-intern-wichita-ks-katrina-amrine/',
     ],
     'honora-cummings' => [
+        'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'name' => 'Honora Cummings', 'creds' => '', 'lane' => 'intern',
         'role' => 'Professional Counselor Intern', 'format' => 'In-person & telehealth',
         'photo' => 'honora-cummings.jpg', 'pos' => '50% 30%',
@@ -336,34 +344,43 @@ $conditions = [
     ],
     'womens' => [
         'image' => '/assets/images/people/womens.jpg',
-        'name' => 'Women’s & Perinatal', 'tone' => 'sky',
+        'name' => 'Women & Perinatal', 'tone' => 'sky',
         'blurb' => 'Infertility, pregnancy, postpartum and infant loss — care for the seasons that change everything.',
         'services' => ['medication', 'therapy'],
     ],
 ];
 
 /* "Find your next step" — plain-language starting points mapped to conditions. */
+/*
+ * "Find your next step" experiences. `conditions` drives "This may be connected to";
+ * `people` (team slugs, from ANew's own list) drives "People on our team who do this work" —
+ * when omitted, people are matched through the conditions. `services` are shown first.
+ */
+$therapists  = array_keys(array_filter($team, fn ($p) => $p['lane'] === 'therapist'));
+$broad_care  = array_merge($therapists, ['ashley-ludlum', 'irene-keny']);
 $symptoms = [
-    'sleep'        => ['label' => 'Trouble sleeping',                 'conditions' => ['anxiety', 'depression', 'trauma', 'stress']],
-    'interest'     => ['label' => 'Loss of interest',                 'conditions' => ['depression']],
-    'low-mood'     => ['label' => 'Persistent low mood',              'conditions' => ['depression', 'grief', 'bipolar']],
-    'focus'        => ['label' => 'Trouble concentrating',            'conditions' => ['adhd', 'anxiety', 'depression']],
-    'appetite'     => ['label' => 'Appetite changes',                 'conditions' => ['depression', 'anxiety', 'stress']],
-    'worry'        => ['label' => 'Constant worry',                   'conditions' => ['anxiety', 'ocd', 'stress']],
-    'intrusive'    => ['label' => 'Unwanted, repeating thoughts',     'conditions' => ['ocd', 'trauma', 'anxiety']],
+    'sleep'        => ['label' => 'Trouble sleeping',                 'conditions' => ['anxiety', 'depression', 'trauma', 'stress'], 'people' => $broad_care],
+    'interest'     => ['label' => 'Loss of interest',                 'conditions' => ['depression', 'adhd'], 'people' => $broad_care],
+    'low-mood'     => ['label' => 'Persistent low mood',              'conditions' => ['depression', 'grief', 'bipolar'], 'people' => $broad_care],
+    'focus'        => ['label' => 'Trouble concentrating',            'conditions' => ['adhd', 'anxiety', 'depression'], 'people' => ['lucas-shryock', 'wes-smothermon', 'jeremiah-coon', 'katlynn-miller', 'christina-wankum', 'ashley-ludlum', 'irene-keny']],
+    'appetite'     => ['label' => 'Appetite changes',                 'conditions' => ['depression', 'anxiety', 'stress'], 'people' => $broad_care],
+    'worry'        => ['label' => 'Constant worry',                   'conditions' => ['anxiety', 'ocd', 'stress'], 'people' => $broad_care],
+    'intrusive'    => ['label' => 'Unwanted, repeating thoughts',     'conditions' => ['ocd', 'trauma', 'anxiety'], 'people' => ['katlynn-miller', 'wes-smothermon', 'ashley-ludlum', 'irene-keny']],
     'memories'     => ['label' => 'Painful memories or flashbacks',   'conditions' => ['trauma']],
-    'swings'       => ['label' => 'Big mood swings',                  'conditions' => ['bipolar', 'depression']],
-    'overwhelmed'  => ['label' => 'Overwhelmed or burned out',        'conditions' => ['stress', 'anxiety', 'depression']],
-    'loss'         => ['label' => 'Grieving a loss',                  'conditions' => ['grief', 'womens']],
-    'child'        => ['label' => 'My child is struggling',           'conditions' => ['child', 'adhd', 'anxiety']],
-    'relationship' => ['label' => 'Strain in my relationships',       'conditions' => ['relationships']],
+    'swings'       => ['label' => 'Big mood swings',                  'conditions' => ['bipolar', 'depression'], 'people' => $broad_care],
+    'overwhelmed'  => ['label' => 'Overwhelmed or burned out',        'conditions' => ['stress', 'anxiety', 'depression'], 'people' => $broad_care],
+    'loss'         => ['label' => 'Grieving a loss',                  'conditions' => ['grief', 'womens'], 'people' => ['wes-smothermon', 'grace-henderson', 'sierra-fair', 'sid-mead', 'barb-meyer', 'chuck-edwards']],
+    'child'        => ['label' => 'My child is struggling',           'conditions' => ['child', 'adhd', 'anxiety'], 'people' => ['jeremiah-coon', 'christina-wankum', 'barb-meyer', 'ashley-ludlum']],
+    'relationship' => ['label' => 'Strain in my relationships',       'conditions' => ['relationships'], 'people' => ['chuck-edwards', 'sid-mead', 'grace-henderson', 'lucas-shryock']],
     'habits'       => ['label' => 'A habit or substance I can’t stop', 'conditions' => ['addiction']],
-    'pregnancy'    => ['label' => 'Pregnancy or postpartum changes',  'conditions' => ['womens', 'depression', 'anxiety']],
+    'pregnancy'    => ['label' => 'Pregnancy or postpartum changes',  'conditions' => ['womens', 'depression', 'anxiety'], 'people' => ['ashley-ludlum', 'sierra-fair']],
+    'medication'   => ['label' => 'Medication struggles',             'conditions' => ['depression', 'anxiety', 'adhd'], 'services' => ['medication', 'tms'], 'people' => ['ashley-ludlum', 'irene-keny']],
+    'military'     => ['label' => 'Military transitions',             'conditions' => ['trauma', 'stress'], 'services' => ['therapy', 'emdr'], 'people' => ['wes-smothermon', 'sid-mead', 'irene-keny']],
 ];
 
 $insurances = [
-    'Aetna', 'Ambetter', 'Blue Cross Blue Shield', 'Cigna', 'Healthy Blue',
-    'Sunflower Health Plan', 'TriWest', 'UMR', 'UnitedHealthcare',
+    'Aetna', 'Ambetter', 'Blue Cross Blue Shield', 'Cigna', 'Healthy Blue · KanCare',
+    'Sunflower Health Plan · KanCare', 'TriWest', 'UMR', 'UnitedHealthcare',
     'United Healthcare Community Plan · KanCare',
 ];
 
