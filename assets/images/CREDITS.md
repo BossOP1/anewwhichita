@@ -11,7 +11,7 @@ Stand-ins until ANew supplies more of its own photography.
 |---|---|
 | people/prairie-walk.jpg | https://images.unsplash.com/photo-1696261857496-f3936ce755f8 |
 | people/sunset-field-walk.jpg | https://images.unsplash.com/photo-1756769851993-a025e82f59b5 |
-| people/hillside-walk.jpg | https://images.unsplash.com/photo-1765639729118-55f7bdc33850 |
+| people/hillside-walk.jpg | https://images.unsplash.com/photo-1765639729118-55f7bdc33850 (edited version supplied by ANew/MyKohi, Nov 2026, with the woman and stroller removed) |
 | people/anxiety.jpg | https://images.unsplash.com/photo-1658279366796-e0c28623cd27 |
 | people/depression.jpg | https://images.unsplash.com/photo-1493836512294-502baa1986e2 |
 | people/adhd.jpg | https://images.unsplash.com/photo-1758612898701-e2f2958f219d |
