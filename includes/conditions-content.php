@@ -23,8 +23,8 @@ $condition_pages = [
         'types'   => ['Generalized anxiety', 'Panic disorder', 'Social anxiety', 'Phobias', 'Health anxiety'],
         'help'    => [
             'therapy'    => 'Learn practical tools to calm your body, untangle anxious thoughts, and gently face what you’ve been avoiding.',
-            'medication' => 'For some people, medication takes the edge off so therapy and everyday life feel more manageable.',
-            'emdr'       => 'When anxiety or panic is tied to past experiences, EMDR can help those memories lose their grip.',
+            'medication' => 'For some people, medication helps ease anxiety so therapy and everyday life feel more manageable.',
+            'emdr'       => 'When anxiety or panic is tied to past experiences, EMDR can help reduce the emotional impact of those memories.',
         ],
         'faqs'    => [
             ['Is anxiety really treatable?', 'Yes. Anxiety is one of the most treatable mental health conditions. Most people improve with therapy, and some also benefit from medication. Many people notice real change within a few months.'],
@@ -54,7 +54,7 @@ $condition_pages = [
             ['What’s the difference between sadness and depression?', 'Sadness usually passes with time. Depression tends to last — most of the day, nearly every day, for two weeks or more — and makes it hard to function. If you’re not sure which it is, a conversation with one of our providers can help.'],
             ['Is depression treatable?', 'Yes. Therapy, medication, or a combination helps most people feel better. And when those haven’t been enough, there are other options — like TMS Therapy, now offered at ANew.'],
             ['What is TMS, and who is it for?', 'Transcranial Magnetic Stimulation (TMS) is a non-invasive, FDA-cleared treatment that uses gentle magnetic pulses to stimulate areas of the brain involved in mood. It’s often considered when depression hasn’t improved enough with medication.'],
-            ['What if I’m having thoughts of suicide?', 'Please reach out now. Call or text 988 (Suicide & Crisis Lifeline), or call 911 if you’re in immediate danger. You deserve support today — and when you’re ready, our team is here for ongoing care.'],
+            ['What if I’m having thoughts of suicide?', 'Please reach out now. Call or text 988 (Suicide & Crisis Lifeline), call COMCARE Crisis Services at 316-660-7500 (24/7 in Sedgwick County), or call 911 if you’re in immediate danger. You deserve support today — and when you’re ready, our team is here for ongoing care.'],
         ],
         'related' => ['anxiety', 'bipolar', 'grief', 'womens'],
     ],
@@ -76,7 +76,7 @@ $condition_pages = [
         ],
         'callout' => ['A referral is required for ADHD assessment', 'An ADHD assessment requires a referral from a doctor or therapist. Ask your provider to fax the referral to %fax% or email it to %email%.', 'About ADHD assessment', '/adhd-assessment/'],
         'faqs'    => [
-            ['Can adults have ADHD?', 'Yes. Many adults were never diagnosed as children. An assessment can help you finally understand years of struggling with focus, organization or restlessness.'],
+            ['Can adults have ADHD?', 'Yes. Many adults were never diagnosed as children. An assessment can help you understand years of struggling with focus, organization or restlessness.'],
             ['How is ADHD diagnosed at ANew?', 'With a referral, you’ll start with an intake with one of our trained providers, take the T.O.V.A. — a computerized, objective test of attention — and then review your results and recommendations at a follow-up.'],
             ['Is medication the only treatment?', 'No. Medication helps many people, but therapy, coaching-style strategies, and family support are important too. We’ll talk through what fits you or your child.'],
         ],
@@ -119,7 +119,7 @@ $condition_pages = [
         'help'    => [
             'therapy'      => 'Space to remember, to feel what you feel, and to find a way to carry your loss as life moves forward.',
             'emdr'         => 'When a loss was sudden or traumatic, EMDR can help ease painful images and memories.',
-            'play-therapy' => 'Children grieve too — often through play. We help kids make sense of loss in a way that fits their age.',
+            'play-therapy' => 'Children grieve too. We help kids make sense of loss in a way that fits their age.',
         ],
         'faqs'    => [
             ['Is it normal for grief to come in waves?', 'Yes. Grief often comes and goes — triggered by dates, places, songs or seemingly nothing at all. That’s a normal part of grieving.'],
@@ -264,7 +264,7 @@ $condition_pages = [
 
     'womens' => [
         'title'   => 'Care for the seasons <em class="italic text-clay">that change everything.</em>',
-        'intro'   => 'Infertility, pregnancy, postpartum and infant loss can bring anxiety, depression, grief and exhaustion that deserve real care. Our team includes providers with a special heart for walking women through these seasons.',
+        'intro'   => 'Infertility, pregnancy, postpartum and infant loss can bring anxiety, depression, grief and exhaustion that deserve real care. Our team includes providers with a special heart for walking women and their partners through these seasons.',
         'signs'   => [
             'Sadness, anxiety or irritability that lasts beyond two weeks after birth', 'Scary or intrusive thoughts',
             'Trouble bonding with your baby', 'Not sleeping even when your baby sleeps',

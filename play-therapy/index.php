@@ -64,7 +64,7 @@ $svc = [
             'eyebrow' => 'Therapists who work with children and teens',
             'title' => 'People your child <em class="italic text-clay">can trust.</em>',
             'intro' => 'Our team includes therapists who love working with kids, teens and their families. We’ll help match your child with the right fit.',
-            'slugs' => ['barb-meyer', 'jeremiah-coon', 'christina-wankum', 'honora-cummings', 'wes-smothermon', 'sierra-fair', 'katlynn-miller'],
+            'slugs' => ['barb-meyer', 'jeremiah-coon', 'christina-orrison', 'honora-cummings', 'wes-smothermon', 'sierra-fair', 'katlynn-miller'],
         ],
     ],
     'faqs' => [

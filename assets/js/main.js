@@ -133,18 +133,31 @@
         renderNextStep();
     }));
 
-    /* ---------- Service page section switcher: highlight the section in view ---------- */
+    /* ---------- Section switcher: highlight the section you're in ---------- */
+    // The active section is the last one whose top has scrolled up under the sticky bars. A clicked
+    // tab stays active until its scroll finishes, so a short section doesn't hand the highlight to the next one.
     const tabLinks = $$('.tab-link[href^="#"]');
-    if (tabLinks.length && 'IntersectionObserver' in window) {
-        const byId = new Map(tabLinks.map((a) => [a.getAttribute('href').slice(1), a]));
-        const spy = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                tabLinks.forEach((a) => a.classList.remove('is-active'));
-                byId.get(entry.target.id)?.classList.add('is-active');
-            });
-        }, { rootMargin: '-45% 0px -50% 0px' });
-        byId.forEach((_, id) => { const el = document.getElementById(id); if (el) spy.observe(el); });
+    if (tabLinks.length) {
+        const sections = tabLinks.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+        const setActive = (id) => tabLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+        let locked = false;
+        let unlockTimer;
+        const update = () => {
+            if (locked) return;
+            const line = 180; // sticky header + section bar, plus a little room
+            let current = null;
+            sections.forEach((el) => { if (el.getBoundingClientRect().top <= line) current = el.id; });
+            setActive(current);
+        };
+        tabLinks.forEach((a) => a.addEventListener('click', () => {
+            setActive(a.getAttribute('href').slice(1));
+            locked = true;
+            clearTimeout(unlockTimer);
+            unlockTimer = setTimeout(() => { locked = false; }, 1200); // fallback where 'scrollend' isn't supported
+        }));
+        window.addEventListener('scrollend', () => { clearTimeout(unlockTimer); unlockTimer = setTimeout(() => { locked = false; }, 50); });
+        window.addEventListener('scroll', update, { passive: true });
+        update();
     }
 
     /* ---------- Insurance plan finder ---------- */
@@ -181,7 +194,6 @@
         const laneBtns = $$('[data-team-lane]');
         const condSel = $('[data-team-condition]');
         const tele = $('[data-team-telehealth]');
-        const summary = $('[data-team-summary]');
         let lane = 'all';
         const applyTeam = () => {
             let shown = 0;
@@ -195,11 +207,8 @@
             $$('[data-team-group]').forEach((g) => {
                 const n = $$('[data-person-card]:not(.hidden)', g).length;
                 g.classList.toggle('hidden', n === 0);
-                $('[data-team-count]', g).textContent = n;
             });
             $('[data-team-empty]').classList.toggle('hidden', shown > 0);
-            const filtered = lane !== 'all' || condSel.value || tele.checked;
-            summary.textContent = filtered ? `Showing ${shown} of ${teamCards.length} team members.` : '';
         };
         laneBtns.forEach((b) => b.addEventListener('click', () => {
             lane = b.dataset.teamLane;

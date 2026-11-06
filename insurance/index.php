@@ -61,7 +61,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="lg:col-span-5">
                 <p class="eyebrow reveal text-wheat">Paying out of pocket</p>
                 <h2 id="pay-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl">Flexible ways <em class="italic text-wheat">to pay.</em></h2>
-                <p class="reveal mt-6 text-[17px] leading-relaxed text-cream-100/75">ANew accepts the following for co-payments and self-pay sessions. Call our office to learn about per-session self-pay rates.</p>
+                <p class="reveal mt-6 text-[17px] leading-relaxed text-cream-100/75">ANew accepts the following for co-payments and self-pay sessions. Call our office to learn about per-session self-pay rates. If you’re paying out of pocket, a <a href="/good-faith-estimate/" class="font-semibold text-white underline underline-offset-4">Good Faith Estimate</a> will be provided to you from the beginning.</p>
             </div>
             <div class="grid gap-3 sm:grid-cols-2 lg:col-span-7">
                 <?php foreach ([

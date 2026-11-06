@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div class="lg:col-span-7">
                 <p class="eyebrow reveal text-ivy">Meet our team</p>
-                <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">The people who’ll walk alongside you.</h1>
+                <h1 id="page-title" class="reveal mt-5 font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl">The people who’ll <em class="italic text-clay">walk alongside you.</em></h1>
             </div>
             <div class="lg:col-span-5">
                 <p class="reveal text-lg leading-relaxed text-ink-soft">Every person here has their own lane of expertise. Together, we create care that’s personalized, coordinated, and designed just for you.</p>
@@ -45,7 +45,7 @@ include __DIR__ . '/../includes/header.php';
     <div id="directory" class="mx-auto max-w-site scroll-mt-28 px-5 sm:px-8">
         <div class="flex flex-col gap-3 border-y border-cream-200 py-4 lg:flex-row lg:items-center lg:justify-between">
             <div class="-mx-5 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:px-0" role="group" aria-label="Filter by role">
-                <button type="button" class="tab-link is-active" data-team-lane="all" aria-pressed="true">Everyone</button>
+                <button type="button" class="tab-link is-active" data-team-lane="all" aria-pressed="true">Our Team</button>
                 <?php foreach ($groups as $lane => [$label]): ?>
                     <button type="button" class="tab-link" data-team-lane="<?= e($lane) ?>" aria-pressed="false"><?= e($label) ?></button>
                 <?php endforeach; ?>
@@ -53,7 +53,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="flex flex-wrap items-center gap-2">
                 <label class="sr-only" for="team-condition">Filter by what you need help with</label>
                 <select id="team-condition" class="rounded-full border border-cream-300 bg-white px-4 py-2 text-sm text-ink" data-team-condition>
-                    <option value="">Help with… anything</option>
+                    <option value="">Help with…</option>
                     <?php foreach ($conditions as $slug => $c): ?>
                         <option value="<?= e($slug) ?>"><?= e($c['name']) ?></option>
                     <?php endforeach; ?>
@@ -63,7 +63,6 @@ include __DIR__ . '/../includes/header.php';
                 </label>
             </div>
         </div>
-        <p class="pt-6 text-sm text-ink-mute" aria-live="polite" data-team-summary></p>
     </div>
 
     <!-- ============ DIRECTORY ============ -->
@@ -74,7 +73,7 @@ include __DIR__ . '/../includes/header.php';
                 <div class="grid gap-8 lg:grid-cols-12 lg:gap-16">
                     <div class="lg:col-span-4">
                         <div class="lg:sticky lg:top-32">
-                            <h2 id="group-<?= e($lane) ?>" class="font-serif text-3xl font-light tracking-tight sm:text-4xl"><?= e($label) ?> <span class="text-ink-mute" data-team-count><?= count($members) ?></span></h2>
+                            <h2 id="group-<?= e($lane) ?>" class="font-serif text-3xl font-light tracking-tight sm:text-4xl"><?= e($label) ?></h2>
                             <p class="mt-4 max-w-sm text-[15.5px] leading-relaxed text-ink-soft"><?= e($blurb) ?><?php if (isset($group_notes[$lane])): ?> <?= e($group_notes[$lane][0]) ?><?php endif; ?></p>
                             <?php if (isset($group_notes[$lane])): [, $nl, $nh] = $group_notes[$lane]; ?>
                                 <a href="<?= e($nh) ?>" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ink underline-offset-4 hover:underline"><?= e($nl) ?> <span aria-hidden="true">→</span></a>

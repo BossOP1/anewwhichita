@@ -25,7 +25,7 @@ $therapy_types = [
             'Trauma and PTSD' => 'trauma', 'Anger management' => null, 'ADHD' => 'adhd',
             'Postpartum' => 'womens', 'Personal growth and discovery' => null, 'Addiction' => 'addiction',
         ],
-        'people' => ['wes-smothermon', 'sierra-fair', 'barb-meyer', 'katlynn-miller', 'chuck-edwards', 'grace-henderson', 'jeremiah-coon', 'christina-wankum', 'sid-mead', 'lucas-shryock', 'katrina-amrine', 'honora-cummings'],
+        'people' => ['wes-smothermon', 'sierra-fair', 'barb-meyer', 'katlynn-miller', 'chuck-edwards', 'grace-henderson', 'jeremiah-coon', 'christina-orrison', 'sid-mead', 'lucas-shryock', 'katrina-amrine', 'honora-cummings'],
     ],
     'couples' => [
         'name'  => 'Couples Therapy',
@@ -42,7 +42,7 @@ $therapy_types = [
             'Communication' => null, 'Differences' => null, 'Disconnection' => null,
             'Future goals and family planning' => null, 'Incompatibility' => null, 'Sexual concerns' => null, 'Financial stress' => null,
         ],
-        'people' => ['wes-smothermon', 'chuck-edwards', 'sid-mead', 'katlynn-miller', 'christina-wankum', 'lucas-shryock'],
+        'people' => ['wes-smothermon', 'chuck-edwards', 'sid-mead', 'katlynn-miller', 'christina-orrison', 'lucas-shryock'],
     ],
     'family' => [
         'name'  => 'Family Therapy',
@@ -59,7 +59,7 @@ $therapy_types = [
             'Divorce and separation' => null, 'Blended family dynamics' => null, 'Finances' => null,
             'Grief and loss' => 'grief', 'Mental health' => null, 'Parenting' => 'child', 'Substance use' => 'addiction',
         ],
-        'people' => ['wes-smothermon', 'christina-wankum', 'barb-meyer', 'jeremiah-coon', 'chuck-edwards'],
+        'people' => ['wes-smothermon', 'christina-orrison', 'barb-meyer', 'jeremiah-coon', 'chuck-edwards'],
     ],
 ];
 

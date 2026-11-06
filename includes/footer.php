@@ -93,7 +93,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
             <span class="mb-2 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-wheat text-prairie-deep sm:mb-0" aria-hidden="true">
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v5M12 16.5v.01"/><circle cx="12" cy="12" r="9"/></svg>
             </span>
-            <p><strong class="text-white">In crisis or need immediate help?</strong> Call or text <a href="tel:988" class="font-semibold text-white underline underline-offset-2">988</a> (Suicide &amp; Crisis Lifeline), or call <a href="tel:911" class="font-semibold text-white underline underline-offset-2">911</a>. ANew is not an emergency service.</p>
+            <p><strong class="text-white">In crisis or need immediate help?</strong> Call or text <a href="tel:988" class="font-semibold text-white underline underline-offset-2">988</a> (Suicide &amp; Crisis Lifeline), call COMCARE Crisis Services at <a href="tel:+13166607500" class="font-semibold text-white underline underline-offset-2">316-660-7500</a> (24/7, Sedgwick County), or call <a href="tel:911" class="font-semibold text-white underline underline-offset-2">911</a>. ANew is not an emergency service.</p>
         </div>
 
         <nav class="mt-10 border-t border-cream-100/10 pt-8" aria-label="Legal">

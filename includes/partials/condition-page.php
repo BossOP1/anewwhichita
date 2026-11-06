@@ -74,7 +74,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
         <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-4">
                 <p class="eyebrow reveal text-ivy">Does this sound familiar?</p>
-                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">What <?= e(['womens' => 'women’s and perinatal mental health concerns'][$slug] ?? $c_lower) ?> can feel like.</h2>
+                <h2 id="signs-title" class="reveal mt-5 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl"><?= e(['womens' => 'What women’s and perinatal mental health concerns can feel like.', 'relationships' => 'What relationship struggles can look like.'][$slug] ?? 'What ' . $c_lower . ' can feel like.') ?></h2>
                 <p class="reveal mt-6 text-[16px] leading-relaxed text-ink-soft">Everyone’s experience is different, and this list isn’t a diagnosis. If several of these feel true for you — or someone you love — it’s worth a conversation.</p>
                 <a href="/#next-step" class="reveal mt-6 inline-flex items-center gap-1.5 text-sm font-semibold underline decoration-cream-300 underline-offset-4 hover:decoration-ink">Not sure? Find your next step →</a>
             </div>
@@ -182,7 +182,7 @@ $replace = ['%fax%' => e($site['fax']), '%email%' => '<a class="font-semibold te
                     ?? $c_lower; ?>
                 <p class="reveal mt-6 text-[17px] leading-relaxed text-ink-soft">Have questions about <?= e($faq_topic) ?>? Call us at <a href="<?= e($site['phone_href']) ?>" class="font-semibold text-ink underline underline-offset-4"><?= e($site['phone']) ?></a>. We’re happy to help.</p>
                 <div class="reveal mt-8 rounded-3xl border border-clay/30 bg-clay-soft/40 p-5 text-[15px] leading-relaxed text-ink-soft">
-                    <strong class="font-semibold text-ink">In crisis?</strong> Call or text <a href="tel:988" class="font-semibold text-ink underline underline-offset-4">988</a>, or call <a href="tel:911" class="font-semibold text-ink underline underline-offset-4">911</a> in an emergency.
+                    <strong class="font-semibold text-ink">In crisis?</strong> Call or text <a href="tel:988" class="font-semibold text-ink underline underline-offset-4">988</a>, call COMCARE Crisis Services at <a href="tel:+13166607500" class="font-semibold text-ink underline underline-offset-4">316-660-7500</a> (24/7, Sedgwick County), or call <a href="tel:911" class="font-semibold text-ink underline underline-offset-4">911</a> in an emergency.
                 </div>
             </div>
             <div class="divide-y divide-cream-200 border-y border-cream-200 lg:col-span-8">

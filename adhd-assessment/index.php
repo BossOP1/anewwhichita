@@ -71,7 +71,7 @@ $svc = [
             'eyebrow' => 'After the assessment',
             'title' => 'Support for <em class="italic text-clay">what comes next.</em>',
             'intro' => 'If ADHD is part of the picture, our medication providers and therapists can help — whether that’s medication, coping strategies, or support for the whole family.',
-            'slugs' => ['ashley-ludlum', 'christina-wankum', 'barb-meyer', 'katlynn-miller', 'jeremiah-coon', 'wes-smothermon', 'chuck-edwards'],
+            'slugs' => ['ashley-ludlum', 'christina-orrison', 'barb-meyer', 'katlynn-miller', 'jeremiah-coon', 'wes-smothermon', 'chuck-edwards'],
         ],
     ],
     'faqs' => [

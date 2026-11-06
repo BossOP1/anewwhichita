@@ -93,17 +93,21 @@ $team = [
         'role' => 'Psychiatric Mental Health Nurse Practitioner', 'format' => 'In-person & telehealth',
         'photo' => 'ashley-ludlum.jpg', 'pos' => '50% 25%',
         'focus' => ['Medication management', 'Women’s mental health', 'Pregnancy & postpartum', 'Infertility & infant loss'],
-        'conditions' => ['depression', 'anxiety', 'bipolar', 'adhd', 'womens', 'ocd'],
-        'bio' => 'I have passion for all areas of mental health, especially women’s health. I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.',
+        'conditions' => ['depression', 'anxiety', 'bipolar', 'adhd', 'womens', 'ocd', 'child'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'In 2010, I graduated from Hesston College as a Registered Nurse. I began my nursing career in High Risk OB and GYN, in a hospital setting. I have also worked in surgical services and in research. It was during my time in research that I found my passion for mental health and made the decision to pursue a career in the field. I took a position at Psychiatric Consultants of Wichita working as a nurse, scribe, and Spravato Coordinator while pursuing a bachelor’s degree and eventually a master’s degree. I graduated from Walden University in 2022 as a Psychiatric Mental Health Nurse Practitioner and I continued working at PCW in this new role.',
+            'I’m very excited to grow in my career at ANew and continue to serve my community. I have passion for all areas of mental health, especially women’s health. I have a heart for helping women navigate and manage their medications before, during, and after pregnancy, infertility, or infant loss.',
+            'I’m married with two children, who keep us busy with sports and school activities. In my spare time, I enjoy reading, crafting, and spending time with my family.',
+        ]),
     ],
     'irene-keny' => [
         // TODO: confirm insurance panels and visit format with ANew.
         'insurance' => [], 'insurance_soon' => [],
         'name' => 'Irene Keny', 'creds' => 'APRN, PMHNP-BC', 'lane' => 'medication',
-        'role' => 'Psychiatric Mental Health Nurse Practitioner · Army Veteran', 'format' => '',
+        'role' => 'Psychiatric Mental Health Nurse Practitioner', 'format' => '',
         'photo' => 'irene.jpg', 'pos' => '50% 20%',
         'focus' => ['Medication management', 'Teens & adults', 'Veterans', 'PTSD & trauma'],
-        'conditions' => ['trauma', 'depression', 'anxiety', 'child'],
+        'conditions' => ['trauma', 'depression', 'anxiety'],
         'bio' => "I am a Board-Certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC), Army veteran, and registered nurse with 14 years of experience in behavioral health, acute care, and critical care. I earned my bachelor’s degree from Mid-America Nazarene University in 2012 and proudly served seven years on active duty in the U.S. Army before transitioning to the Army Reserve in 2022. My passion for mental health care led me to earn my Master of Science in Nursing with a specialization in Psychiatric-Mental Health Nurse Practitioner from Walden University in August 2025.\n\n"
             . "I am excited to join ANew and provide compassionate, evidence-based mental health care to our community. I am especially passionate about supporting teens and adults facing mental health challenges, including veterans navigating PTSD and trauma. My approach is collaborative and trauma-informed, focusing on each person’s unique needs and goals to promote healing, well-being, and recovery.\n\n"
             . "I am married and blessed with two wonderful boys. Outside of work, I enjoy cheering our kids on in soccer, exploring nature trails, and going on family bike rides.\n\n"
@@ -116,8 +120,14 @@ $team = [
         'role' => 'Co-founder · Licensed Clinical Marriage & Family Therapist', 'format' => 'In-person & telehealth',
         'photo' => 'wes-smothermon.jpg', 'pos' => '50% 20%',
         'focus' => ['Adolescents & families', 'Couples', 'Anxiety & trauma', 'Parenting'],
-        'conditions' => ['anxiety', 'trauma', 'relationships', 'child', 'addiction'],
-        'bio' => 'Today, I work with adolescents, adults, couples, and families experiencing anxiety, trauma, relationship difficulties, family conflict, parenting challenges, and struggles related to pornography. My approach is warm, practical, and grounded in an understanding of how past experiences, family relationships, and generational patterns influence our present.',
+        'conditions' => ['anxiety', 'trauma', 'relationships', 'child', 'addiction', 'adhd', 'stress', 'bipolar', 'grief'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'I believe that our life experiences, relationships, and environments profoundly shape who we are and how we respond to the world around us. The patterns we develop often begin as ways of coping, protecting ourselves, or finding connection. Although those patterns may eventually leave us feeling stuck, they do not have to define our future.',
+            'Before becoming a therapist, I served in youth ministry, where I developed a passion for supporting teenagers and their families through difficult seasons. Today, I work with adolescents, adults, couples, and families experiencing anxiety, trauma, relationship difficulties, family conflict, parenting challenges, and struggles related to pornography.',
+            'My approach is warm, practical, and grounded in an understanding of how past experiences, family relationships, and generational patterns influence our present thoughts, emotions, and behaviors. I use humor when appropriate and seek to create an environment where clients feel comfortable being honest about what they are experiencing. Together, we work to understand how problems developed, identify the patterns keeping them in place, and develop healthier ways of responding.',
+            'My Christian faith is central to who I am and how I view people. I believe every person has inherent value, that grace creates room for change, and that healing involves caring for both our emotional and spiritual lives. For clients who desire it, I welcome the opportunity to integrate Christian faith and biblical principles into the counseling process.',
+            'I am a Licensed Clinical Marriage and Family Therapist and am trained in EMDR. Whether you are working through trauma, feeling overwhelmed by anxiety, struggling in your relationships, or trying to break a pattern that has taken control of your life, my goal is to help you better understand your story and move forward with greater freedom, connection, and hope.',
+        ]),
     ],
     'sierra-fair' => [
         'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
@@ -126,18 +136,26 @@ $team = [
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'Telehealth only',
         'photo' => 'sierra-fair.jpg', 'pos' => '50% 20%',
         'focus' => ['Adolescents & adults', 'Trauma', 'Infertility', 'Postpartum'],
-        'conditions' => ['trauma', 'womens', 'depression', 'anxiety'],
-        'bio' => 'Sierra offers a compassionate, down-to-earth approach to therapy for adolescents and adults, and has a special heart for supporting women through infertility, postpartum struggles, and the complex emotions that often accompany these seasons.',
+        'conditions' => ['trauma', 'womens', 'depression', 'anxiety', 'bipolar', 'grief'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'Sierra Fair is a Licensed Specialist Clinical Social Worker who offers a compassionate, down-to-earth approach to therapy for adolescents and adults. She holds a Bachelor’s degree in Counseling from Southwestern Assemblies of God University (2017) and a Master’s in Social Work from Newman University (2021).',
+            'Sierra has worked with clients facing some of life’s most difficult moments—including families in crisis, teens who have experienced abuse and trauma, and survivors of human trafficking. Sierra has a special heart for supporting women through infertility, postpartum struggles, and the complex emotions that often accompany these seasons.',
+            'She tailors her approach to each person she works with, using a variety of therapeutic tools to meet clients where they are and help them feel seen, supported, and empowered in their healing journey.',
+            'When she’s not in session, Sierra loves working on puzzles, sipping coffee while reading a good book, and enjoying the outdoors with her husband and son.',
+        ]),
     ],
-    'christina-wankum' => [
+    'christina-orrison' => [
         'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'], 'insurance_soon' => [],
-        'name' => 'Christina Wankum', 'creds' => 'LMFT', 'lane' => 'therapist',
+        'name' => 'Christina Orrison', 'creds' => 'LMFT', 'lane' => 'therapist',
         'role' => 'Licensed Marriage & Family Therapist', 'format' => 'In-person & telehealth',
         'photo' => 'christina-wankum.jpg', 'pos' => '50% 30%',
         'focus' => ['ADHD', 'Families', 'Person-centered care'],
-        'conditions' => ['adhd', 'relationships', 'child'],
-        'bio' => 'I’m Christina, a Licensed Marriage and Family Therapist, driven by a genuine love for people and a desire to help others feel seen, heard, and valued. My practice is focused on person-centered and collaborative care.',
+        'conditions' => ['adhd', 'relationships', 'child', 'grief'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'Welcome! I’m Christina, a Licensed Marriage and Family Therapist, driven by a genuine love for people and a desire to help others feel seen, heard, and valued. My therapy practice isfocused on person-centered and collaborative care, emphasizing the power of listening withcuriosity and creating a safe, supportive environment for my clients and their families.Through my own journey of understanding the effects and systems that set my ADHD brain upfor success, I have integrated these insights into my practice. I particularly enjoy working withchildren of all ages and their parents, helping them build systems that foster self-confidence andsuccess. My passion is working specifically with neurodivergence (ADHD/ASD) with childrenand within couple systems and addressing the trauma that often accompanies these diagnoses.Additionally, I am pursuing certification in play therapy to better support children and theirfamilies.',
+            'I have experience working with individuals of all ages, telehealth with those in rural communities, families, and couples. I believe that every person possesses the tools needed tosucceed, and my goal is to foster that growth through an emotionally safe therapeuticrelationship.',
+        ]),
     ],
     'sid-mead' => [
         'insurance' => ['aetna', 'bcbs', 'tricare'], 'insurance_soon' => [],
@@ -146,7 +164,9 @@ $team = [
         'photo' => 'sid-mead.jpg', 'pos' => '50% 30%',
         'focus' => ['Adults & couples', 'Veterans', 'EMDR trained'],
         'conditions' => ['relationships', 'trauma'],
-        'bio' => 'My primary focus is on helping adults and couples on the road of life. I’m retired from US Military, conflict tolerant, and EMDR trained. If you have slices of your life that don’t fit well, call and let’s do some work together.',
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'I embarked on this second career 20 years ago, graduating from Friends University with a master’s in Marriage and Family Therapy. I’ve been licensed at the clinical level since 2007. My primary focus is on helping adults and couples on the road of life. I’m retired from US Military, conflict tolerant, EMDR trained, and cordite exposure. I am Christian, and a member of Focus on the Family network of counselors. I reside in west Wichita with my bride of 50+ years. If you have slices of your life that don’t fit well, call and let’s do some work together.',
+        ]),
     ],
     'barb-meyer' => [
         'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
@@ -155,8 +175,12 @@ $team = [
         'role' => 'Licensed Specialist Clinical Social Worker', 'format' => 'In-person & telehealth',
         'photo' => 'barb-meyer.jpg', 'pos' => '50% 30%',
         'focus' => ['All ages', 'Anxiety & depression', 'School & ADHD', 'Trauma-informed'],
-        'conditions' => ['anxiety', 'depression', 'adhd', 'trauma', 'child'],
-        'bio' => 'I have a specific interest in helping people overcome feelings of anxiety and depression. I enjoy helping young people overcome school-related issues including ADHD, and helping parents learn new skills to support their children is important to me.',
+        'conditions' => ['anxiety', 'depression', 'adhd', 'trauma', 'child', 'grief'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'Barb is a master-level clinical social worker with experience in child welfare, schools, and crisis work. I enjoy working with clients of all ages to achieve their potential. I have a specific interest in helping people overcome feelings of anxiety and depression including suicide ideation. I enjoy helping young people overcome school-related issues including ADHD and various mental health issues. Helping parents learn new skills to support their children is important to me.',
+            'Barb’s educational background includes a Bachelors in Social Work from Kansas State University and a Masters in Social Work from Kansas University. My training also includes trauma-informed practices.',
+            'Barb is committed to helping people who experience trauma or severe life stressors. I have a passion to bring healing to people who have been through a traumatic/stressful experience. I help my clients who include children, young adults, and families to find healthy perceptions of themselves and strengthen their relationships so they can know themselves as peaceful, complete, and safe.',
+        ]),
     ],
     'chuck-edwards' => [
         'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
@@ -165,8 +189,13 @@ $team = [
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'chuck-edwards.jpg', 'pos' => '50% 20%',
         'focus' => ['Trauma', 'Addiction', 'Couples (Gottman)', 'Emotional regulation'],
-        'conditions' => ['trauma', 'addiction', 'depression', 'anxiety', 'relationships'],
-        'bio' => 'I am a skilled professional counselor specializing in trauma, addiction, personality disorders, depression, and anxiety — as well as parenting issues, emotional regulation, personal and spiritual growth, conflict resolution, and broken relationships.',
+        'conditions' => ['trauma', 'addiction', 'depression', 'anxiety', 'relationships', 'adhd', 'stress', 'bipolar', 'child', 'grief', 'womens'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'With a deep commitment to guiding individuals and families through life’s most difficult challenges. I am a skilled professional counselor specializing in trauma, addiction, personality disorders, depression, and anxiety. As well as parenting issues, emotional regulation issues, personal/spiritual growth, conflict resolution, work-related issues, and broken relationships.',
+            'Over the past 15 years I’ve worked on my own root wounds and through those personal healing experiences I have learned to combine a compassionate, client-centered, emotionally focused approach with evidence-based methods to help clients uncover, understand, and heal the wounded parts of themselves. I draw on my expertise and experience to create a safe, relationship-based environment through exploring all of the parts that make up a person.',
+            'I am a certified NeuroChange Specialist. I’m also trained in Symbis (premarital) assessments and have completed Level 1 & Level 2 training of Gottman Method Couples Therapy. No matter what skill or tool I use, my goal is to create a safe, grace-filled, and nonjudgmental space. Wherein individuals, couples, and families can move toward healing, growth, and transformation.',
+            'Whether guiding someone through recovery, helping a couple rebuild trust, or supporting individuals in reclaiming their sense of self, I am dedicated to fostering lasting change and emotional well-being. For those seeking hope and restoration, I offer a path to deeper understanding, healthier relationships, and renewed purpose.',
+        ]),
     ],
     'katlynn-miller' => [
         'ages' => 'Works with teens & adults', // shown on provider cards so parents know who sees children
@@ -175,8 +204,13 @@ $team = [
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'katlynn-miller.jpg', 'pos' => '50% 30%',
         'focus' => ['Trauma & grief', 'Depression & anxiety', 'ADHD & bipolar', 'Couples'],
-        'conditions' => ['trauma', 'depression', 'anxiety', 'grief', 'adhd', 'bipolar', 'relationships'],
-        'bio' => 'I strive to create a warm, nonjudgmental space where clients feel seen, heard, and empowered. I work with individuals navigating trauma, depression, anxiety, grief, ADHD, and bipolar disorder, and support couples seeking to rebuild trust or deepen their connection.',
+        'conditions' => ['trauma', 'depression', 'anxiety', 'grief', 'adhd', 'bipolar', 'relationships', 'ocd', 'stress', 'child'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'As a counselor, I strive to create a warm, nonjudgmental space where clients feel seen, heard, and empowered. My approach is rooted in person-centered therapy, emphasizing empathy, authenticity, and respect for each individual’s journey. While I primarily draw from person-centered modalities, I tailor each treatment plan to meet the unique needs and goals of my clients.',
+            'I work with individuals navigating a wide range of concerns, including trauma, depression, anxiety, grief, ADHD, and bipolar disorder. I also support couples seeking to improve communication, rebuild trust, or deepen their connection. My goal is to walk alongside you as we explore the patterns, emotions, and experiences that shape your life, and collaboratively work toward healing and growth.',
+            'I earned my master’s degree in Clinical Mental Health Counseling from Wichita State University. It is where I received training in evidence-based practices and developed a passion for supporting clients through life’s challenges.',
+            'Outside of the therapy room, you can find me spending time with my family and friends or at the gym recharging both mentally and physically.',
+        ]),
     ],
     'lucas-shryock' => [
         'insurance' => ['aetna', 'ambetter', 'bcbs', 'sunflower'], 'insurance_soon' => ['healthyblue'],
@@ -184,8 +218,12 @@ $team = [
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'lucas-shryock.jpg', 'pos' => '50% 20%',
         'focus' => ['Relationships', 'Substance use', 'Men’s recovery', 'CBT & narrative therapy'],
-        'conditions' => ['addiction', 'relationships'],
-        'bio' => 'Relationships, rupture, repair. I believe that relationships do not have to live in brokenness; there can be healing in all of our stories. I have a strong passion for working with people who are addicted to alcohol and other substances.',
+        'conditions' => ['addiction', 'relationships', 'stress'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'Relationships, rupture, repair. A commonality that all humans have is a desire for connection in relationships. Sadly, however, everybody knows what it is like to experience rupture throughout different relationships. Though, through hard work and intentionality, I believe that relationships do not have to live in brokenness; but instead, there can be healing in all of our stories.',
+            'My name is Lucas Shryock and I am a graduate of Emporia State University. As a former youth pastor, I have been able to experience the sweet joy of walking with people in their stories and seeking healing and restoration so that they could become emotionally healthy people.',
+            'As an LPC, I have a strong passion for walking with married men who are struggling with pornography and sex addictions. I also have a strong passion for working with people who are addicted to alcohol and other substances. I will work hard to walk with you in your story by implementing different techniques such as CBT, narrative therapy, solutions focused therapy and other modalities. I’m excited to strive towards healing with you in our time in therapy',
+        ]),
     ],
     'jeremiah-coon' => [
         'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
@@ -194,8 +232,12 @@ $team = [
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'jeremiah-coon.jpg', 'pos' => '50% 30%',
         'focus' => ['Youth & adults', 'Families', 'Autism spectrum experience'],
-        'conditions' => ['child', 'relationships', 'anxiety'],
-        'bio' => 'I enjoy working with both youth and adults, and spent two and a half years working with children and adolescents diagnosed with ASD. I was born and raised in Wichita and love my city. My goal is to help you run your race no matter where you find yourself in life.',
+        'conditions' => ['child', 'relationships', 'anxiety', 'adhd', 'stress'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'We are all running a race. Whether we are pacing ourselves too fast, too slow, or just right, we are all moving towards a goal. Over the course of my race, I have had the opportunity to work with many youths and adults in ministry and clinical settings. In 2021, I graduated with my bachelor’s from Ozark Christian College and kept my educational race going by attending Liberty University to obtain my master’s in Clinical Mental Health Counseling.',
+            'I enjoy working with both youth and adults. I’ve learned my passion for helping youth in ministry settings. I’ve furthered this passion by spending two and a half years working with children and adolescents diagnosed with ASD. I currently work with families as an MST therapist. And also help parents eliminate the risk of their children being removed from their houses. My goal is to help you run your race no matter where you find yourself in life. I’d be honored to run the race alongside you.',
+            'I was born and raised in Wichita and love my city. I enjoy triathlons, playing any sport on a field, and camping. I’m also finding every excuse to go to Colorado or Arkansas to rock climb, snowboard, mountain bike, or hike tall mountains. When I’m not running around for fun I love spending time with my family and friends around a fire pit if possible.',
+        ]),
     ],
     'grace-henderson' => [
         'insurance' => [], 'insurance_soon' => ['aetna', 'ambetter', 'bcbs', 'healthyblue', 'sunflower', 'uhc-kancare'],
@@ -203,8 +245,11 @@ $team = [
         'role' => 'Licensed Professional Counselor', 'format' => 'In-person & telehealth',
         'photo' => 'grace-henderson.jpg', 'pos' => '50% 25%',
         'focus' => ['Adults', 'Anxiety & overthinking', 'Stress & burnout', 'Life transitions'],
-        'conditions' => ['anxiety', 'stress', 'grief', 'relationships'],
-        'bio' => 'Grace believes counseling should feel like a space where clients can be fully themselves without judgment, pressure, or the expectation that they need to have everything figured out. Her areas of interest include anxiety and overthinking, stress and burnout, self-esteem, grief, and major life transitions.',
+        'conditions' => ['anxiety', 'stress', 'grief', 'relationships', 'bipolar'],
+        'bio' => implode("\n\n", [ // full bio from anewwichita.com
+            'Grace believes counseling should feel like a space where clients can be fully themselves without judgment, pressure, or the expectation that they need to have everything figured out. She strives to create a warm, genuine, and collaborative relationship in which clients feel heard, supported, and empowered to make changes that are meaningful to them.',
+            'Grace works with adults across all stages of life. Her areas of interest include anxiety and overthinking, stress and burnout, self-esteem, relationship concerns, grief and loss, boundary setting, perfectionism, people-pleasing, and major life transitions. She welcomes clients from a variety of backgrounds and enjoys helping individuals better understand themselves, recognize their strengths, and create meaningful change in their lives.Grace uses an integrative approach, drawing from a variety of counseling practices based on each client’s individual needs, experiences, and goals. Her work is grounded in a warm, person-centered relationship while remaining solution-focused and goal-oriented. She helps clients explore the thoughts, emotions, and patterns influencing their lives while also identifying practical and realistic steps they can take to move forward. Her counseling style is down-to-earth, compassionate, and collaborative, with space for both meaningful reflection and genuine conversation.Grace earned her Master of Education in Clinical Mental Health Counseling from Wichita State University and is a Licensed Professional Counselor in Kansas. Originally from Wyoming, Grace now calls Wichita home. Outside of counseling, she e',
+        ]),
     ],
     'katrina-amrine' => [
         'name' => 'Katrina Amrine', 'creds' => '', 'lane' => 'intern',
@@ -362,7 +407,7 @@ $symptoms = [
     'sleep'        => ['label' => 'Trouble sleeping',                 'conditions' => ['anxiety', 'depression', 'trauma', 'stress'], 'people' => $broad_care],
     'interest'     => ['label' => 'Loss of interest',                 'conditions' => ['depression', 'adhd'], 'people' => $broad_care],
     'low-mood'     => ['label' => 'Persistent low mood',              'conditions' => ['depression', 'grief', 'bipolar'], 'people' => $broad_care],
-    'focus'        => ['label' => 'Trouble concentrating',            'conditions' => ['adhd', 'anxiety', 'depression'], 'people' => ['lucas-shryock', 'wes-smothermon', 'jeremiah-coon', 'katlynn-miller', 'christina-wankum', 'ashley-ludlum', 'irene-keny']],
+    'focus'        => ['label' => 'Trouble concentrating',            'conditions' => ['adhd', 'anxiety', 'depression'], 'people' => ['lucas-shryock', 'wes-smothermon', 'jeremiah-coon', 'katlynn-miller', 'christina-orrison', 'ashley-ludlum', 'irene-keny']],
     'appetite'     => ['label' => 'Appetite changes',                 'conditions' => ['depression', 'anxiety', 'stress'], 'people' => $broad_care],
     'worry'        => ['label' => 'Constant worry',                   'conditions' => ['anxiety', 'ocd', 'stress'], 'people' => $broad_care],
     'intrusive'    => ['label' => 'Unwanted, repeating thoughts',     'conditions' => ['ocd', 'trauma', 'anxiety'], 'people' => ['katlynn-miller', 'wes-smothermon', 'ashley-ludlum', 'irene-keny']],
@@ -370,7 +415,7 @@ $symptoms = [
     'swings'       => ['label' => 'Big mood swings',                  'conditions' => ['bipolar', 'depression'], 'people' => $broad_care],
     'overwhelmed'  => ['label' => 'Overwhelmed or burned out',        'conditions' => ['stress', 'anxiety', 'depression'], 'people' => $broad_care],
     'loss'         => ['label' => 'Grieving a loss',                  'conditions' => ['grief', 'womens'], 'people' => ['wes-smothermon', 'grace-henderson', 'sierra-fair', 'sid-mead', 'barb-meyer', 'chuck-edwards']],
-    'child'        => ['label' => 'My child is struggling',           'conditions' => ['child', 'adhd', 'anxiety'], 'people' => ['jeremiah-coon', 'christina-wankum', 'barb-meyer', 'ashley-ludlum']],
+    'child'        => ['label' => 'My child is struggling',           'conditions' => ['child', 'adhd', 'anxiety'], 'people' => ['jeremiah-coon', 'christina-orrison', 'barb-meyer', 'ashley-ludlum']],
     'relationship' => ['label' => 'Strain in my relationships',       'conditions' => ['relationships'], 'people' => ['chuck-edwards', 'sid-mead', 'grace-henderson', 'lucas-shryock']],
     'habits'       => ['label' => 'A habit or substance I can’t stop', 'conditions' => ['addiction']],
     'pregnancy'    => ['label' => 'Pregnancy or postpartum changes',  'conditions' => ['womens', 'depression', 'anxiety'], 'people' => ['ashley-ludlum', 'sierra-fair']],

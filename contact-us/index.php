@@ -46,7 +46,7 @@ include __DIR__ . '/../includes/header.php';
                 <dl class="reveal mt-10 grid gap-6 sm:grid-cols-2">
                     <div>
                         <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">Phone</dt>
-                        <dd class="mt-1.5"><a href="<?= e($site['phone_href']) ?>" class="font-serif text-3xl hover:text-clay"><?= e($site['phone']) ?></a></dd>
+                        <dd class="mt-1.5 text-[16px]"><a href="<?= e($site['phone_href']) ?>" class="underline decoration-cream-300 underline-offset-4 hover:text-ink"><?= e($site['phone']) ?></a></dd>
                     </div>
                     <div>
                         <dt class="text-xs font-semibold uppercase tracking-[0.16em] text-ink-mute">Visit</dt>
@@ -130,7 +130,7 @@ include __DIR__ . '/../includes/header.php';
                             <img src="/assets/images/team/<?= e($p['photo']) ?>" alt="" class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.04]" style="object-position: <?= e($p['pos']) ?>" loading="lazy">
                         </span>
                         <span class="mt-4 block font-serif text-xl leading-tight"><?= e($p['name']) ?></span>
-                        <span class="mt-1 block text-sm text-ink-soft"><?= e($p['role']) ?></span>
+                        <span class="mt-1 block text-sm text-ink-soft"><?= e($p['role'] . ($p['creds'] ? ', ' . strtok($p['creds'], ',') : '')) ?></span>
                     </button>
                 </li>
             <?php endforeach; ?>
