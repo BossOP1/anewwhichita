@@ -45,8 +45,9 @@ $site = [
 
 /* Optional: drop in an mp4/webm of the Flint Hills (moving grass, clouds, sunset)
    and the hero switches from photo to looping video automatically. */
-$hero_video = '';            // e.g. '/assets/video/flint-hills.mp4'
-$hero_image = '/assets/images/people/sunset-field-walk.jpg';
+// Pexels "Walking in the Field" by Marian Croitoru (free Pexels License), trimmed to 20s at 720p.
+$hero_video = '/assets/video/hero-wheat-field.mp4';
+$hero_image = '/assets/images/scenery/hero-wheat-field.jpg'; // first frame of the video: poster + fallback
 
 $services = [
     'therapy' => [
@@ -269,7 +270,7 @@ $team = [
         'ages' => 'Works with kids & teens', // shown on provider cards so parents know who sees children
         'name' => 'Honora Cummings', 'creds' => '', 'lane' => 'intern',
         'role' => 'Professional Counselor Intern', 'format' => 'In-person & telehealth',
-        'photo' => 'honora-cummings.jpg', 'pos' => '50% 30%',
+        'photo' => 'honora-cummings.jpg', 'pos' => '50% 25%',
         'self_pay' => '$30 per session',
         'focus' => ['Children & families', 'Emotional regulation', 'Behavioral concerns', 'Life transitions'],
         'conditions' => ['child', 'relationships', 'anxiety'],

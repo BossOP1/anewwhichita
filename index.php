@@ -11,11 +11,11 @@ include __DIR__ . '/includes/header.php';
     <section class="px-3 pt-2 sm:px-4" aria-labelledby="hero-title">
         <div class="relative isolate flex min-h-[88svh] overflow-hidden rounded-4xl bg-prairie-deep text-white sm:min-h-[86vh]">
             <?php if ($hero_video): ?>
-                <video class="absolute inset-0 -z-10 h-full w-full object-cover" autoplay muted loop playsinline poster="<?= e($hero_image) ?>">
+                <video class="absolute inset-0 -z-10 h-full w-full object-cover object-[45%_50%]" autoplay muted loop playsinline poster="<?= e($hero_image) ?>" aria-hidden="true" data-hero-video>
                     <source src="<?= e($hero_video) ?>" type="video/mp4">
                 </video>
             <?php else: ?>
-                <img src="<?= e($hero_image) ?>" alt="A young woman walking across a field beside sunflowers at sunset" class="hero-drift absolute inset-0 -z-10 h-full w-full object-cover object-[35%_50%]" fetchpriority="high">
+                <img src="<?= e($hero_image) ?>" alt="A young woman standing in a wheat field at sunset" class="hero-drift absolute inset-0 -z-10 h-full w-full object-cover object-[35%_50%]" fetchpriority="high">
             <?php endif; ?>
             <div class="hero-glow absolute -inset-[10%] -z-10" aria-hidden="true"></div>
             <div class="absolute inset-0 -z-10 bg-gradient-to-t from-[#16201A]/85 via-[#16201A]/30 to-[#16201A]/5"></div>

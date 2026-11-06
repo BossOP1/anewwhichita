@@ -38,6 +38,13 @@
         window.addEventListener('hashchange', syncNav);
     }
 
+    /* ---------- Hero video: stay still for people who prefer reduced motion ---------- */
+    const heroVideo = $('[data-hero-video]');
+    if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.pause();
+    }
+
     /* ---------- Scroll reveal ---------- */
     const reveals = $$('.reveal');
     if ('IntersectionObserver' in window) {
