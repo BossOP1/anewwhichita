@@ -23,8 +23,7 @@ include __DIR__ . '/../includes/header.php';
 
     <!-- ============ PAGE HERO ============ -->
     <section class="mx-auto max-w-site px-5 pb-14 pt-10 sm:px-8 lg:pb-20 lg:pt-14" aria-labelledby="page-title">
-        <div class="grid items-end gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-7">
+        <div class="max-w-3xl">
                 <nav aria-label="Breadcrumb" class="reveal text-sm text-ink-mute">
                     <a href="/" class="hover:text-ink">Home</a> <span aria-hidden="true">/</span> <span class="text-ink">Insurance &amp; Payment</span>
                 </nav>
@@ -39,18 +38,22 @@ include __DIR__ . '/../includes/header.php';
                     <a href="<?= e($site['schedule_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Schedule an Appointment</a>
                     <a href="<?= e($site['phone_href']) ?>" class="btn-ghost">Call to check your coverage</a>
                 </div>
+        </div>
+
+        <!-- Plans: full-width logo wall under the hero text -->
+        <div class="reveal mt-12 rounded-4xl bg-cream-100 p-6 sm:p-8 lg:mt-16 lg:p-10" style="--d: 120ms">
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-mute">Plans we’re contracted with</p>
+                <p class="text-sm text-ink-soft">Accepted plans vary by provider. Call us and we’ll confirm yours.</p>
             </div>
-            <div class="reveal lg:col-span-5" style="--d: 120ms">
-                <div class="rounded-4xl bg-cream-100 p-7 sm:p-8">
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink-mute">Plans we’re contracted with</p>
-                    <ul class="mt-5 flex flex-wrap gap-2">
-                        <?php foreach ($insurances as $insurer): ?>
-                            <li class="rounded-full bg-white px-3.5 py-2 text-[14px] font-medium"><?= e($insurer) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <p class="mt-5 text-sm leading-relaxed text-ink-soft">Accepted plans vary by provider. Call us and we’ll confirm yours.</p>
-                </div>
-            </div>
+            <ul class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5" aria-label="Insurance plans we accept">
+                <?php foreach ($insurance_logos as [$ins_name, $ins_logo, $ins_note, $ins_h]): ?>
+                    <li class="group flex h-[92px] flex-col items-center justify-center gap-1 rounded-2xl bg-white px-3">
+                        <img src="/assets/images/insurance/<?= e($ins_logo) ?>" alt="<?= e($ins_name) ?>" class="<?= e($ins_h) ?> w-auto max-w-full object-contain grayscale opacity-60 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" decoding="async">
+                        <?php if ($ins_note): ?><span class="whitespace-nowrap text-[11.5px] font-medium text-ink-mute"><?= e($ins_note) ?></span><?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </section>
 

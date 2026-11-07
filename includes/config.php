@@ -430,6 +430,20 @@ $insurances = [
     'United Healthcare Community Plan · KanCare',
 ];
 
+/* Homepage logo wall: same plans as $insurances. Sources in assets/images/insurance/CREDITS.md. */
+$insurance_logos = [ // [name, file, note, logo height class — tuned so they read at a similar size]
+    ['Aetna',                           'aetna.svg',                  '',                          'h-7'],
+    ['Ambetter Health',                 'ambetter.png',               '',                          'h-10'],
+    ['Blue Cross Blue Shield',          'blue-cross-blue-shield.svg', '',                          'h-8'],
+    ['Cigna Healthcare',                'cigna-healthcare.svg',       '',                          'h-12'],
+    ['UnitedHealthcare',                'unitedhealthcare.svg',       '',                          'h-10'],
+    ['UMR',                             'umr.svg',                    '',                          'h-11'],
+    ['TriWest Healthcare Alliance',     'triwest.png',                '',                          'h-8'],
+    ['Healthy Blue',                    'healthy-blue.svg',           'KanCare',                   'h-7'],
+    ['Sunflower Health Plan',           'sunflower-health-plan.png',  'KanCare',                   'h-11'],
+    ['UnitedHealthcare Community Plan', 'unitedhealthcare.svg',       'Community Plan · KanCare',  'h-8'],
+];
+
 /*
  * Plans each provider accepts, from their staff bios on anewwichita.com.
  * Practice-level contracts ($insurances above) also list Cigna, TriWest and UMR,

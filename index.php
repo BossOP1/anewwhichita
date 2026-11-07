@@ -337,9 +337,12 @@ include __DIR__ . '/includes/header.php';
                 </div>
             </div>
             <div class="lg:col-span-7 lg:pt-12">
-                <ul class="reveal flex flex-wrap gap-2.5">
-                    <?php foreach ($insurances as $insurer): ?>
-                        <li class="rounded-full bg-cream-100 px-4 py-2.5 text-[15px] font-medium text-ink-soft"><?= e($insurer) ?></li>
+                <ul class="reveal flex flex-wrap justify-center gap-3" aria-label="Insurance plans we accept">
+                    <?php foreach ($insurance_logos as [$ins_name, $ins_logo, $ins_note, $ins_h]): ?>
+                        <li class="group flex h-[92px] w-[calc((100%-0.75rem)/2)] flex-col items-center justify-center gap-1.5 rounded-2xl border border-cream-300 bg-white px-3 sm:w-[calc((100%-1.5rem)/3)] lg:w-[calc((100%-2.25rem)/4)]">
+                            <img src="/assets/images/insurance/<?= e($ins_logo) ?>" alt="<?= e($ins_name) ?>" class="<?= e($ins_h) ?> w-auto max-w-full object-contain grayscale opacity-60 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" decoding="async">
+                            <?php if ($ins_note): ?><span class="whitespace-nowrap text-[12px] font-medium text-ink-mute"><?= e($ins_note) ?></span><?php endif; ?>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
                 <p class="reveal mt-8 text-[15px] leading-relaxed text-ink-soft">Paying out of pocket? We accept cash, all major credit cards, CareCredit, HSA and FSA.<br> <a href="<?= e($site['carecredit_url']) ?>" target="_blank" rel="noopener" class="font-semibold text-ink underline underline-offset-4">Apply for CareCredit</a></p>
