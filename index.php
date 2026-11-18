@@ -11,11 +11,11 @@ include __DIR__ . '/includes/header.php';
     <section class="px-3 pt-2 sm:px-4" aria-labelledby="hero-title">
         <div class="relative isolate flex min-h-[88svh] overflow-hidden rounded-4xl bg-prairie-deep text-white sm:min-h-[86vh]">
             <?php if ($hero_video): ?>
-                <video class="absolute inset-0 -z-10 h-full w-full object-cover object-[45%_50%]" autoplay muted loop playsinline poster="<?= e($hero_image) ?>" aria-hidden="true" data-hero-video>
+                <video class="absolute inset-0 -z-10 h-full w-full object-cover object-center" autoplay muted loop playsinline poster="<?= e($hero_image) ?>" aria-hidden="true" data-hero-video>
                     <source src="<?= e($hero_video) ?>" type="video/mp4">
                 </video>
             <?php else: ?>
-                <img src="<?= e($hero_image) ?>" alt="A young woman standing in a wheat field at sunset" class="hero-drift absolute inset-0 -z-10 h-full w-full object-cover object-[35%_50%]" fetchpriority="high">
+                <img src="<?= e($hero_image) ?>" alt="Golden wheat swaying in the breeze" class="hero-drift absolute inset-0 -z-10 h-full w-full object-cover object-center" fetchpriority="high">
             <?php endif; ?>
             <div class="hero-glow absolute -inset-[10%] -z-10" aria-hidden="true"></div>
             <div class="absolute inset-0 -z-10 bg-gradient-to-t from-[#16201A]/85 via-[#16201A]/30 to-[#16201A]/5"></div>
@@ -85,7 +85,7 @@ include __DIR__ . '/includes/header.php';
                 <a href="/about/" class="reveal mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-ink underline-offset-4 hover:underline">Read our story <span aria-hidden="true">→</span></a>
             </div>
             <figure class="reveal lg:col-span-6" style="--d: 120ms">
-                <img src="/assets/images/office/front-desk.jpg" alt="Two smiling ANew team members at the front desk of the Wichita office" class="aspect-[5/4] w-full rounded-4xl object-cover object-[50%_40%] lg:aspect-[1/1]" loading="lazy">
+                <img src="/assets/images/office/reception.jpg" alt="The bright reception area of ANew Mental Health in East Wichita, with the ANew logo on the wall" class="aspect-[5/4] w-full rounded-4xl object-cover object-[80%_50%] lg:aspect-[1/1]" loading="lazy">
             </figure>
         </div>
     </section>
