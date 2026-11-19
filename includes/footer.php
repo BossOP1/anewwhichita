@@ -83,8 +83,8 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
                     </div>
                 </dl>
             </div>
-            <div class="overflow-hidden rounded-3xl bg-white/5 lg:col-span-7">
-                <iframe src="<?= e($map_embed) ?>" title="Map showing ANew Mental Health at <?= e($address_full) ?>" class="h-72 w-full border-0 lg:h-full lg:min-h-[340px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="relative overflow-hidden rounded-3xl bg-white/5 lg:col-span-7">
+                <?= consent_embed('map', $map_embed, 'Map showing ANew Mental Health at ' . $address_full, 'h-72 w-full border-0 lg:h-full lg:min-h-[340px]', 'loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen', $site['maps_url'], true) ?>
             </div>
         </div>
         <?php endif; ?>
@@ -101,6 +101,7 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
                 <?php foreach ($legal_pages as $url => $label): ?>
                     <li><a href="<?= e($url) ?>" class="text-cream-200/85 underline-offset-4 hover:text-white hover:underline"><?= e($label) ?></a></li>
                 <?php endforeach; ?>
+                <li><button type="button" class="text-cream-200/85 underline-offset-4 hover:text-white hover:underline" data-consent-open>Cookie settings</button></li>
             </ul>
         </nav>
 
@@ -110,6 +111,16 @@ $map_embed    = 'https://maps.google.com/maps?q=' . rawurlencode('ANew Mental He
         </div>
     </div>
 </footer>
+
+<!-- Cookie banner: shown until the visitor chooses. Choice is kept in localStorage (see main.js). -->
+<section class="fixed inset-x-3 bottom-[5.25rem] z-50 rounded-3xl border border-cream-200 bg-white p-5 shadow-2xl shadow-ink/15 sm:inset-x-auto sm:bottom-6 sm:left-6 sm:max-w-md sm:p-6" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text" data-consent-banner hidden>
+    <h2 id="consent-title" class="font-serif text-xl">Your privacy</h2>
+    <p id="consent-text" class="mt-2 text-sm leading-relaxed text-ink-soft">We don’t use advertising or tracking cookies. Our maps and videos come from Google and YouTube, which may set their own cookies. Choose whether to load them. <a href="/privacy-policy/#cookies" class="font-semibold text-ink underline underline-offset-4">Privacy Policy</a></p>
+    <div class="mt-4 flex flex-col gap-2 sm:flex-row">
+        <button type="button" class="inline-flex h-11 items-center sm:flex-1 justify-center rounded-full bg-ink px-5 text-sm font-semibold text-white transition hover:bg-ink/90" data-consent-choice="all">Accept all</button>
+        <button type="button" class="inline-flex h-11 items-center sm:flex-1 justify-center rounded-full border border-cream-300 px-5 text-sm font-semibold text-ink transition hover:border-ink" data-consent-choice="essential">Essential only</button>
+    </div>
+</section>
 
 <!-- Mobile action bar -->
 <div class="fixed inset-x-3 bottom-3 z-40 grid grid-cols-[auto_1fr] gap-2 rounded-full border border-cream-200 bg-white/90 p-1.5 shadow-lg shadow-ink/10 backdrop-blur sm:hidden" data-mobile-bar>

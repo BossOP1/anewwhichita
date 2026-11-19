@@ -255,8 +255,8 @@ include __DIR__ . '/includes/header.php';
         <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <?php foreach ($videos as $video): ?>
                 <figure>
-                    <div class="aspect-video overflow-hidden rounded-3xl bg-cream-200">
-                        <iframe class="h-full w-full" src="https://www.youtube-nocookie.com/embed/<?= e($video['youtube_id']) ?>" title="<?= e($video['title']) ?>" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    <div class="relative aspect-video overflow-hidden rounded-3xl bg-cream-200">
+                        <?= consent_embed('video', 'https://www.youtube-nocookie.com/embed/' . $video['youtube_id'], $video['title'], 'h-full w-full', 'loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen', 'https://www.youtube.com/watch?v=' . $video['youtube_id']) ?>
                     </div>
                     <figcaption class="mt-3 font-serif text-lg"><?= e($video['title']) ?></figcaption>
                 </figure>

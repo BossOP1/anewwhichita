@@ -14,6 +14,30 @@ if (!function_exists('e')) {
     }
 }
 
+/*
+ * Third-party embed (Google Maps, YouTube) that waits for cookie consent.
+ * The iframe has no src until the visitor accepts cookies or clicks the placeholder
+ * (see the consent code in assets/js/main.js). The parent element must be `relative`.
+ */
+if (!function_exists('consent_embed')) {
+    function consent_embed(string $kind, string $src, string $title, string $class, string $attrs = '', string $open_url = '', bool $dark = false): string
+    {
+        $is_map  = $kind === 'map';
+        $service = $is_map ? 'Google Maps' : 'YouTube';
+        $label   = $is_map ? 'Load map' : 'Play video';
+        $open    = $open_url ?: $src;
+        $tone    = $dark ? 'bg-white/5 text-cream-100' : 'bg-cream-200 text-ink';
+        $muted   = $dark ? 'text-cream-200/75' : 'text-ink-soft';
+        $btn     = $dark ? 'bg-cream-100 text-ink hover:bg-white' : 'bg-ink text-white hover:bg-ink/90';
+        return '<iframe data-consent-src="' . e($src) . '" title="' . e($title) . '" class="' . e($class) . '" ' . $attrs . '></iframe>'
+            . '<div class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center ' . $tone . '" data-consent-placeholder>'
+            . '<p class="max-w-xs text-sm leading-relaxed ' . $muted . '">This ' . ($is_map ? 'map' : 'video') . ' is provided by ' . $service . ', which may set cookies.</p>'
+            . '<button type="button" class="rounded-full px-5 py-2.5 text-sm font-semibold transition ' . $btn . '" data-consent-load>' . $label . '</button>'
+            . '<a href="' . e($open) . '" target="_blank" rel="noopener" class="text-xs underline underline-offset-4 ' . $muted . '">Open in ' . $service . '</a>'
+            . '</div>';
+    }
+}
+
 $site = [
     'name'        => 'ANew Mental Health',
     'short_name'  => 'ANew',

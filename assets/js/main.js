@@ -295,6 +295,42 @@
         update();
     });
 
+    /* ---------- Cookie consent ----------
+       'all' loads Google Maps / YouTube embeds; 'essential' keeps click-to-load placeholders.
+       The choice lives in localStorage (no cookie), so it can fail quietly in private mode. */
+    const CONSENT_KEY = 'anew-consent';
+    const readConsent = () => { try { return localStorage.getItem(CONSENT_KEY); } catch { return null; } };
+    const saveConsent = (v) => { try { localStorage.setItem(CONSENT_KEY, v); } catch { /* not stored: banner shows again next visit */ } };
+    const consentBanner = $('[data-consent-banner]');
+
+    const loadEmbed = (frame) => {
+        if (!frame || frame.src) return;
+        frame.src = frame.dataset.consentSrc;
+        frame.parentElement?.querySelector('[data-consent-placeholder]')?.remove();
+    };
+    const loadAllEmbeds = () => $$('iframe[data-consent-src]').forEach(loadEmbed);
+    const showBanner = (show) => { if (consentBanner) consentBanner.hidden = !show; };
+
+    if (readConsent() === 'all') loadAllEmbeds();
+    showBanner(!readConsent());
+
+    document.addEventListener('click', (e) => {
+        const choice = e.target.closest('[data-consent-choice]');
+        if (choice) {
+            saveConsent(choice.dataset.consentChoice);
+            if (choice.dataset.consentChoice === 'all') loadAllEmbeds();
+            showBanner(false);
+            return;
+        }
+        if (e.target.closest('[data-consent-open]')) {
+            showBanner(true);
+            $('[data-consent-choice]', consentBanner)?.focus();
+            return;
+        }
+        const load = e.target.closest('[data-consent-load]');
+        if (load) loadEmbed(load.closest('[data-consent-placeholder]')?.parentElement?.querySelector('iframe[data-consent-src]'));
+    });
+
     /* ---------- Provider dialog ---------- */
     const dialog = $('#person-dialog');
     const openPerson = (slug) => {

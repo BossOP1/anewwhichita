@@ -44,7 +44,7 @@ $doc = [
                 <li><strong>Facebook and Instagram</strong> — if you follow links to our social media pages</li>
             </ul>'],
         ['cookies', 'Cookies', '
-            <p>Our website does not use cookies for advertising. Some embedded third-party services (such as Google Maps) may set their own cookies. You can block or delete cookies through your browser settings; the site will still work.</p>'],
+            <p>Our website does not use cookies for advertising or tracking. Our maps (Google Maps) and videos (YouTube) are provided by Google, which may set its own cookies when they load. The first time you visit, we ask whether to load them: choose <strong>Accept all</strong> to load them automatically, or <strong>Essential only</strong> to keep them switched off until you click to load a specific map or video. Your choice is saved in your browser, and you can change it at any time using the <strong>Cookie settings</strong> link at the bottom of every page. You can also block or delete cookies through your browser settings; the site will still work.</p>'],
         ['communications', 'Email and text messaging', '
             <p>ANew offers email and text messaging to make communication easier and more accessible. Please note that email and text messaging are not secure, and we cannot guarantee the privacy of these communications. If you receive a text from ANew, you may decline or opt out of text communication at any time.</p>'],
         ['security', 'How we protect information', '

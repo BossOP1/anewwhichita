@@ -107,8 +107,8 @@ include __DIR__ . '/../includes/header.php';
                     <a href="<?= e($site['maps_url']) ?>" target="_blank" rel="noopener" class="btn-primary">Get directions</a>
                 </div>
             </div>
-            <div class="min-h-[360px] lg:col-span-7">
-                <iframe src="<?= e($map_embed) ?>" title="Map showing ANew Mental Health at <?= e($address_full) ?>" class="h-full min-h-[360px] w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="relative min-h-[360px] lg:col-span-7">
+                <?= consent_embed('map', $map_embed, 'Map showing ANew Mental Health at ' . $address_full, 'h-full min-h-[360px] w-full border-0', 'loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen', $site['maps_url']) ?>
             </div>
         </div>
     </section>
