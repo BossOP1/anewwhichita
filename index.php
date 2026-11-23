@@ -12,6 +12,7 @@ include __DIR__ . '/includes/header.php';
         <div class="relative isolate flex min-h-[88svh] overflow-hidden rounded-4xl bg-prairie-deep text-white sm:min-h-[86vh]">
             <?php if ($hero_video): ?>
                 <video class="absolute inset-0 -z-10 h-full w-full object-cover object-center" autoplay muted loop playsinline poster="<?= e($hero_image) ?>" aria-hidden="true" data-hero-video>
+                    <?php if (!empty($hero_video_mobile)): ?><source src="<?= e($hero_video_mobile) ?>" type="video/mp4" media="(max-width: 767px)"><?php endif; ?>
                     <source src="<?= e($hero_video) ?>" type="video/mp4">
                 </video>
             <?php else: ?>

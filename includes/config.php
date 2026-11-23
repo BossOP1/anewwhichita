@@ -70,8 +70,9 @@ $site = [
 /* Optional: drop in an mp4/webm of the Flint Hills (moving grass, clouds, sunset)
    and the hero switches from photo to looping video automatically. */
 // Pexels "Walking in the Field" by Marian Croitoru (free Pexels License), trimmed to 20s at 720p.
-$hero_video = '/assets/video/hero-wheat-breeze.mp4';
-$hero_image = '/assets/images/scenery/hero-wheat-breeze.jpg'; // first frame of the video: poster + fallback
+$hero_video        = '/assets/video/hero-wheat-sky-1080.mp4';     // 1920x1080, wide screens
+$hero_video_mobile = '/assets/video/hero-wheat-sky-portrait.mp4'; // 720x1280 portrait crop, phones
+$hero_image = '/assets/images/scenery/hero-wheat-sky.jpg'; // first frame of the video: poster + fallback
 
 $services = [
     'therapy' => [
